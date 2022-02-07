@@ -3313,452 +3313,515 @@ namespace AstroGuide
 			// aapt resource value: 0x7F07006C
 			public const int design_snackbar_background = 2131165292;
 			
-			// aapt resource value: 0x7F070070
-			public const int Icon_Aluminium = 2131165296;
-			
-			// aapt resource value: 0x7F070071
-			public const int Icon_Aluminiumlegierung = 2131165297;
-			
-			// aapt resource value: 0x7F070072
-			public const int Icon_Ammonium = 2131165298;
-			
-			// aapt resource value: 0x7F070073
-			public const int Icon_Arbeitslicht = 2131165299;
-			
-			// aapt resource value: 0x7F070074
-			public const int Icon_Argon = 2131165300;
-			
-			// aapt resource value: 0x7F070075
-			public const int Icon_Astronium = 2131165301;
-			
-			// aapt resource value: 0x7F070076
-			public const int Icon_Atmosphaerenkondensator = 2131165302;
-			
-			// aapt resource value: 0x7F070077
-			public const int Icon_Atrox = 2131165303;
-			
-			// aapt resource value: 0x7F070078
-			public const int Icon_Augment = 2131165304;
-			
-			// aapt resource value: 0x7F070079
-			public const int Icon_Battery = 2131165305;
-			
-			// aapt resource value: 0x7F07007A
-			public const int Icon_Beacon = 2131165306;
-			
-			// aapt resource value: 0x7F07007B
-			public const int Icon_Bohrstaerke_1 = 2131165307;
-			
-			// aapt resource value: 0x7F07007C
-			public const int Icon_Bohrstaerke_2 = 2131165308;
-			
-			// aapt resource value: 0x7F07007D
-			public const int Icon_Bohrstaerke_3 = 2131165309;
-			
-			// aapt resource value: 0x7F07007E
-			public const int Icon_Calidor = 2131165310;
-			
-			// aapt resource value: 0x7F07007F
-			public const int Icon_Canister = 2131165311;
-			
-			// aapt resource value: 0x7F070080
-			public const int Icon_Chemielabor = 2131165312;
-			
-			// aapt resource value: 0x7F070081
-			public const int Icon_Compound = 2131165313;
-			
-			// aapt resource value: 0x7F070082
-			public const int Icon_Desolo = 2131165314;
-			
-			// aapt resource value: 0x7F070083
-			public const int Icon_Diamant = 2131165315;
-			
-			// aapt resource value: 0x7F070084
-			public const int Icon_Dynamite = 2131165316;
-			
-			// aapt resource value: 0x7F070085
-			public const int Icon_Eisen = 2131165317;
-			
-			// aapt resource value: 0x7F070086
-			public const int Icon_Energie = 2131165318;
-			
-			// aapt resource value: 0x7F070087
-			public const int Icon_Erdzentrifuge = 2131165319;
-			
-			// aapt resource value: 0x7F070088
-			public const int Icon_EXOChip = 2131165320;
-			
-			// aapt resource value: 0x7F07008C
-			public const int Icon_Extragrosser_Schredder = 2131165324;
-			
-			// aapt resource value: 0x7F07008D
-			public const int Icon_Extragrosses_Lager = 2131165325;
-			
-			// aapt resource value: 0x7F070089
-			public const int Icon_Extragrosse_Plattform_A = 2131165321;
-			
-			// aapt resource value: 0x7F07008A
-			public const int Icon_Extragrosse_Plattform_B = 2131165322;
-			
-			// aapt resource value: 0x7F07008B
-			public const int Icon_Extragrosse_Plattform_C = 2131165323;
-			
-			// aapt resource value: 0x7F07008E
-			public const int Icon_Feststoff_Schubduese = 2131165326;
-			
-			// aapt resource value: 0x7F07008F
-			public const int Icon_Figurine = 2131165327;
-			
-			// aapt resource value: 0x7F070090
-			public const int Icon_Fireworks = 2131165328;
-			
-			// aapt resource value: 0x7F070091
-			public const int Icon_Forschungskammer = 2131165329;
-			
-			// aapt resource value: 0x7F070092
-			public const int Icon_Generator = 2131165330;
-			
-			// aapt resource value: 0x7F070093
-			public const int Icon_Glacio = 2131165331;
-			
-			// aapt resource value: 0x7F070094
-			public const int Icon_Glas = 2131165332;
-			
-			// aapt resource value: 0x7F070095
-			public const int Icon_Graphen = 2131165333;
-			
-			// aapt resource value: 0x7F070096
-			public const int Icon_Graphite = 2131165334;
-			
-			// aapt resource value: 0x7F07009A
-			public const int Icon_Grosser_Drucker = 2131165338;
-			
-			// aapt resource value: 0x7F07009B
-			public const int Icon_Grosser_Rover = 2131165339;
-			
-			// aapt resource value: 0x7F07009C
-			public const int Icon_Grosser_Rover_Sitz = 2131165340;
-			
-			// aapt resource value: 0x7F07009D
-			public const int Icon_Grosser_Schredder = 2131165341;
-			
-			// aapt resource value: 0x7F07009E
-			public const int Icon_Grosses_Lager = 2131165342;
-			
-			// aapt resource value: 0x7F07009F
-			public const int Icon_Grosses_Shuttle = 2131165343;
-			
-			// aapt resource value: 0x7F070097
-			public const int Icon_Grosse_Plattform_A = 2131165335;
-			
-			// aapt resource value: 0x7F070098
-			public const int Icon_Grosse_Plattform_B = 2131165336;
-			
-			// aapt resource value: 0x7F070099
-			public const int Icon_Grosse_Plattform_C = 2131165337;
-			
-			// aapt resource value: 0x7F0700A0
-			public const int Icon_Gummi = 2131165344;
-			
-			// aapt resource value: 0x7F0700A1
-			public const int Icon_Haematit = 2131165345;
-			
-			// aapt resource value: 0x7F0700A2
-			public const int Icon_Haenger = 2131165346;
-			
-			// aapt resource value: 0x7F0700A3
-			public const int Icon_Handelsplattform = 2131165347;
-			
-			// aapt resource value: 0x7F0700A4
-			public const int Icon_Helium = 2131165348;
-			
-			// aapt resource value: 0x7F0700A5
-			public const int Icon_Horn = 2131165349;
-			
-			// aapt resource value: 0x7F0700A6
-			public const int Icon_Hoverboard = 2131165350;
-			
-			// aapt resource value: 0x7F0700A7
-			public const int Icon_Hydrazin = 2131165351;
-			
-			// aapt resource value: 0x7F0700A8
-			public const int Icon_Hydrazin_Schubduese = 2131165352;
-			
-			// aapt resource value: 0x7F0700A9
-			public const int Icon_Keramik = 2131165353;
-			
-			// aapt resource value: 0x7F0700AA
-			public const int Icon_Kleiner_Drucker = 2131165354;
-			
-			// aapt resource value: 0x7F0700AB
-			public const int Icon_Kleiner_Kanister = 2131165355;
-			
-			// aapt resource value: 0x7F0700AC
-			public const int Icon_Kleines_Shuttle = 2131165356;
-			
-			// aapt resource value: 0x7F0700AD
-			public const int Icon_Kohlenstoff = 2131165357;
-			
-			// aapt resource value: 0x7F0700AE
-			public const int Icon_Kran = 2131165358;
-			
-			// aapt resource value: 0x7F0700AF
-			public const int Icon_Kunststoff = 2131165359;
-			
-			// aapt resource value: 0x7F0700B0
-			public const int Icon_Kupfer = 2131165360;
-			
-			// aapt resource value: 0x7F0700B1
-			public const int Icon_Landeplattform = 2131165361;
-			
-			// aapt resource value: 0x7F0700B2
-			public const int Icon_Laterit = 2131165362;
-			
-			// aapt resource value: 0x7F0700B3
-			public const int Icon_Lehm = 2131165363;
-			
-			// aapt resource value: 0x7F0700B4
-			public const int Icon_Leuchtfeuer = 2131165364;
-			
-			// aapt resource value: 0x7F0700B5
-			public const int Icon_Lithium = 2131165365;
-			
-			// aapt resource value: 0x7F0700B6
-			public const int Icon_Malachit = 2131165366;
-			
-			// aapt resource value: 0x7F0700B7
-			public const int Icon_Methan = 2131165367;
-			
-			// aapt resource value: 0x7F0700BC
-			public const int Icon_Mittelgrosser_Drucker = 2131165372;
-			
-			// aapt resource value: 0x7F0700BD
-			public const int Icon_Mittelgrosser_Generator = 2131165373;
-			
-			// aapt resource value: 0x7F0700BE
-			public const int Icon_Mittelgrosses_Lager = 2131165374;
-			
-			// aapt resource value: 0x7F0700BF
-			public const int Icon_Mittelgrosses_Solarmodul = 2131165375;
-			
-			// aapt resource value: 0x7F0700B8
-			public const int Icon_Mittelgrosse_Batterie = 2131165368;
-			
-			// aapt resource value: 0x7F0700B9
-			public const int Icon_Mittelgrosse_Plattform_A = 2131165369;
-			
-			// aapt resource value: 0x7F0700BA
-			public const int Icon_Mittelgrosse_Plattform_B = 2131165370;
-			
-			// aapt resource value: 0x7F0700BB
-			public const int Icon_Mittelgrosse_Windturbine = 2131165371;
-			
-			// aapt resource value: 0x7F0700C0
-			public const int Icon_Mittleres_Shuttle = 2131165376;
-			
-			// aapt resource value: 0x7F0700C1
-			public const int Icon_Nanocarbonlegierung = 2131165377;
-			
-			// aapt resource value: 0x7F0700C2
-			public const int Icon_Novus = 2131165378;
-			
-			// aapt resource value: 0x7F0700C3
-			public const int Icon_Organisch = 2131165379;
-			
-			// aapt resource value: 0x7F0700C5
-			public const int Icon_Oxygenator = 2131165381;
-			
-			// aapt resource value: 0x7F0700C4
-			public const int Icon_Oxygen_Tank = 2131165380;
-			
-			// aapt resource value: 0x7F0700C6
-			public const int Icon_Packager = 2131165382;
-			
-			// aapt resource value: 0x7F0700C7
-			public const int Icon_Power_Cells = 2131165383;
-			
-			// aapt resource value: 0x7F0700C8
-			public const int Icon_Probe_Scanner = 2131165384;
-			
-			// aapt resource value: 0x7F0700C9
-			public const int Icon_Quartz = 2131165385;
-			
-			// aapt resource value: 0x7F0700CA
-			public const int Icon_Resin = 2131165386;
-			
-			// aapt resource value: 0x7F0700CB
-			public const int Icon_Rover = 2131165387;
-			
-			// aapt resource value: 0x7F0700CC
-			public const int Icon_Rover_Sitz = 2131165388;
-			
-			// aapt resource value: 0x7F0700CD
-			public const int Icon_Rucksack = 2131165389;
-			
-			// aapt resource value: 0x7F0700CE
-			public const int Icon_Sauerstoff = 2131165390;
-			
-			// aapt resource value: 0x7F0700CF
-			public const int Icon_Sauerstoffmacher = 2131165391;
-			
-			// aapt resource value: 0x7F0700D0
-			public const int Icon_Schmelzofen = 2131165392;
-			
-			// aapt resource value: 0x7F0700D1
-			public const int Icon_Schredder = 2131165393;
-			
-			// aapt resource value: 0x7F0700D2
-			public const int Icon_Schrott = 2131165394;
-			
-			// aapt resource value: 0x7F0700D3
-			public const int Icon_Schwefel = 2131165395;
-			
-			// aapt resource value: 0x7F0700D4
-			public const int Icon_Silikon = 2131165396;
-			
-			// aapt resource value: 0x7F0700D5
-			public const int Icon_Small_Camera = 2131165397;
-			
-			// aapt resource value: 0x7F0700D6
-			public const int Icon_Soil = 2131165398;
-			
-			// aapt resource value: 0x7F0700D7
-			public const int Icon_Solar = 2131165399;
-			
-			// aapt resource value: 0x7F0700D8
-			public const int Icon_Solarstromanlage = 2131165400;
-			
-			// aapt resource value: 0x7F0700D9
-			public const int Icon_Sprengpulver = 2131165401;
-			
-			// aapt resource value: 0x7F0700DA
-			public const int Icon_Stahl = 2131165402;
-			
-			// aapt resource value: 0x7F0700DB
-			public const int Icon_Stickstoff = 2131165403;
-			
-			// aapt resource value: 0x7F0700DC
-			public const int Icon_Sylva = 2131165404;
-			
-			// aapt resource value: 0x7F0700DD
-			public const int Icon_Thruster = 2131165405;
-			
-			// aapt resource value: 0x7F0700DE
-			public const int Icon_Titan = 2131165406;
-			
-			// aapt resource value: 0x7F0700DF
-			public const int Icon_Titanit = 2131165407;
-			
-			// aapt resource value: 0x7F0700E0
-			public const int Icon_Titanlegierung = 2131165408;
-			
-			// aapt resource value: 0x7F0700E1
-			public const int Icon_Traktor = 2131165409;
-			
-			// aapt resource value: 0x7F0700E2
-			public const int Icon_Unterkunft = 2131165410;
-			
-			// aapt resource value: 0x7F0700E3
-			public const int Icon_Verbindungspaket = 2131165411;
-			
-			// aapt resource value: 0x7F0700E4
-			public const int Icon_Verlaengerungen = 2131165412;
-			
-			// aapt resource value: 0x7F0700E5
-			public const int Icon_Verteiler = 2131165413;
-			
-			// aapt resource value: 0x7F0700E6
-			public const int Icon_Vesania = 2131165414;
-			
-			// aapt resource value: 0x7F0700E7
-			public const int Icon_Wasserstoff = 2131165415;
-			
-			// aapt resource value: 0x7F0700E9
-			public const int Icon_Winde = 2131165417;
-			
-			// aapt resource value: 0x7F0700E8
-			public const int Icon_Wind_Turbine = 2131165416;
-			
-			// aapt resource value: 0x7F0700EA
-			public const int Icon_Wolfram = 2131165418;
-			
-			// aapt resource value: 0x7F0700EB
-			public const int Icon_Wolframit = 2131165419;
-			
-			// aapt resource value: 0x7F0700EC
-			public const int Icon_Wolframkarbid = 2131165420;
-			
-			// aapt resource value: 0x7F0700ED
-			public const int Icon_Zink = 2131165421;
-			
-			// aapt resource value: 0x7F0700EE
-			public const int Icon_Zinkblende = 2131165422;
-			
 			// aapt resource value: 0x7F07006D
-			public const int ic_mtrl_chip_checked_black = 2131165293;
+			public const int Galas_Atrox_Shell = 2131165293;
 			
 			// aapt resource value: 0x7F07006E
-			public const int ic_mtrl_chip_checked_circle = 2131165294;
+			public const int Galas_Bestefar = 2131165294;
 			
 			// aapt resource value: 0x7F07006F
-			public const int ic_mtrl_chip_close_circle = 2131165295;
+			public const int Galas_Calidor_Shell = 2131165295;
+			
+			// aapt resource value: 0x7F070070
+			public const int Galas_Desolo_Shell = 2131165296;
+			
+			// aapt resource value: 0x7F070071
+			public const int Galas_Enoki = 2131165297;
+			
+			// aapt resource value: 0x7F070072
+			public const int Galas_Glacio_Shell = 2131165298;
+			
+			// aapt resource value: 0x7F070073
+			public const int Galas_Novus_Shell = 2131165299;
+			
+			// aapt resource value: 0x7F070074
+			public const int Galas_Princess = 2131165300;
+			
+			// aapt resource value: 0x7F070075
+			public const int Galas_Rogal = 2131165301;
+			
+			// aapt resource value: 0x7F070076
+			public const int Galas_Stilgar = 2131165302;
+			
+			// aapt resource value: 0x7F070077
+			public const int Galas_Sylva_Shell = 2131165303;
+			
+			// aapt resource value: 0x7F070078
+			public const int Galas_Sylvie = 2131165304;
+			
+			// aapt resource value: 0x7F070079
+			public const int Galas_Usagi = 2131165305;
+			
+			// aapt resource value: 0x7F07007A
+			public const int Galas_Vesania_Shell = 2131165306;
+			
+			// aapt resource value: 0x7F07007E
+			public const int Icon_Aluminium = 2131165310;
+			
+			// aapt resource value: 0x7F07007F
+			public const int Icon_Aluminiumlegierung = 2131165311;
+			
+			// aapt resource value: 0x7F070080
+			public const int Icon_Ammonium = 2131165312;
+			
+			// aapt resource value: 0x7F070081
+			public const int Icon_Arbeitslicht = 2131165313;
+			
+			// aapt resource value: 0x7F070082
+			public const int Icon_Argon = 2131165314;
+			
+			// aapt resource value: 0x7F070083
+			public const int Icon_Astronium = 2131165315;
+			
+			// aapt resource value: 0x7F070084
+			public const int Icon_Atmosphaerenkondensator = 2131165316;
+			
+			// aapt resource value: 0x7F070085
+			public const int Icon_Atrox = 2131165317;
+			
+			// aapt resource value: 0x7F070086
+			public const int Icon_Augment = 2131165318;
+			
+			// aapt resource value: 0x7F070087
+			public const int Icon_Battery = 2131165319;
+			
+			// aapt resource value: 0x7F070088
+			public const int Icon_Beacon = 2131165320;
+			
+			// aapt resource value: 0x7F070089
+			public const int Icon_Bestefar = 2131165321;
+			
+			// aapt resource value: 0x7F07008A
+			public const int Icon_Bohrstaerke_1 = 2131165322;
+			
+			// aapt resource value: 0x7F07008B
+			public const int Icon_Bohrstaerke_2 = 2131165323;
+			
+			// aapt resource value: 0x7F07008C
+			public const int Icon_Bohrstaerke_3 = 2131165324;
+			
+			// aapt resource value: 0x7F07008D
+			public const int Icon_Calidor = 2131165325;
+			
+			// aapt resource value: 0x7F07008E
+			public const int Icon_Canister = 2131165326;
+			
+			// aapt resource value: 0x7F07008F
+			public const int Icon_Chemielabor = 2131165327;
+			
+			// aapt resource value: 0x7F070090
+			public const int Icon_Compound = 2131165328;
+			
+			// aapt resource value: 0x7F070091
+			public const int Icon_Desolo = 2131165329;
+			
+			// aapt resource value: 0x7F070092
+			public const int Icon_Diamant = 2131165330;
+			
+			// aapt resource value: 0x7F070093
+			public const int Icon_Dynamite = 2131165331;
+			
+			// aapt resource value: 0x7F070094
+			public const int Icon_Eisen = 2131165332;
+			
+			// aapt resource value: 0x7F070095
+			public const int Icon_Energie = 2131165333;
+			
+			// aapt resource value: 0x7F070096
+			public const int Icon_Enoki = 2131165334;
+			
+			// aapt resource value: 0x7F070097
+			public const int Icon_Erdzentrifuge = 2131165335;
+			
+			// aapt resource value: 0x7F070098
+			public const int Icon_EXOChip = 2131165336;
+			
+			// aapt resource value: 0x7F07009C
+			public const int Icon_Extragrosser_Schredder = 2131165340;
+			
+			// aapt resource value: 0x7F07009D
+			public const int Icon_Extragrosses_Lager = 2131165341;
+			
+			// aapt resource value: 0x7F070099
+			public const int Icon_Extragrosse_Plattform_A = 2131165337;
+			
+			// aapt resource value: 0x7F07009A
+			public const int Icon_Extragrosse_Plattform_B = 2131165338;
+			
+			// aapt resource value: 0x7F07009B
+			public const int Icon_Extragrosse_Plattform_C = 2131165339;
+			
+			// aapt resource value: 0x7F07009E
+			public const int Icon_Feststoff_Schubduese = 2131165342;
+			
+			// aapt resource value: 0x7F07009F
+			public const int Icon_Figurine = 2131165343;
+			
+			// aapt resource value: 0x7F0700A0
+			public const int Icon_Fireworks = 2131165344;
+			
+			// aapt resource value: 0x7F0700A1
+			public const int Icon_Forschungskammer = 2131165345;
+			
+			// aapt resource value: 0x7F0700A2
+			public const int Icon_Generator = 2131165346;
+			
+			// aapt resource value: 0x7F0700A3
+			public const int Icon_Glacio = 2131165347;
+			
+			// aapt resource value: 0x7F0700A4
+			public const int Icon_Glas = 2131165348;
+			
+			// aapt resource value: 0x7F0700A5
+			public const int Icon_Graphen = 2131165349;
+			
+			// aapt resource value: 0x7F0700A6
+			public const int Icon_Graphite = 2131165350;
+			
+			// aapt resource value: 0x7F0700AA
+			public const int Icon_Grosser_Drucker = 2131165354;
+			
+			// aapt resource value: 0x7F0700AB
+			public const int Icon_Grosser_Rover = 2131165355;
+			
+			// aapt resource value: 0x7F0700AC
+			public const int Icon_Grosser_Rover_Sitz = 2131165356;
+			
+			// aapt resource value: 0x7F0700AD
+			public const int Icon_Grosser_Schredder = 2131165357;
+			
+			// aapt resource value: 0x7F0700AE
+			public const int Icon_Grosses_Lager = 2131165358;
+			
+			// aapt resource value: 0x7F0700AF
+			public const int Icon_Grosses_Shuttle = 2131165359;
+			
+			// aapt resource value: 0x7F0700A7
+			public const int Icon_Grosse_Plattform_A = 2131165351;
+			
+			// aapt resource value: 0x7F0700A8
+			public const int Icon_Grosse_Plattform_B = 2131165352;
+			
+			// aapt resource value: 0x7F0700A9
+			public const int Icon_Grosse_Plattform_C = 2131165353;
+			
+			// aapt resource value: 0x7F0700B0
+			public const int Icon_Gummi = 2131165360;
+			
+			// aapt resource value: 0x7F0700B1
+			public const int Icon_Haematit = 2131165361;
+			
+			// aapt resource value: 0x7F0700B2
+			public const int Icon_Haenger = 2131165362;
+			
+			// aapt resource value: 0x7F0700B3
+			public const int Icon_Handelsplattform = 2131165363;
+			
+			// aapt resource value: 0x7F0700B4
+			public const int Icon_Helium = 2131165364;
+			
+			// aapt resource value: 0x7F0700B5
+			public const int Icon_Horn = 2131165365;
+			
+			// aapt resource value: 0x7F0700B6
+			public const int Icon_Hoverboard = 2131165366;
+			
+			// aapt resource value: 0x7F0700B7
+			public const int Icon_Hydrazin = 2131165367;
+			
+			// aapt resource value: 0x7F0700B8
+			public const int Icon_Hydrazin_Schubduese = 2131165368;
+			
+			// aapt resource value: 0x7F0700B9
+			public const int Icon_Keramik = 2131165369;
+			
+			// aapt resource value: 0x7F0700BA
+			public const int Icon_Kleiner_Drucker = 2131165370;
+			
+			// aapt resource value: 0x7F0700BB
+			public const int Icon_Kleiner_Kanister = 2131165371;
+			
+			// aapt resource value: 0x7F0700BC
+			public const int Icon_Kleines_Shuttle = 2131165372;
+			
+			// aapt resource value: 0x7F0700BD
+			public const int Icon_Kohlenstoff = 2131165373;
+			
+			// aapt resource value: 0x7F0700BE
+			public const int Icon_Kran = 2131165374;
+			
+			// aapt resource value: 0x7F0700BF
+			public const int Icon_Kunststoff = 2131165375;
+			
+			// aapt resource value: 0x7F0700C0
+			public const int Icon_Kupfer = 2131165376;
+			
+			// aapt resource value: 0x7F0700C1
+			public const int Icon_Landeplattform = 2131165377;
+			
+			// aapt resource value: 0x7F0700C2
+			public const int Icon_Laterit = 2131165378;
+			
+			// aapt resource value: 0x7F0700C3
+			public const int Icon_Lehm = 2131165379;
+			
+			// aapt resource value: 0x7F0700C4
+			public const int Icon_Leuchtfeuer = 2131165380;
+			
+			// aapt resource value: 0x7F0700C5
+			public const int Icon_Lithium = 2131165381;
+			
+			// aapt resource value: 0x7F0700C6
+			public const int Icon_Malachit = 2131165382;
+			
+			// aapt resource value: 0x7F0700C7
+			public const int Icon_Methan = 2131165383;
+			
+			// aapt resource value: 0x7F0700CC
+			public const int Icon_Mittelgrosser_Drucker = 2131165388;
+			
+			// aapt resource value: 0x7F0700CD
+			public const int Icon_Mittelgrosser_Generator = 2131165389;
+			
+			// aapt resource value: 0x7F0700CE
+			public const int Icon_Mittelgrosses_Lager = 2131165390;
+			
+			// aapt resource value: 0x7F0700CF
+			public const int Icon_Mittelgrosses_Solarmodul = 2131165391;
+			
+			// aapt resource value: 0x7F0700C8
+			public const int Icon_Mittelgrosse_Batterie = 2131165384;
+			
+			// aapt resource value: 0x7F0700C9
+			public const int Icon_Mittelgrosse_Plattform_A = 2131165385;
+			
+			// aapt resource value: 0x7F0700CA
+			public const int Icon_Mittelgrosse_Plattform_B = 2131165386;
+			
+			// aapt resource value: 0x7F0700CB
+			public const int Icon_Mittelgrosse_Windturbine = 2131165387;
+			
+			// aapt resource value: 0x7F0700D0
+			public const int Icon_Mittleres_Shuttle = 2131165392;
+			
+			// aapt resource value: 0x7F0700D1
+			public const int Icon_Nanocarbonlegierung = 2131165393;
+			
+			// aapt resource value: 0x7F0700D2
+			public const int Icon_Novus = 2131165394;
+			
+			// aapt resource value: 0x7F0700D3
+			public const int Icon_Organisch = 2131165395;
+			
+			// aapt resource value: 0x7F0700D5
+			public const int Icon_Oxygenator = 2131165397;
+			
+			// aapt resource value: 0x7F0700D4
+			public const int Icon_Oxygen_Tank = 2131165396;
+			
+			// aapt resource value: 0x7F0700D6
+			public const int Icon_Packager = 2131165398;
+			
+			// aapt resource value: 0x7F0700D7
+			public const int Icon_Power_Cells = 2131165399;
+			
+			// aapt resource value: 0x7F0700D8
+			public const int Icon_Princess = 2131165400;
+			
+			// aapt resource value: 0x7F0700D9
+			public const int Icon_Probe_Scanner = 2131165401;
+			
+			// aapt resource value: 0x7F0700DA
+			public const int Icon_Quartz = 2131165402;
+			
+			// aapt resource value: 0x7F0700DB
+			public const int Icon_Resin = 2131165403;
+			
+			// aapt resource value: 0x7F0700DC
+			public const int Icon_Rogal = 2131165404;
+			
+			// aapt resource value: 0x7F0700DD
+			public const int Icon_Rover = 2131165405;
+			
+			// aapt resource value: 0x7F0700DE
+			public const int Icon_Rover_Sitz = 2131165406;
+			
+			// aapt resource value: 0x7F0700DF
+			public const int Icon_Rucksack = 2131165407;
+			
+			// aapt resource value: 0x7F0700E0
+			public const int Icon_Sauerstoff = 2131165408;
+			
+			// aapt resource value: 0x7F0700E1
+			public const int Icon_Sauerstoffmacher = 2131165409;
+			
+			// aapt resource value: 0x7F0700E2
+			public const int Icon_Schmelzofen = 2131165410;
+			
+			// aapt resource value: 0x7F0700E3
+			public const int Icon_Schredder = 2131165411;
+			
+			// aapt resource value: 0x7F0700E4
+			public const int Icon_Schrott = 2131165412;
+			
+			// aapt resource value: 0x7F0700E5
+			public const int Icon_Schwefel = 2131165413;
+			
+			// aapt resource value: 0x7F0700E6
+			public const int Icon_Silikon = 2131165414;
+			
+			// aapt resource value: 0x7F0700E7
+			public const int Icon_Small_Camera = 2131165415;
+			
+			// aapt resource value: 0x7F0700E8
+			public const int Icon_Soil = 2131165416;
+			
+			// aapt resource value: 0x7F0700E9
+			public const int Icon_Solar = 2131165417;
+			
+			// aapt resource value: 0x7F0700EA
+			public const int Icon_Solarstromanlage = 2131165418;
+			
+			// aapt resource value: 0x7F0700EB
+			public const int Icon_Sprengpulver = 2131165419;
+			
+			// aapt resource value: 0x7F0700EC
+			public const int Icon_Stahl = 2131165420;
+			
+			// aapt resource value: 0x7F0700ED
+			public const int Icon_Stickstoff = 2131165421;
+			
+			// aapt resource value: 0x7F0700EE
+			public const int Icon_Stilgar = 2131165422;
 			
 			// aapt resource value: 0x7F0700EF
-			public const int mtrl_snackbar_background = 2131165423;
+			public const int Icon_Sylva = 2131165423;
 			
 			// aapt resource value: 0x7F0700F0
-			public const int mtrl_tabs_default_indicator = 2131165424;
+			public const int Icon_Sylvie = 2131165424;
 			
 			// aapt resource value: 0x7F0700F1
-			public const int navigation_empty_icon = 2131165425;
+			public const int Icon_Thruster = 2131165425;
 			
 			// aapt resource value: 0x7F0700F2
-			public const int notification_action_background = 2131165426;
+			public const int Icon_Titan = 2131165426;
 			
 			// aapt resource value: 0x7F0700F3
-			public const int notification_bg = 2131165427;
+			public const int Icon_Titanit = 2131165427;
 			
 			// aapt resource value: 0x7F0700F4
-			public const int notification_bg_low = 2131165428;
+			public const int Icon_Titanlegierung = 2131165428;
 			
 			// aapt resource value: 0x7F0700F5
-			public const int notification_bg_low_normal = 2131165429;
+			public const int Icon_Traktor = 2131165429;
 			
 			// aapt resource value: 0x7F0700F6
-			public const int notification_bg_low_pressed = 2131165430;
+			public const int Icon_Unterkunft = 2131165430;
 			
 			// aapt resource value: 0x7F0700F7
-			public const int notification_bg_normal = 2131165431;
+			public const int Icon_Usagi = 2131165431;
 			
 			// aapt resource value: 0x7F0700F8
-			public const int notification_bg_normal_pressed = 2131165432;
+			public const int Icon_Verbindungspaket = 2131165432;
 			
 			// aapt resource value: 0x7F0700F9
-			public const int notification_icon_background = 2131165433;
+			public const int Icon_Verlaengerungen = 2131165433;
 			
 			// aapt resource value: 0x7F0700FA
-			public const int notification_template_icon_bg = 2131165434;
+			public const int Icon_Verteiler = 2131165434;
 			
 			// aapt resource value: 0x7F0700FB
-			public const int notification_template_icon_low_bg = 2131165435;
+			public const int Icon_Vesania = 2131165435;
 			
 			// aapt resource value: 0x7F0700FC
-			public const int notification_tile_bg = 2131165436;
-			
-			// aapt resource value: 0x7F0700FD
-			public const int notify_panel_notification_icon_bg = 2131165437;
+			public const int Icon_Wasserstoff = 2131165436;
 			
 			// aapt resource value: 0x7F0700FE
-			public const int plus = 2131165438;
+			public const int Icon_Winde = 2131165438;
+			
+			// aapt resource value: 0x7F0700FD
+			public const int Icon_Wind_Turbine = 2131165437;
 			
 			// aapt resource value: 0x7F0700FF
-			public const int splash_screen = 2131165439;
+			public const int Icon_Wolfram = 2131165439;
 			
 			// aapt resource value: 0x7F070100
-			public const int tooltip_frame_dark = 2131165440;
+			public const int Icon_Wolframit = 2131165440;
 			
 			// aapt resource value: 0x7F070101
-			public const int tooltip_frame_light = 2131165441;
+			public const int Icon_Wolframkarbid = 2131165441;
+			
+			// aapt resource value: 0x7F070102
+			public const int Icon_Zink = 2131165442;
+			
+			// aapt resource value: 0x7F070103
+			public const int Icon_Zinkblende = 2131165443;
+			
+			// aapt resource value: 0x7F07007B
+			public const int ic_mtrl_chip_checked_black = 2131165307;
+			
+			// aapt resource value: 0x7F07007C
+			public const int ic_mtrl_chip_checked_circle = 2131165308;
+			
+			// aapt resource value: 0x7F07007D
+			public const int ic_mtrl_chip_close_circle = 2131165309;
+			
+			// aapt resource value: 0x7F070104
+			public const int mtrl_snackbar_background = 2131165444;
+			
+			// aapt resource value: 0x7F070105
+			public const int mtrl_tabs_default_indicator = 2131165445;
+			
+			// aapt resource value: 0x7F070106
+			public const int navigation_empty_icon = 2131165446;
+			
+			// aapt resource value: 0x7F070107
+			public const int notification_action_background = 2131165447;
+			
+			// aapt resource value: 0x7F070108
+			public const int notification_bg = 2131165448;
+			
+			// aapt resource value: 0x7F070109
+			public const int notification_bg_low = 2131165449;
+			
+			// aapt resource value: 0x7F07010A
+			public const int notification_bg_low_normal = 2131165450;
+			
+			// aapt resource value: 0x7F07010B
+			public const int notification_bg_low_pressed = 2131165451;
+			
+			// aapt resource value: 0x7F07010C
+			public const int notification_bg_normal = 2131165452;
+			
+			// aapt resource value: 0x7F07010D
+			public const int notification_bg_normal_pressed = 2131165453;
+			
+			// aapt resource value: 0x7F07010E
+			public const int notification_icon_background = 2131165454;
+			
+			// aapt resource value: 0x7F07010F
+			public const int notification_template_icon_bg = 2131165455;
+			
+			// aapt resource value: 0x7F070110
+			public const int notification_template_icon_low_bg = 2131165456;
+			
+			// aapt resource value: 0x7F070111
+			public const int notification_tile_bg = 2131165457;
+			
+			// aapt resource value: 0x7F070112
+			public const int notify_panel_notification_icon_bg = 2131165458;
+			
+			// aapt resource value: 0x7F070113
+			public const int plus = 2131165459;
+			
+			// aapt resource value: 0x7F070114
+			public const int splash_screen = 2131165460;
+			
+			// aapt resource value: 0x7F070115
+			public const int tooltip_frame_dark = 2131165461;
+			
+			// aapt resource value: 0x7F070116
+			public const int tooltip_frame_light = 2131165462;
 			
 			static Drawable()
 			{

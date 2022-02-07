@@ -505,6 +505,8 @@ namespace AstroGuide
             Ressourcen Res12Sylva = new Ressourcen(MaterialTest.wasserstoff, ResArt.Gase, "75ppu");
             Ressourcen Res13Sylva = new Ressourcen(MaterialTest.stickstoff, ResArt.Gase, "100ppu");
 
+
+
             PlanetenTest.Sylva.SetPflanzen(new List<Pflanze>() { PflanzenTest.Knallkoralle, PflanzenTest.Huepfranke, PflanzenTest.Dolchwurzel, PflanzenTest.Zischrebe });
 
             PlanetenTest.Sylva.SetRessourcen(new List<Ressourcen>() { Res1Sylva, Res2Sylva, Res3Sylva, Res4Sylva, Res5Sylva, Res6Sylva, Res7Sylva, Res8Sylva, Res9Sylva, Res10Sylva, Res11Sylva, Res12Sylva, Res13Sylva });
