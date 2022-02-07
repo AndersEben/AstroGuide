@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dip">
+    <ImageView
+        android:id="@+id/PflanzenImage"
+        android:layout_width="70px"
+        android:layout_height="70px"
+        android:layout_marginLeft="25px"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/icon_quartz"/>
+        <TextView
+            android:id="@+id/PflanzenName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PlaceHolder"
+            android:gravity="center"
+            android:layout_marginRight="85px"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="50px"/>
+</RelativeLayout>

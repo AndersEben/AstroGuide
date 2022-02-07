@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="25px">
+    <LinearLayout
+        android:id="@+id/addText" 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ResListBild"
+            android:layout_width="150px"
+            android:layout_height="150px"
+            android:layout_marginLeft="35px"
+            android:src="@drawable/icon_quartz"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/ResListName"
+        android:layout_width="wrap_content"
+        android:layout_height="150px"
+        android:gravity="center"
+        android:text="PlaceHolder"
+        android:layout_marginLeft="230px"
+        android:textSize="55px"/>
+</RelativeLayout>
