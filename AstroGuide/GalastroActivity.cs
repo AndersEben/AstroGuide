@@ -25,7 +25,8 @@ namespace AstroGuide
 
             var galast = GalastropodenTest.FindGalast(Intent.GetStringExtra("Galastropode"));
 
-            FindViewById<TextView>(Resource.Id.GalastFood).Text = galast.Name;
+            FindViewById<TextView>(Resource.Id.GalastName).Text = galast.Name;
+            FindViewById<TextView>(Resource.Id.GalastFood).Text = galast.Food.Name + " Samen";
             FindViewById<ImageView>(Resource.Id.GalastroBild).SetImageResource(galast.Image);
 
         }
