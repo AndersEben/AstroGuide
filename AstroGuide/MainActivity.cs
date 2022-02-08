@@ -478,8 +478,6 @@ namespace AstroGuide
             CraftingTest.xlEPlattform.SetDescription("");
             CraftingTest.fPlattform.SetHerstellung(new List<Ressource>() { MaterialTest.eisen, MaterialTest.eisen, MaterialTest.eisen,MaterialTest.eisen }, CraftingTest.grosserDrucker);
             CraftingTest.fPlattform.SetDescription("");
-            //CraftingTest.KUnterkunkt.SetHerstellung(new List<Ressource>() { MaterialTest.kunststoff, MaterialTest.lehm, MaterialTest.harz,MaterialTest.kohlenstoff }, CraftingTest.grosserDrucker);
-            //CraftingTest.KUnterkunkt.SetDescription("");
             CraftingTest.landeplattform.SetHerstellung(new List<Ressource>() { MaterialTest.keramik, MaterialTest.keramik, MaterialTest.aluminium }, CraftingTest.grosserDrucker);
             CraftingTest.landeplattform.SetDescription("");
 
@@ -505,7 +503,7 @@ namespace AstroGuide
             Ressourcen Res12Sylva = new Ressourcen(MaterialTest.wasserstoff, ResArt.Gase, "75ppu");
             Ressourcen Res13Sylva = new Ressourcen(MaterialTest.stickstoff, ResArt.Gase, "100ppu");
 
-
+            PlanetenTest.Sylva.SetGalastropode(GalastropodenTest.Sylvie);
 
             PlanetenTest.Sylva.SetPflanzen(new List<Pflanze>() { PflanzenTest.Knallkoralle, PflanzenTest.Huepfranke, PflanzenTest.Dolchwurzel, PflanzenTest.Zischrebe });
 
@@ -528,6 +526,8 @@ namespace AstroGuide
             Ressourcen Res8Desolo = new Ressourcen(MaterialTest.quartz, ResArt.Universale, "Oft");
             Ressourcen Res9Desolo = new Ressourcen(MaterialTest.laterit, ResArt.Universale, "Oft");
             Ressourcen Res10Desolo = new Ressourcen(MaterialTest.astronium, ResArt.Universale, "Oft");
+
+            PlanetenTest.Desolo.SetGalastropode(GalastropodenTest.Usagi);
 
             PlanetenTest.Desolo.SetPflanzen(new List<Pflanze>() { PflanzenTest.Knallkoralle, PflanzenTest.Dolchwurzel, PflanzenTest.Zischrebe });
 
@@ -555,6 +555,8 @@ namespace AstroGuide
             Ressourcen Res11Vesania = new Ressourcen(MaterialTest.argon, ResArt.Gase, "50ppu");
             Ressourcen Res12Vesania = new Ressourcen(MaterialTest.stickstoff, ResArt.Gase, "75ppu");
 
+            PlanetenTest.Vesania.SetGalastropode(GalastropodenTest.Princess);
+
             PlanetenTest.Vesania.SetPflanzen(new List<Pflanze>() { PflanzenTest.Knallkoralle, PflanzenTest.Peitschenblatt, PflanzenTest.Distelgerte, PflanzenTest.Zischrebe, PflanzenTest.Katapflanze });
 
             PlanetenTest.Vesania.SetRessourcen(new List<Ressourcen>() { Res1Vesania, Res2Vesania, Res3Vesania, Res4Vesania, Res5Vesania, Res6Vesania, Res7Vesania, Res8Vesania, Res9Vesania, Res13Vesania, Res10Vesania, Res11Vesania, Res12Vesania });
@@ -581,6 +583,8 @@ namespace AstroGuide
             Ressourcen Res12Novus = new Ressourcen(MaterialTest.wasserstoff, ResArt.Gase, "25ppu");
             Ressourcen Res13Novus = new Ressourcen(MaterialTest.methan, ResArt.Gase, "75ppu");
 
+            PlanetenTest.Novus.SetGalastropode(GalastropodenTest.Rogal);
+
             PlanetenTest.Novus.SetPflanzen(new List<Pflanze>() { PflanzenTest.Knallkoralle, PflanzenTest.Peitschenblatt, PflanzenTest.Distelgerte, PflanzenTest.Zischrebe, PflanzenTest.Katapflanze });
 
             PlanetenTest.Novus.SetRessourcen(new List<Ressourcen>() { Res1Novus, Res2Novus, Res3Novus, Res4Novus, Res5Novus, Res6Novus, Res7Novus, Res8Novus, Res9Novus, Res10Novus, Res11Novus, Res12Novus, Res13Novus });
@@ -606,6 +610,8 @@ namespace AstroGuide
             Ressourcen Res10Calidor = new Ressourcen(MaterialTest.wasserstoff, ResArt.Gase, "50ppu");
             Ressourcen Res11Calidor = new Ressourcen(MaterialTest.schwefel, ResArt.Gase, "100ppu");
 
+            PlanetenTest.Calidor.SetGalastropode(GalastropodenTest.Stilgar);
+
             PlanetenTest.Calidor.SetPflanzen(new List<Pflanze>() { PflanzenTest.Knallkoralle, PflanzenTest.Keuchkraut, PflanzenTest.Stachellilie, PflanzenTest.Zischrebe, PflanzenTest.Attaktus });
 
             PlanetenTest.Calidor.SetRessourcen(new List<Ressourcen>() { Res1Calidor, Res2Calidor, Res3Calidor, Res4Calidor, Res5Calidor, Res6Calidor, Res7Calidor, Res8Calidor, Res9Calidor, Res12Calidor, Res10Calidor, Res11Calidor });
@@ -629,6 +635,8 @@ namespace AstroGuide
             Ressourcen Res11Glacio = new Ressourcen(MaterialTest.astronium, ResArt.Universale, "Oft");
 
             Ressourcen Res10Glacio = new Ressourcen(MaterialTest.argon, ResArt.Gase, "100ppu");
+
+            PlanetenTest.Glacio.SetGalastropode(GalastropodenTest.Bestefar);
 
             PlanetenTest.Glacio.SetPflanzen(new List<Pflanze>() { PflanzenTest.Knallkoralle, PflanzenTest.Zischrebe, PflanzenTest.Knalloon, PflanzenTest.Katapflanze });
 
@@ -655,6 +663,8 @@ namespace AstroGuide
             Ressourcen Res10Atrox = new Ressourcen(MaterialTest.methan, ResArt.Gase, "100ppu");
             Ressourcen Res11Atrox = new Ressourcen(MaterialTest.stickstoff, ResArt.Gase, "50ppu");
             Ressourcen Res12Atrox = new Ressourcen(MaterialTest.schwefel, ResArt.Gase, "75ppu");
+
+            PlanetenTest.Atrox.SetGalastropode(GalastropodenTest.Enoki);
 
             PlanetenTest.Atrox.SetPflanzen(new List<Pflanze>() { PflanzenTest.Knallkoralle, PflanzenTest.Keuchkraut, PflanzenTest.Stachellilie, PflanzenTest.Dolchwurzel, PflanzenTest.Zischrebe, PflanzenTest.Katapflanze, PflanzenTest.Attaktus, PflanzenTest.Spuckblume });
 

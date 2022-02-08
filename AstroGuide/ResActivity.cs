@@ -208,6 +208,7 @@ namespace AstroGuide
                 test2.Add(new Trade(item.Name, item.Image, item.Tauschen.Find(x => x.Item == res.Name).Ratio, item.TauschObj));
             }
 
+
             if(test.Count > 0)
             {
                 var LL = FindViewById<ListView>(Resource.Id.RLVerwendung);

@@ -27,6 +27,8 @@ namespace AstroGuide.Scripts.Planeten
 
         public Ressource PortalElement { get; set; }
 
+        public Galastropode Galastro { get; set; }
+
         public int Image { get; set; }
 
         public Planet(string name, string type, PlanetSize groesse, Difficulty diff, int image,Ressource res)
@@ -52,6 +54,11 @@ namespace AstroGuide.Scripts.Planeten
         public void SetRessourcen(List<Ressourcen> ressourcen)
         {
             this.Ress = ressourcen;
+        }
+
+        public void SetGalastropode(Galastropode tropode)
+        {
+            this.Galastro = tropode;
         }
     }
 }

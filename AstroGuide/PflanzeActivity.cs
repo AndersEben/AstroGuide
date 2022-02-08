@@ -47,6 +47,8 @@ namespace AstroGuide
                 intent.PutExtra("Planet", plan.Name);
                 this.StartActivity(intent);
             };
+
+
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

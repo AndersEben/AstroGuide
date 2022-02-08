@@ -81,6 +81,25 @@ namespace AstroGuide
                 this.StartActivity(intent);
             };
 
+
+            var Galastro = FindViewById<TextView>(Resource.Id.PlanetGalatrop);
+            portalRess.Text = plan.Galastro.Name;
+            portalRess.Click += (o, e) =>
+            {
+                Intent intent = new Intent(this, typeof(GalastroActivity));
+                intent.PutExtra("Galastropode", plan.Galastro.Name);
+                this.StartActivity(intent);
+            };
+
+            var GalastroImage = FindViewById<ImageView>(Resource.Id.PlanetGalatropImage);
+            portalRessImage.SetImageResource(plan.Galastro.Icon);
+            portalRessImage.Click += (o, e) =>
+            {
+                Intent intent = new Intent(this, typeof(GalastroActivity));
+                intent.PutExtra("Galastropode", plan.Galastro.Name);
+                this.StartActivity(intent);
+            };
+
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

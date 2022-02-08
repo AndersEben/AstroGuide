@@ -76,6 +76,7 @@
     <Compile Include="CraftActivity.cs" />
     <Compile Include="CrafterActivity.cs" />
     <Compile Include="CraftingActivity.cs" />
+    <Compile Include="GalastroActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="PflanzeActivity.cs" />
     <Compile Include="PlanetActivity.cs" />
@@ -678,6 +679,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Icon_Usagi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\galastropod.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

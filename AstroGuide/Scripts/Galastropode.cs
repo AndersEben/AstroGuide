@@ -17,6 +17,7 @@ namespace AstroGuide.Scripts
         public string Name { get; }
 
         public int Image { get; set; }
+        public int Icon { get; set; }
 
         public string Buff { get; set; }
         
@@ -25,11 +26,12 @@ namespace AstroGuide.Scripts
         public GTerrarium Terrarium { get; set; }
 
 
-        public Galastropode(string name, int image, Pflanze food)
+        public Galastropode(string name, int image, Pflanze food,int icon)
         {
             this.Name = name;
             this.Image = image;
             this.Food = food;
+            this.Icon = icon;
         }
 
         public void SetTerrarium(GTerrarium terrarium)
