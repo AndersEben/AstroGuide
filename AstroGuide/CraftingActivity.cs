@@ -69,6 +69,7 @@ namespace AstroGuide
             LL.LayoutParameters = Lparam;
             LL.Orientation = Orientation.Vertical;
             LL.Visibility = ViewStates.Gone;
+            LL.SetPadding(0, 0, 0, 45);
 
             TextView txtv = new TextView(this);
             txtv.LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent,
@@ -127,13 +128,27 @@ namespace AstroGuide
 
 
 
-            var ResHolder = FindViewById<LinearLayout>(Resource.Id.CraftHolder);
+            
+
+
+              
+
+
+
+
+
+
+
+
+
+
+            var CraftHolder = FindViewById<LinearLayout>(Resource.Id.CraftHolder);
 
             int pixel = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 10, Resources.DisplayMetrics);
 
             var RLcrafter = SetRelativeLayout("Crafter");
 
-            ResHolder.AddView(RLcrafter);
+            CraftHolder.AddView(RLcrafter);
 
             LinearLayout LL = new LinearLayout(this);
             LinearLayout.LayoutParams Lparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent,
@@ -162,9 +177,8 @@ namespace AstroGuide
             };
 
             lv.LayoutParameters.Height = (CraftingTest.Alle_crafter.Count * Einstellungen.ListPlanetHeight);
-            //lv.Visibility = ViewStates.Gone;
 
-            ResHolder.AddView(LL);
+            CraftHolder.AddView(LL);
 
             RLcrafter.Click += (o, e) =>
             {
@@ -182,7 +196,7 @@ namespace AstroGuide
 
             var RLcraft = SetRelativeLayout("Craft");
 
-            ResHolder.AddView(RLcraft);
+            CraftHolder.AddView(RLcraft);
 
             List<LinearLayout> Layouts = new List<LinearLayout>();
             foreach (string item in Enum.GetNames(typeof(CraftType)))
@@ -190,7 +204,7 @@ namespace AstroGuide
                 var selCrafts = CraftingTest.Alle_craft.FindAll(x => x.Typ.ToString() == item);
                 var layout = SetLinearLayout(Funktionen.ShowEnumLabel((CraftType)System.Enum.Parse(typeof(CraftType),item)),selCrafts);
 
-                ResHolder.AddView(layout);
+                CraftHolder.AddView(layout);
                 Layouts.Add(layout);
             }
 

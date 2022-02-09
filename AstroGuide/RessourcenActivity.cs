@@ -106,16 +106,53 @@ namespace AstroGuide
         }
 
 
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
-            SetContentView(Resource.Layout.ressourcen);
 
-            FindViewById<TextView>(Resource.Id.TitleRessourcen).SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / 10);
+            int pixel = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 10, Resources.DisplayMetrics);
 
-            var ResHolder = FindViewById<LinearLayout>(Resource.Id.ResHolder);
+            LinearLayout LL = new LinearLayout(this);
+            LinearLayout.LayoutParams Lparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
+            LL.LayoutParameters = Lparam;
+            LL.Orientation = Orientation.Vertical;
+
+            TextView txtv = new TextView(this);
+            var param = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
+            param.SetMargins(0, 25, 0, 75);
+            txtv.LayoutParameters = param;
+            txtv.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / 10);
+            
+            txtv.Text = "Ressourcen";
+            
+            txtv.SetPadding(pixel, pixel, pixel, pixel);
+            txtv.Gravity = GravityFlags.Center;
+
+            LL.AddView(txtv);
+
+            ScrollView SV = new ScrollView(this);
+            LinearLayout.LayoutParams SVparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
+            SV.LayoutParameters = SVparam;
+
+            LL.AddView(SV);
+
+            LinearLayout SVLL = new LinearLayout(this);
+            LinearLayout.LayoutParams SVLparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
+            SVLL.LayoutParameters = SVLparam;
+            SVLL.Orientation = Orientation.Vertical;
+
+            SV.AddView(SVLL);
+
+
+            SetContentView(LL);
+            //SetContentView(Resource.Layout.ressourcen);
+
+            //FindViewById<TextView>(Resource.Id.TitleRessourcen).SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / 10);
+
+            //var ResHolder = FindViewById<LinearLayout>(Resource.Id.ResHolder);
 
             List<LinearLayout> Layouts = new List<LinearLayout>();
             foreach (string item in Enum.GetNames(typeof(ResType)))
@@ -124,8 +161,8 @@ namespace AstroGuide
                 var Rlayout = SetRelativeLayout(Funktionen.ShowEnumLabel((ResType)System.Enum.Parse(typeof(ResType), item)));
                 var layout = SetLinearLayout(Rlayout, selCrafts);
 
-                ResHolder.AddView(Rlayout);
-                ResHolder.AddView(layout);
+                SVLL.AddView(Rlayout);
+                SVLL.AddView(layout);
                 Layouts.Add(layout);
             }
 
