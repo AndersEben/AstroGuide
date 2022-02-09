@@ -41,5 +41,6 @@ namespace AstroGuide.Scripts.Settings
         public static int LL_AddE_padding_right { get; set; } = 0;
         public static int LL_AddE_padding_top { get; set; } = 0;
         public static int LL_AddE_padding_bottem { get; set; } = 45;
+
     }
 }

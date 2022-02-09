@@ -64,7 +64,7 @@ namespace AstroGuide
             LL.LayoutParameters = Lparam;
             LL.Orientation = Orientation.Vertical;
             LL.Visibility = ViewStates.Gone;
-            LL.SetPadding(0, 0, 0, 45);
+            LL.SetPadding(Einstellungen.LL_AddE_padding_left, Einstellungen.LL_AddE_padding_top, Einstellungen.LL_AddE_padding_right, Einstellungen.LL_AddE_padding_bottem);
 
             TextView txtv = new TextView(this);
             txtv.LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent,
@@ -118,25 +118,55 @@ namespace AstroGuide
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
-            SetContentView(Resource.Layout.crafting);
-            FindViewById<TextView>(Resource.Id.TitleCrafting).SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / 10);
+            //SetContentView(Resource.Layout.crafting);
+            //FindViewById<TextView>(Resource.Id.TitleCrafting).SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / 10);
 
 
-            var CraftHolder = FindViewById<LinearLayout>(Resource.Id.CraftHolder);
+            LinearLayout LL = new LinearLayout(this);
+            LinearLayout.LayoutParams Lparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
+            LL.LayoutParameters = Lparam;
+            LL.Orientation = Orientation.Vertical;
 
-            int pixel = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 10, Resources.DisplayMetrics);
+            TextView txtv = new TextView(this);
+            var param = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
+            param.SetMargins(Einstellungen.LL_E1_margin_left, Einstellungen.LL_E1_margin_top, Einstellungen.LL_E1_margin_right, Einstellungen.LL_E1_margin_bottem);
+            txtv.LayoutParameters = param;
+            txtv.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / 10);
+
+            txtv.Text = "Planeten";
+
+            txtv.SetPadding(Einstellungen.LL_AddE_padding_left, Einstellungen.LL_AddE_padding_top, Einstellungen.LL_AddE_padding_right, Einstellungen.LL_AddE_padding_bottem);
+            txtv.Gravity = GravityFlags.Center;
+
+            LL.AddView(txtv);
+
+            ScrollView SV = new ScrollView(this);
+            LinearLayout.LayoutParams SVparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
+            SV.LayoutParameters = SVparam;
+
+            LL.AddView(SV);
+
+            LinearLayout CraftHolder = new LinearLayout(this);
+            LinearLayout.LayoutParams SVLparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
+            CraftHolder.LayoutParameters = SVLparam;
+            CraftHolder.Orientation = Orientation.Vertical;
+
+            SV.AddView(CraftHolder);
+
+            //var CraftHolder = FindViewById<LinearLayout>(Resource.Id.CraftHolder);
+            SetContentView(LL);
 
             var RLcrafter = SetRelativeLayout("Crafter");
 
             CraftHolder.AddView(RLcrafter);
 
-            LinearLayout LL = new LinearLayout(this);
-            LinearLayout.LayoutParams Lparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent,
+            LinearLayout LLCrafter = new LinearLayout(this);
+            LinearLayout.LayoutParams LCrafterparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent,
                                                                                 LinearLayout.LayoutParams.WrapContent);
-            LL.LayoutParameters = Lparam;
-            LL.Orientation = Orientation.Vertical;
-            LL.Visibility = ViewStates.Gone;
-            LL.SetPadding(0, 0, 0, 45);
+            LLCrafter.LayoutParameters = Lparam;
+            LLCrafter.Orientation = Orientation.Vertical;
+            LLCrafter.Visibility = ViewStates.Gone;
+            LLCrafter.SetPadding(0, 0, 0, 45);
 
             ListView lv = new ListView(this);
             lv.Adapter = new AddCrafter(this, CraftingTest.Alle_crafter);
@@ -145,7 +175,7 @@ namespace AstroGuide
             lv.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent,
                                                                 LinearLayout.LayoutParams.WrapContent);
 
-            LL.AddView(lv);
+            LLCrafter.AddView(lv);
             lv.ItemClick += (o, e) =>
             {
                 var item = lv.Adapter as AddCrafter;
@@ -158,18 +188,18 @@ namespace AstroGuide
 
             lv.LayoutParameters.Height = (CraftingTest.Alle_crafter.Count * Einstellungen.ListPlanetHeight);
 
-            CraftHolder.AddView(LL);
+            CraftHolder.AddView(LLCrafter);
 
             RLcrafter.Click += (o, e) =>
             {
 
-                if (LL.Visibility == ViewStates.Gone)
+                if (LLCrafter.Visibility == ViewStates.Gone)
                 {
-                    LL.Visibility = ViewStates.Visible;
+                    LLCrafter.Visibility = ViewStates.Visible;
                 }
                 else
                 {
-                    LL.Visibility = ViewStates.Gone;
+                    LLCrafter.Visibility = ViewStates.Gone;
                 }
             };
 
