@@ -83,8 +83,8 @@ namespace AstroGuide
 
 
             var Galastro = FindViewById<TextView>(Resource.Id.PlanetGalatrop);
-            portalRess.Text = plan.Galastro.Name;
-            portalRess.Click += (o, e) =>
+            Galastro.Text = plan.Galastro.Name;
+            Galastro.Click += (o, e) =>
             {
                 Intent intent = new Intent(this, typeof(GalastroActivity));
                 intent.PutExtra("Galastropode", plan.Galastro.Name);
@@ -92,8 +92,8 @@ namespace AstroGuide
             };
 
             var GalastroImage = FindViewById<ImageView>(Resource.Id.PlanetGalatropImage);
-            portalRessImage.SetImageResource(plan.Galastro.Icon);
-            portalRessImage.Click += (o, e) =>
+            GalastroImage.SetImageResource(plan.Galastro.Icon);
+            GalastroImage.Click += (o, e) =>
             {
                 Intent intent = new Intent(this, typeof(GalastroActivity));
                 intent.PutExtra("Galastropode", plan.Galastro.Name);

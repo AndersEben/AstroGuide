@@ -40,8 +40,6 @@ namespace AstroGuide
                 this.StartActivity(intent);
             };
 
-            
-            //FindViewById<TextView>(Resource.Id.CraftHerstellung).Text = craf.Hersteller.Name;
 
             var txtHersteller = FindViewById<TextView>(Resource.Id.CraftHerstellung);
             txtHersteller.Text = craf.Hersteller.Name;
@@ -56,9 +54,6 @@ namespace AstroGuide
 
             FindViewById<ImageView>(Resource.Id.CraftBild).SetImageResource(craf.Image);
 
-            //FindViewById<TextView>(Resource.Id.RessourceType).Text = res.Type.ToString();
-            //FindViewById<TextView>(Resource.Id.RessourceType).Text = Funktionen.ShowEnumLabel(res.Type);
-            //FindViewById<TextView>(Resource.Id.RVorkommen).Text = "Sylva";
 
             FindViewById<TextView>(Resource.Id.CWert).Text = "0 Bytes";
 

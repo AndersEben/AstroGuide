@@ -21,6 +21,7 @@ namespace AstroGuide
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
         }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -28,7 +29,6 @@ namespace AstroGuide
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-        // Launches the startup task
         protected override void OnResume()
         {
             base.OnResume();
@@ -38,7 +38,7 @@ namespace AstroGuide
 
         async void SimulateStartup()
         {
-            await Task.Delay(5000); // Simulate a bit of startup work.
+            await Task.Delay(2000);
             StartActivity(new Intent(Application.Context, typeof(MainActivity)));
         }
     }

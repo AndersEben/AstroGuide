@@ -25,8 +25,6 @@ namespace AstroGuide.Scripts
         public static Planet Glacio = new Planet("Glacio", "Tundra Planet", PlanetSize.klein, Difficulty.schwer, Resource.Drawable.Icon_Glacio,MaterialTest.diamant);
         public static Planet Atrox = new Planet("Atrox", "Verstrahlter Planet", PlanetSize.klein, Difficulty.overkill, Resource.Drawable.Icon_Atrox,MaterialTest.wasserstoff);
 
-        //static Energie SonneSylva = new Energie("Sonneneinstrahlung", Strength.mittel);
-        //static Energie WindSylva = new Energie("Windgeschwindigkeit", Strength.mittel);
 
         public static List<Planet> Alle_Planeten = new List<Planet>() { Sylva, Desolo, Vesania, Novus, Calidor, Glacio, Atrox };
 
