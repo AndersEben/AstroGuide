@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Content.Res;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -23,5 +24,22 @@ namespace AstroGuide.Scripts.Settings
         public static int ListCraftingHeight { get; } = 205;
 
         public static int TextSizeListOffset { get; set; }
+
+
+
+        public static int TXT_pixel10dip { get; set; }
+
+
+
+
+        public static int LL_E1_margin_left { get; set; } = 0;
+        public static int LL_E1_margin_right { get; set; } = 0;
+        public static int LL_E1_margin_top { get; set; } = 25;
+        public static int LL_E1_margin_bottem { get; set; } = 75;
+
+        public static int LL_AddE_padding_left { get; set; } = 0;
+        public static int LL_AddE_padding_right { get; set; } = 0;
+        public static int LL_AddE_padding_top { get; set; } = 0;
+        public static int LL_AddE_padding_bottem { get; set; } = 45;
     }
 }

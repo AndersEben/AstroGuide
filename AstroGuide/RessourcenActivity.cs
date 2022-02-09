@@ -21,8 +21,6 @@ namespace AstroGuide
         private RelativeLayout SetRelativeLayout(string name)
         {
 
-            int pixel = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 10, Resources.DisplayMetrics);
-
             RelativeLayout RL = new RelativeLayout(this);
             RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MatchParent,
                                                                                 RelativeLayout.LayoutParams.WrapContent);
@@ -39,7 +37,7 @@ namespace AstroGuide
                                                                 ViewGroup.LayoutParams.WrapContent);
             txtv.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / 13);
             txtv.Text = name;
-            txtv.SetPadding(pixel, pixel, pixel, pixel);
+            txtv.SetPadding(Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip);
 
             LL.AddView(txtv);
             RL.AddView(LL);
@@ -66,8 +64,7 @@ namespace AstroGuide
                                                                                 LinearLayout.LayoutParams.WrapContent);
             LL.LayoutParameters = Lparam;
             LL.Orientation = Orientation.Vertical;
-            //LL.Visibility = ViewStates.Gone;
-            LL.SetPadding(0, 0, 0, 45);
+            LL.SetPadding(Einstellungen.LL_AddE_padding_left, Einstellungen.LL_AddE_padding_top, Einstellungen.LL_AddE_padding_right, Einstellungen.LL_AddE_padding_bottem);
 
             ListView lv = new ListView(this);
             lv.Adapter = new AddRessourcen(this, test);
@@ -113,8 +110,6 @@ namespace AstroGuide
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
 
-            int pixel = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 10, Resources.DisplayMetrics);
-
             LinearLayout LL = new LinearLayout(this);
             LinearLayout.LayoutParams Lparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
             LL.LayoutParameters = Lparam;
@@ -122,13 +117,13 @@ namespace AstroGuide
 
             TextView txtv = new TextView(this);
             var param = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
-            param.SetMargins(0, 25, 0, 75);
+            param.SetMargins(Einstellungen.LL_E1_margin_left, Einstellungen.LL_E1_margin_top, Einstellungen.LL_E1_margin_right, Einstellungen.LL_E1_margin_bottem);
             txtv.LayoutParameters = param;
             txtv.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / 10);
             
             txtv.Text = "Ressourcen";
             
-            txtv.SetPadding(pixel, pixel, pixel, pixel);
+            txtv.SetPadding(Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip);
             txtv.Gravity = GravityFlags.Center;
 
             LL.AddView(txtv);
@@ -148,11 +143,6 @@ namespace AstroGuide
 
 
             SetContentView(LL);
-            //SetContentView(Resource.Layout.ressourcen);
-
-            //FindViewById<TextView>(Resource.Id.TitleRessourcen).SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / 10);
-
-            //var ResHolder = FindViewById<LinearLayout>(Resource.Id.ResHolder);
 
             List<LinearLayout> Layouts = new List<LinearLayout>();
             foreach (string item in Enum.GetNames(typeof(ResType)))

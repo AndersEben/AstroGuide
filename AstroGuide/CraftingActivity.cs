@@ -22,9 +22,6 @@ namespace AstroGuide
 
         private RelativeLayout SetRelativeLayout(string name)
         {
-
-            int pixel = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 10, Resources.DisplayMetrics);
-
             RelativeLayout RL = new RelativeLayout(this);
             RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MatchParent,
                                                                                 RelativeLayout.LayoutParams.WrapContent);
@@ -41,7 +38,7 @@ namespace AstroGuide
                                                                 ViewGroup.LayoutParams.WrapContent);
             txtv.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / 13);
             txtv.Text = name;
-            txtv.SetPadding(pixel, pixel, pixel, pixel);
+            txtv.SetPadding(Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip);
 
             LL.AddView(txtv);
             RL.AddView(LL);
@@ -61,8 +58,6 @@ namespace AstroGuide
 
         private LinearLayout SetLinearLayout(string text, List<Craft> test)
         {
-            int pixel = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 10, Resources.DisplayMetrics);
-
             LinearLayout LL = new LinearLayout(this);
             LinearLayout.LayoutParams Lparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent,
                                                                                 LinearLayout.LayoutParams.WrapContent);
@@ -76,7 +71,7 @@ namespace AstroGuide
                                                                 ViewGroup.LayoutParams.WrapContent);
             txtv.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / 16);
 
-            txtv.SetPadding(pixel, pixel, pixel, pixel);
+            txtv.SetPadding(Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip);
             txtv.Text = text;
 
             LL.AddView(txtv);
@@ -125,21 +120,6 @@ namespace AstroGuide
 
             SetContentView(Resource.Layout.crafting);
             FindViewById<TextView>(Resource.Id.TitleCrafting).SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / 10);
-
-
-
-            
-
-
-              
-
-
-
-
-
-
-
-
 
 
             var CraftHolder = FindViewById<LinearLayout>(Resource.Id.CraftHolder);
