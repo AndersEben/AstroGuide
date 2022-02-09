@@ -156,7 +156,7 @@ namespace AstroGuide
                 var item = lv.Adapter as AddCrafter;
                 var ress = item[e.Position];
 
-                Intent intent = new Intent(this, typeof(CraftActivity));
+                Intent intent = new Intent(this, typeof(CrafterActivity));
                 intent.PutExtra("Crafter", ress.Name);
                 this.StartActivity(intent);
             };
