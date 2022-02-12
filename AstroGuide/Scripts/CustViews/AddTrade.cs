@@ -47,7 +47,7 @@ namespace AstroGuide.Scripts.CustViews
                 view = Context.LayoutInflater.Inflate(Resource.Layout.ressourece_ressource, null);
 
             var text = view.FindViewById<TextView>(Resource.Id.RRezept);
-            text.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / 35);
+            text.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementM);
             text.Text = item.Ratio + " " + item.Obj.ToString() + " / " + item.Item;
             view.FindViewById<ImageView>(Resource.Id.RRIcon).SetImageResource(item.Image);
 

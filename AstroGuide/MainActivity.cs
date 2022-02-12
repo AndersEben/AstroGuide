@@ -27,7 +27,7 @@ namespace AstroGuide
 
 
             var b1 = FindViewById<Button>(Resource.Id.SPlaneten);
-            b1.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset/10);
+            b1.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset/ Einstellungen.TXT_HeaderSize);
             b1.Click += (o, e) =>
             {
                 Intent intent = new Intent(this, typeof(PlanetenActivity));
@@ -35,7 +35,7 @@ namespace AstroGuide
             };
 
             var b2 = FindViewById<Button>(Resource.Id.SRessourcen);
-            b2.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset/10);
+            b2.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset/ Einstellungen.TXT_HeaderSize);
             b2.Click += (o, e) =>
             {
                 Intent intent = new Intent(this, typeof(RessourcenActivity));
@@ -43,8 +43,35 @@ namespace AstroGuide
             };
 
             var b3 = FindViewById<Button>(Resource.Id.SCrafting);
-            b3.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset/10);
+            b3.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset/ Einstellungen.TXT_HeaderSize);
             b3.Click += (o, e) =>
+            {
+                Intent intent = new Intent(this, typeof(CraftingActivity));
+                this.StartActivity(intent);
+            };
+
+            var LL = FindViewById<LinearLayout>(Resource.Id.MainTestLayout);
+            var buttonParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent);
+            buttonParam.Gravity = Android.Views.GravityFlags.Center;
+            buttonParam.TopMargin = 75;
+
+            var pflanzenButton = new Button(this);
+            pflanzenButton.LayoutParameters = buttonParam;
+            pflanzenButton.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_HeaderSize);
+            pflanzenButton.Gravity = Android.Views.GravityFlags.Center;
+            pflanzenButton.Text = "Pflanzen";
+            pflanzenButton.Click += (o, e) =>
+            {
+                Intent intent = new Intent(this, typeof(PflanzenActivity));
+                this.StartActivity(intent);
+            };
+
+            var galastroButton = new Button(this);
+            galastroButton.LayoutParameters = buttonParam;
+            galastroButton.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_HeaderSize);
+            galastroButton.Gravity = Android.Views.GravityFlags.Center;
+            galastroButton.Text = "Galastropoden";
+            galastroButton.Click += (o, e) =>
             {
                 Intent intent = new Intent(this, typeof(CraftingActivity));
                 this.StartActivity(intent);

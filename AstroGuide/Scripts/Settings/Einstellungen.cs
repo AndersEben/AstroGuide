@@ -31,6 +31,12 @@ namespace AstroGuide.Scripts.Settings
 
 
 
+        public static int TXT_HeaderSize { get; set; } = 10;
+        public static int TXT_ElementXL { get; set; } = 13;
+        public static int TXT_ElementL { get; set; } = 16;
+        public static int TXT_ElementM { get; set; } = 20;
+
+
 
         public static int LL_E1_margin_left { get; set; } = 0;
         public static int LL_E1_margin_right { get; set; } = 0;

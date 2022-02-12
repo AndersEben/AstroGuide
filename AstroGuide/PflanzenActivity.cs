@@ -16,7 +16,7 @@ using System.Text;
 namespace AstroGuide
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    class RessourcenActivity : AppCompatActivity
+    class PflanzenActivity : AppCompatActivity
     {
         private RelativeLayout SetRelativeLayout(string name)
         {
@@ -55,7 +55,7 @@ namespace AstroGuide
             return RL;
         }
 
-        private LinearLayout SetLinearLayout(RelativeLayout RL, List<Ressource> test)
+        private LinearLayout SetLinearLayout(RelativeLayout RL, List<Pflanze> test)
         {
             int pixel = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 10, Resources.DisplayMetrics);
 
@@ -67,7 +67,7 @@ namespace AstroGuide
             LL.SetPadding(Einstellungen.LL_AddE_padding_left, Einstellungen.LL_AddE_padding_top, Einstellungen.LL_AddE_padding_right, Einstellungen.LL_AddE_padding_bottem);
 
             ListView lv = new ListView(this);
-            lv.Adapter = new AddRessourcen(this, test);
+            lv.Adapter = new AddPflanze(this, test);
 
             lv.NestedScrollingEnabled = true;
             lv.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent,
@@ -79,8 +79,8 @@ namespace AstroGuide
                 var item = lv.Adapter as AddRessourcen;
                 var ress = item[e.Position];
 
-                Intent intent = new Intent(this, typeof(ResActivity));
-                intent.PutExtra("Ressource", ress.Name);
+                Intent intent = new Intent(this, typeof(PflanzeActivity));
+                intent.PutExtra("Pflanze", ress.Name);
                 this.StartActivity(intent);
             };
 
@@ -120,9 +120,9 @@ namespace AstroGuide
             param.SetMargins(Einstellungen.LL_E1_margin_left, Einstellungen.LL_E1_margin_top, Einstellungen.LL_E1_margin_right, Einstellungen.LL_E1_margin_bottem);
             txtv.LayoutParameters = param;
             txtv.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_HeaderSize);
-            
-            txtv.Text = "Ressourcen";
-            
+
+            txtv.Text = "Pflanzen";
+
             txtv.SetPadding(Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip);
             txtv.Gravity = GravityFlags.Center;
 
@@ -145,10 +145,10 @@ namespace AstroGuide
             SetContentView(LL);
 
             List<LinearLayout> Layouts = new List<LinearLayout>();
-            foreach (string item in Enum.GetNames(typeof(ResType)))
+            foreach (string item in Enum.GetNames(typeof(PlantType)))
             {
-                var selCrafts = MaterialTest.Alle_Ressourcen.FindAll(x => x.Type.ToString() == item);
-                var Rlayout = SetRelativeLayout(Funktionen.ShowEnumLabel((ResType)System.Enum.Parse(typeof(ResType), item)));
+                var selCrafts = PflanzenTest.Alle_Pflanzen.FindAll(x => x.Typ.ToString() == item);
+                var Rlayout = SetRelativeLayout(Funktionen.ShowEnumLabel((PlantType)System.Enum.Parse(typeof(PlantType), item)));
                 var layout = SetLinearLayout(Rlayout, selCrafts);
 
                 SVLL.AddView(Rlayout);

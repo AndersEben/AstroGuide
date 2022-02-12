@@ -171,5 +171,23 @@ namespace AstroGuide.Scripts
             }
             return "PlaceHolder";
         }
+
+        public static string ShowEnumLabel(PlantType val)
+        {
+            Type type = val.GetType();
+            string name = Enum.GetName(type, val);
+            if (name != null)
+            {
+                var field = type.GetField(name);
+                if (field != null)
+                {
+                    if (Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute)) is DescriptionAttribute attr)
+                    {
+                        return attr.Description;
+                    }
+                }
+            }
+            return "PlaceHolder";
+        }
     }
 }
