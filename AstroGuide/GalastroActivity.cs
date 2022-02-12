@@ -36,7 +36,7 @@ namespace AstroGuide
             verwendung.Add(new Verwendung(galast.Terrarium.Samen.Name, galast.Terrarium.Samen.Image, VerwendungsTyp.Pflanze));
 
 
-            var LV = FindViewById<ListView>(Resource.Id.RLVerwendung);
+            var LV = FindViewById<ListView>(Resource.Id.GalastTerrarium);
             LV.Adapter = new AddVerwendung(this, verwendung);
             LV.LayoutParameters.Height = (verwendung.Count * Einstellungen.ListItemHeight);
             LV.ItemClick += (o, e) =>

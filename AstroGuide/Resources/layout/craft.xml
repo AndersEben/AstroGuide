@@ -44,6 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="25px" 
             android:text="Placeholder"/>
     </RelativeLayout>
     <RelativeLayout
@@ -82,6 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="25px" 
             android:text="PlaceHolder"/>
     </RelativeLayout>
     <RelativeLayout
@@ -123,6 +125,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="25px" 
             android:text="Placeholder"/>
     </RelativeLayout>
     <RelativeLayout

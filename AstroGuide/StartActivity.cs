@@ -51,6 +51,7 @@ namespace AstroGuide
 
             CreateMaterial();
             CreateCrafting();
+            CreateTerrarium();
             CreatePlaneten();
 
             await Task.Delay(2000);
