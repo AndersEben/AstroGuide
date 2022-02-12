@@ -22,11 +22,11 @@ namespace AstroGuide.Scripts
         public static Pflanze Huepfranke = new Pflanze("Hüpfranke", PlantType.Defensive, Resource.Drawable.Icon_Aluminiumlegierung);
         public static Pflanze Distelgerte = new Pflanze("Distelgerte", PlantType.Defensive, Resource.Drawable.Icon_Aluminiumlegierung);
 
-        public static Pflanze Zischrebe = new Pflanze("Zischrebe", PlantType.Defensive, Resource.Drawable.Icon_Aluminiumlegierung);
-        public static Pflanze Knalloon = new Pflanze("Knalloon", PlantType.Defensive, Resource.Drawable.Icon_Aluminiumlegierung);
-        public static Pflanze Katapflanze = new Pflanze("Katapflanze", PlantType.Defensive, Resource.Drawable.Icon_Aluminiumlegierung);
-        public static Pflanze Attaktus = new Pflanze("Attaktus", PlantType.Defensive, Resource.Drawable.Icon_Aluminiumlegierung);
-        public static Pflanze Spuckblume = new Pflanze("Spuckblume", PlantType.Defensive, Resource.Drawable.Icon_Aluminiumlegierung);
+        public static Pflanze Zischrebe = new Pflanze("Zischrebe", PlantType.Offensive, Resource.Drawable.Icon_Aluminiumlegierung);
+        public static Pflanze Knalloon = new Pflanze("Knalloon", PlantType.Offensive, Resource.Drawable.Icon_Aluminiumlegierung);
+        public static Pflanze Katapflanze = new Pflanze("Katapflanze", PlantType.Offensive, Resource.Drawable.Icon_Aluminiumlegierung);
+        public static Pflanze Attaktus = new Pflanze("Attaktus", PlantType.Offensive, Resource.Drawable.Icon_Aluminiumlegierung);
+        public static Pflanze Spuckblume = new Pflanze("Spuckblume", PlantType.Offensive, Resource.Drawable.Icon_Aluminiumlegierung);
 
 
         public static List<Pflanze> Alle_Pflanzen = new List<Pflanze>() { Knallkoralle,Dolchwurzel,Keuchkraut,Stachellilie,Peitschenblatt,Huepfranke,Distelgerte,Zischrebe,Knallkoralle,Katapflanze,Attaktus,Spuckblume};

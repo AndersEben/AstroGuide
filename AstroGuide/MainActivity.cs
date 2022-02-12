@@ -60,6 +60,7 @@ namespace AstroGuide
             pflanzenButton.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_HeaderSize);
             pflanzenButton.Gravity = Android.Views.GravityFlags.Center;
             pflanzenButton.Text = "Pflanzen";
+            pflanzenButton.SetBackgroundColor(new Android.Graphics.Color(-16115236));
             pflanzenButton.Click += (o, e) =>
             {
                 Intent intent = new Intent(this, typeof(PflanzenActivity));
@@ -71,11 +72,15 @@ namespace AstroGuide
             galastroButton.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_HeaderSize);
             galastroButton.Gravity = Android.Views.GravityFlags.Center;
             galastroButton.Text = "Galastropoden";
+            galastroButton.SetBackgroundColor(new Android.Graphics.Color(-16115236));
             galastroButton.Click += (o, e) =>
             {
-                Intent intent = new Intent(this, typeof(CraftingActivity));
+                Intent intent = new Intent(this, typeof(GalastropodenActivity));
                 this.StartActivity(intent);
             };
+
+            LL.AddView(pflanzenButton);
+            LL.AddView(galastroButton);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

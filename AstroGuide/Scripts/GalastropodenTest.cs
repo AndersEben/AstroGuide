@@ -22,6 +22,8 @@ namespace AstroGuide.Scripts
         public static Galastropode Bestefar = new Galastropode("Bestefar", Resource.Drawable.Galas_Bestefar, PflanzenTest.Knalloon,Resource.Drawable.Icon_Bestefar);
         public static Galastropode Enoki = new Galastropode("Enoki", Resource.Drawable.Galas_Enoki, PflanzenTest.Spuckblume,Resource.Drawable.Icon_Enoki);
 
+        public static List<Galastropode> Ale_Galastro = new List<Galastropode>() { Sylvie,Usagi,Stilgar,Princess,Rogal,Bestefar,Enoki };
+        
         public static Galastropode FindGalast(string name)
         {
             var fields = typeof(GalastropodenTest).GetFields();

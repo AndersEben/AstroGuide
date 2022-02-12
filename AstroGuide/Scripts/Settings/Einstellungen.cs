@@ -18,6 +18,7 @@ namespace AstroGuide.Scripts.Settings
         public static int PlanetOffset { get; } = 35;
 
 
+        public static int ListSingletHeight { get; set; } = 325;
         public static int ListPlanetHeight { get; set; } = 205;
 
 

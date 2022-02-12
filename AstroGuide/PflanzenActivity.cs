@@ -76,7 +76,7 @@ namespace AstroGuide
             LL.AddView(lv);
             lv.ItemClick += (o, e) =>
             {
-                var item = lv.Adapter as AddRessourcen;
+                var item = lv.Adapter as AddPflanze;
                 var ress = item[e.Position];
 
                 Intent intent = new Intent(this, typeof(PflanzeActivity));

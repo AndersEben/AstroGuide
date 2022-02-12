@@ -77,6 +77,7 @@
     <Compile Include="CrafterActivity.cs" />
     <Compile Include="CraftingActivity.cs" />
     <Compile Include="GalastroActivity.cs" />
+    <Compile Include="GalastropodenActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="PflanzeActivity.cs" />
     <Compile Include="PflanzenActivity.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Scripts\CustViews\AddCraft.cs" />
     <Compile Include="Scripts\CustViews\AddCrafter.cs" />
     <Compile Include="Scripts\CustViews\AddEnergie.cs" />
+    <Compile Include="Scripts\CustViews\AddGalastro.cs" />
     <Compile Include="Scripts\CustViews\AddPflanze.cs" />
     <Compile Include="Scripts\CustViews\AddPflanzen.cs" />
     <Compile Include="Scripts\CustViews\AddPlaneten.cs" />

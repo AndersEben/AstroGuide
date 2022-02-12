@@ -4,9 +4,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-
 using AndroidX.AppCompat.App;
-
 using AstroGuide.Scripts;
 using AstroGuide.Scripts.CustViews;
 using AstroGuide.Scripts.Settings;
@@ -18,8 +16,9 @@ using System.Text;
 namespace AstroGuide
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    class PlanetenActivity : AppCompatActivity
+    class GalastropodenActivity : AppCompatActivity
     {
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -37,7 +36,7 @@ namespace AstroGuide
             txtv.LayoutParameters = param;
             txtv.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_HeaderSize);
 
-            txtv.Text = "Planeten";
+            txtv.Text = "Galstropoden";
 
             txtv.SetPadding(Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip);
             txtv.Gravity = GravityFlags.Center;
@@ -60,28 +59,25 @@ namespace AstroGuide
 
             SetContentView(LL);
 
-            //SetContentView(Resource.Layout.planeten);
 
-            //var LPlaneten = FindViewById<ListView>(Resource.Id.ListPlaneten);
-
-            ListView LPlaneten = new ListView(this);
-            LPlaneten.NestedScrollingEnabled = true;
-            LPlaneten.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent,
+            ListView LGalastro = new ListView(this);
+            LGalastro.NestedScrollingEnabled = true;
+            LGalastro.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent,
                                                                 LinearLayout.LayoutParams.WrapContent);
-            LPlaneten.Adapter = new AddPlaneten(this, PlanetenTest.Alle_Planeten);
-            LPlaneten.ItemClick += (o, e) =>
-            {
-                var item = LPlaneten.Adapter as AddPlaneten;
-                var plan = item[e.Position];
 
-                Intent intent = new Intent(this, typeof(PlanetActivity));
-                intent.PutExtra("Planet", plan.Name);
+            LGalastro.Adapter = new AddGalastro(this, GalastropodenTest.Ale_Galastro);
+            LGalastro.ItemClick += (o, e) =>
+            {
+                var item = LGalastro.Adapter as AddGalastro;
+                var gal = item[e.Position];
+
+                Intent intent = new Intent(this, typeof(GalastroActivity));
+                intent.PutExtra("Galastropode", gal.Name);
                 this.StartActivity(intent);
             };
 
-            SVLL.AddView(LPlaneten);
-            LPlaneten.LayoutParameters.Height = (PlanetenTest.Alle_Planeten.Count * Einstellungen.ListSingletHeight);
-
+            SVLL.AddView(LGalastro);
+            LGalastro.LayoutParameters.Height = (GalastropodenTest.Ale_Galastro.Count * Einstellungen.ListPlanetHeight);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
