@@ -60,9 +60,6 @@ namespace AstroGuide
 
             SetContentView(LL);
 
-            //SetContentView(Resource.Layout.planeten);
-
-            //var LPlaneten = FindViewById<ListView>(Resource.Id.ListPlaneten);
 
             ListView LPlaneten = new ListView(this);
             LPlaneten.NestedScrollingEnabled = true;

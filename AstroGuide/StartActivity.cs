@@ -461,6 +461,25 @@ namespace AstroGuide
 
         }
 
+        private void CreateTerrarium()
+        {
+            GalastropodenTest.Sylvie.SetTerrarium(new GTerrarium(MaterialTest.erde,MaterialTest.zink,PflanzenTest.Huepfranke));
+            GalastropodenTest.Sylvie.SetBuff("");
+            GalastropodenTest.Usagi.SetTerrarium(new GTerrarium(MaterialTest.erde, MaterialTest.wolfram, PflanzenTest.Dolchwurzel));
+            GalastropodenTest.Usagi.SetBuff("");
+            GalastropodenTest.Stilgar.SetTerrarium(new GTerrarium(MaterialTest.erde, MaterialTest.kupfer, PflanzenTest.Keuchkraut));
+            GalastropodenTest.Stilgar.SetBuff("");
+            GalastropodenTest.Princess.SetTerrarium(new GTerrarium(MaterialTest.erde, MaterialTest.lithium, PflanzenTest.Peitschenblatt));
+            GalastropodenTest.Princess.SetBuff("");
+            GalastropodenTest.Rogal.SetTerrarium(new GTerrarium(MaterialTest.erde, MaterialTest.eisen, PflanzenTest.Distelgerte));
+            GalastropodenTest.Rogal.SetBuff("");
+            GalastropodenTest.Bestefar.SetTerrarium(new GTerrarium(MaterialTest.erde, MaterialTest.argon, PflanzenTest.Knallkoralle));
+            GalastropodenTest.Bestefar.SetBuff("");
+            GalastropodenTest.Enoki.SetTerrarium(new GTerrarium(MaterialTest.erde, MaterialTest.helium, PflanzenTest.Stachellilie));
+            GalastropodenTest.Enoki.SetBuff("");
+        }
+
+
         private void CreatePlaneten()
         {
 

@@ -236,6 +236,10 @@ namespace AstroGuide
                             intent3.PutExtra("Craft", type.Name);
                             this.StartActivity(intent3);
                             break;
+                        case VerwendungsTyp.Galastropode:
+                            break;
+                        case VerwendungsTyp.Pflanze:
+                            break;
                     }
                 };
             }

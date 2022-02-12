@@ -23,44 +23,63 @@ namespace AstroGuide
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
 
-            SetContentView(Resource.Layout.start);
+            //SetContentView(Resource.Layout.start);
 
 
-            var b1 = FindViewById<Button>(Resource.Id.SPlaneten);
-            b1.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset/ Einstellungen.TXT_HeaderSize);
-            b1.Click += (o, e) =>
+            //var LL = FindViewById<LinearLayout>(Resource.Id.MainTestLayout);
+
+            LinearLayout LL = new LinearLayout(this);
+            LL.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
+            LL.Orientation = Orientation.Vertical;
+
+
+
+            var buttonParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent);
+            buttonParam.Gravity = Android.Views.GravityFlags.Center;
+            buttonParam.TopMargin = 75;
+
+            var PlanetenButton = new Button(this);
+            PlanetenButton.LayoutParameters = buttonParam;
+            PlanetenButton.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_HeaderSize);
+            PlanetenButton.Gravity = Android.Views.GravityFlags.Center;
+            PlanetenButton.Text = "Planeten";
+            //pflanzenButton.SetBackgroundColor(new Android.Graphics.Color(-16115236));
+            PlanetenButton.Click += (o, e) =>
             {
                 Intent intent = new Intent(this, typeof(PlanetenActivity));
                 this.StartActivity(intent);
             };
 
-            var b2 = FindViewById<Button>(Resource.Id.SRessourcen);
-            b2.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset/ Einstellungen.TXT_HeaderSize);
-            b2.Click += (o, e) =>
+            var ressourcenButton = new Button(this);
+            ressourcenButton.LayoutParameters = buttonParam;
+            ressourcenButton.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_HeaderSize);
+            ressourcenButton.Gravity = Android.Views.GravityFlags.Center;
+            ressourcenButton.Text = "Ressourcen";
+            //pflanzenButton.SetBackgroundColor(new Android.Graphics.Color(-16115236));
+            ressourcenButton.Click += (o, e) =>
             {
                 Intent intent = new Intent(this, typeof(RessourcenActivity));
                 this.StartActivity(intent);
             };
 
-            var b3 = FindViewById<Button>(Resource.Id.SCrafting);
-            b3.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset/ Einstellungen.TXT_HeaderSize);
-            b3.Click += (o, e) =>
+            var craftingButton = new Button(this);
+            craftingButton.LayoutParameters = buttonParam;
+            craftingButton.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_HeaderSize);
+            craftingButton.Gravity = Android.Views.GravityFlags.Center;
+            craftingButton.Text = "Crafting";
+            //pflanzenButton.SetBackgroundColor(new Android.Graphics.Color(-16115236));
+            craftingButton.Click += (o, e) =>
             {
                 Intent intent = new Intent(this, typeof(CraftingActivity));
                 this.StartActivity(intent);
             };
-
-            var LL = FindViewById<LinearLayout>(Resource.Id.MainTestLayout);
-            var buttonParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent);
-            buttonParam.Gravity = Android.Views.GravityFlags.Center;
-            buttonParam.TopMargin = 75;
 
             var pflanzenButton = new Button(this);
             pflanzenButton.LayoutParameters = buttonParam;
             pflanzenButton.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_HeaderSize);
             pflanzenButton.Gravity = Android.Views.GravityFlags.Center;
             pflanzenButton.Text = "Pflanzen";
-            pflanzenButton.SetBackgroundColor(new Android.Graphics.Color(-16115236));
+            //pflanzenButton.SetBackgroundColor(new Android.Graphics.Color(-16115236));
             pflanzenButton.Click += (o, e) =>
             {
                 Intent intent = new Intent(this, typeof(PflanzenActivity));
@@ -72,15 +91,20 @@ namespace AstroGuide
             galastroButton.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_HeaderSize);
             galastroButton.Gravity = Android.Views.GravityFlags.Center;
             galastroButton.Text = "Galastropoden";
-            galastroButton.SetBackgroundColor(new Android.Graphics.Color(-16115236));
+            //galastroButton.SetBackgroundColor(new Android.Graphics.Color(-16115236));
             galastroButton.Click += (o, e) =>
             {
                 Intent intent = new Intent(this, typeof(GalastropodenActivity));
                 this.StartActivity(intent);
             };
 
+            LL.AddView(PlanetenButton);
+            LL.AddView(ressourcenButton);
+            LL.AddView(craftingButton);
             LL.AddView(pflanzenButton);
             LL.AddView(galastroButton);
+
+            SetContentView(LL);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
