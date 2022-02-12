@@ -40,11 +40,6 @@ namespace AstroGuide
                 this.StartActivity(intent);
             };
 
-            //FindViewById<TextView>(Resource.Id.CraftHerstellung).Text = craf.Hersteller.Name;
-
-
-
-
 
             var txtHersteller = FindViewById<TextView>(Resource.Id.CraftHerstellung);
             txtHersteller.Text = craf.Hersteller.Name;
