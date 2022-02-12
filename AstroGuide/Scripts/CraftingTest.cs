@@ -213,7 +213,7 @@ namespace AstroGuide.Scripts
                 if (type == typeof(Craft))
                 {
                     Craft test = (Craft)fields[i].GetValue(null);
-                    if (test.Name == name)
+                    if (test.Name.Contains(name))
                     {
                         return test;
                     }

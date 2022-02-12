@@ -36,6 +36,7 @@ namespace AstroGuide.Scripts.Settings
         public static int TXT_ElementXL { get; set; } = 13;
         public static int TXT_ElementL { get; set; } = 16;
         public static int TXT_ElementM { get; set; } = 20;
+        public static int TXT_ElementS { get; set; } = 28;
 
 
 
