@@ -152,7 +152,7 @@ namespace AstroGuide
             searchlv.NestedScrollingEnabled = true;
             searchlv.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent,
                                                                         LinearLayout.LayoutParams.WrapContent);
-
+            searchView.SetIconifiedByDefault(false);
             searchlv.ItemClick += (o, e) =>
             {
                 var item = searchlv.Adapter as AddPflanze;

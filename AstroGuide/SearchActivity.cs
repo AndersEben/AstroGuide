@@ -66,12 +66,48 @@ namespace AstroGuide
             LSearch.Adapter = new AddVerwendungen(this, new List<Verwendung>());
             LSearch.ItemClick += (o, e) =>
             {
+                var item = LSearch.Adapter as AddVerwendungen;
+                var file = item[e.Position];
 
+                switch (file.Typ)
+                {
+                    case VerwendungsTyp.Ressource:
+                        Intent intent = new Intent(this, typeof(ResActivity));
+                        intent.PutExtra("Ressource", file.Name);
+                        this.StartActivity(intent);
+                        break;
+                    case VerwendungsTyp.Crafter:
+                        Intent intent2 = new Intent(this, typeof(CrafterActivity));
+                        intent2.PutExtra("Crafter", file.Name);
+                        this.StartActivity(intent2);
+                        break;
+                    case VerwendungsTyp.Craft:
+                        Intent intent3 = new Intent(this, typeof(CraftActivity));
+                        intent3.PutExtra("Craft", file.Name);
+                        this.StartActivity(intent3);
+                        break;
+                    case VerwendungsTyp.Pflanze:
+                        Intent intent4 = new Intent(this, typeof(PflanzeActivity));
+                        intent4.PutExtra("Pflanze", file.Name);
+                        this.StartActivity(intent4);
+                        break;
+                    case VerwendungsTyp.Galastropode:
+                        Intent intent5 = new Intent(this, typeof(GalastroActivity));
+                        intent5.PutExtra("Galastropode", file.Name);
+                        this.StartActivity(intent5);
+                        break;
+                    case VerwendungsTyp.Planet:
+                        Intent intent6 = new Intent(this, typeof(PlanetActivity));
+                        intent6.PutExtra("Planet", file.Name);
+                        this.StartActivity(intent6);
+                        break;
+                }
             };
 
             SearchView searchView = new SearchView(this);
             searchView.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent,
                                                                         LinearLayout.LayoutParams.WrapContent);
+            searchView.SetIconifiedByDefault(false);
             searchView.QueryTextChange += (o, e) =>
             {
                 List<Verwendung> gefunden = new List<Verwendung>();
