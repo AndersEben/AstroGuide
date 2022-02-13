@@ -49,6 +49,8 @@ namespace AstroGuide
 
             Einstellungen.TXT_pixel10dip = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 10, Resources.DisplayMetrics);
 
+            LoadAll();
+
             CreateMaterial();
             CreateCrafting();
             CreateTerrarium();
@@ -58,6 +60,52 @@ namespace AstroGuide
 
             StartActivity(new Intent(Application.Context, typeof(MainActivity)));
         }
+
+        private void LoadAll()
+        {
+            MaterialTest.Alle_Ressourcen = MaterialTest.AllRessource();
+
+            CraftingTest.Alle_craft = CraftingTest.AllCraft();
+            CraftingTest.Alle_crafter = CraftingTest.AllCrafter();
+
+            PlanetenTest.Alle_Planeten = PlanetenTest.AllPlanet();
+
+            PflanzenTest.Alle_Pflanzen = PflanzenTest.AllPlant();
+
+            GalastropodenTest.Alle_Galastro = GalastropodenTest.AllGalastro();
+
+
+            foreach (var item in MaterialTest.AllRessourceToVerwendung())
+            {
+                VerwendungTest.AlleElemente.Add(item);
+            }
+
+            foreach (var item in CraftingTest.AllCraftToVerwendung())
+            {
+                VerwendungTest.AlleElemente.Add(item);
+            }
+
+            foreach (var item in CraftingTest.AllCrafterToVerwendung())
+            {
+                VerwendungTest.AlleElemente.Add(item);
+            }
+
+            foreach (var item in PlanetenTest.AllPlanetToVerwendung())
+            {
+                VerwendungTest.AlleElemente.Add(item);
+            }
+
+            foreach (var item in PflanzenTest.AllPlantToVerwendung())
+            {
+                VerwendungTest.AlleElemente.Add(item);
+            }
+
+            foreach (var item in GalastropodenTest.AllGalastroToVerwendung())
+            {
+                VerwendungTest.AlleElemente.Add(item);
+            }
+        }
+
 
         private void CreateMaterial()
         {

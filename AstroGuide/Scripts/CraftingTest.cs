@@ -43,6 +43,42 @@ namespace AstroGuide.Scripts
             return rucksack;
         }
 
+        public static List<Crafter> AllCrafter()
+        {
+            var fields = typeof(CraftingTest).GetFields();
+            List<Crafter> crafter = new List<Crafter>();
+            for (int i = 0; i < fields.Length; i++)
+            {
+                var type = fields[i].FieldType;
+                if (type == typeof(Crafter))
+                {
+                    crafter.Add((Crafter)fields[i].GetValue(null));
+                }
+
+            }
+
+            return crafter;
+        }
+
+        public static List<Verwendung> AllCrafterToVerwendung()
+        {
+            var fields = typeof(CraftingTest).GetFields();
+            List<Verwendung> verwendung = new List<Verwendung>();
+
+            for (int i = 0; i < fields.Length; i++)
+            {
+                var type = fields[i].FieldType;
+                if (type == typeof(Crafter))
+                {
+                    var file = (Crafter)fields[i].GetValue(null);
+                    verwendung.Add(new Verwendung(file.Name, file.Image, VerwendungsTyp.Crafter));
+                }
+
+            }
+
+            return verwendung;
+        }
+
 
         #region Tier1
         public static Craft verbindungen = new Craft("Verbindungen", Resource.Drawable.Icon_Verbindungspaket,0,CraftType.sauerstoffGegenstand,2);
@@ -222,6 +258,43 @@ namespace AstroGuide.Scripts
             }
 
             return verbindungen;
+        }
+
+        public static List<Craft> AllCraft()
+        {
+            var fields = typeof(CraftingTest).GetFields();
+            List<Craft> craft = new List<Craft>();
+
+            for (int i = 0; i < fields.Length; i++)
+            {
+                var type = fields[i].FieldType;
+                if (type == typeof(Craft))
+                {
+                    craft.Add((Craft)fields[i].GetValue(null));
+                }
+
+            }
+
+            return craft;
+        }
+
+        public static List<Verwendung> AllCraftToVerwendung()
+        {
+            var fields = typeof(CraftingTest).GetFields();
+            List<Verwendung> verwendung = new List<Verwendung>();
+
+            for (int i = 0; i < fields.Length; i++)
+            {
+                var type = fields[i].FieldType;
+                if (type == typeof(Craft))
+                {
+                    var file = (Craft)fields[i].GetValue(null);
+                    verwendung.Add(new Verwendung(file.Name,file.Image,VerwendungsTyp.Craft));
+                }
+
+            }
+
+            return verwendung;
         }
     }
 }

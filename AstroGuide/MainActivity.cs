@@ -98,11 +98,24 @@ namespace AstroGuide
                 this.StartActivity(intent);
             };
 
+            var searchButton = new Button(this);
+            searchButton.LayoutParameters = buttonParam;
+            searchButton.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_HeaderSize);
+            searchButton.Gravity = Android.Views.GravityFlags.Center;
+            searchButton.Text = "Suchen";
+            //galastroButton.SetBackgroundColor(new Android.Graphics.Color(-16115236));
+            searchButton.Click += (o, e) =>
+            {
+                Intent intent = new Intent(this, typeof(SearchActivity));
+                this.StartActivity(intent);
+            };
+
             LL.AddView(PlanetenButton);
             LL.AddView(ressourcenButton);
             LL.AddView(craftingButton);
             LL.AddView(pflanzenButton);
             LL.AddView(galastroButton);
+            LL.AddView(searchButton);
 
             SetContentView(LL);
         }

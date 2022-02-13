@@ -156,8 +156,37 @@ namespace AstroGuide
             //var CraftHolder = FindViewById<LinearLayout>(Resource.Id.CraftHolder);
             SetContentView(LL);
 
-            var RLcrafter = SetRelativeLayout("Crafter");
 
+
+            ListView searchlv = new ListView(this);
+            searchlv.Adapter = new AddCraft(this, new List<Craft>());
+
+            searchlv.NestedScrollingEnabled = true;
+            searchlv.LayoutParameters = new LinearLayout.LayoutParams(  LinearLayout.LayoutParams.MatchParent,
+                                                                        LinearLayout.LayoutParams.WrapContent);
+
+            searchlv.ItemClick += (o, e) =>
+            {
+                var item = searchlv.Adapter as AddCraft;
+                var ress = item[e.Position];
+
+                Intent intent = new Intent(this, typeof(CraftActivity));
+                intent.PutExtra("Craft", ress.Name);
+                this.StartActivity(intent);
+            };
+
+            SearchView searchView = new SearchView(this);
+            searchView.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent,
+                                                                        LinearLayout.LayoutParams.WrapContent);
+            
+            
+            CraftHolder.AddView(searchView);
+            CraftHolder.AddView(searchlv);
+            searchlv.LayoutParameters.Height = (0 * Einstellungen.ListPlanetHeight);
+
+
+            #region Crafter
+            var RLcrafter = SetRelativeLayout("Crafter");
             CraftHolder.AddView(RLcrafter);
 
             LinearLayout LLCrafter = new LinearLayout(this);
@@ -203,9 +232,11 @@ namespace AstroGuide
                 }
             };
 
+            #endregion
 
+
+            #region Craft
             var RLcraft = SetRelativeLayout("Craft");
-
             CraftHolder.AddView(RLcraft);
 
             List<LinearLayout> Layouts = new List<LinearLayout>();
@@ -227,6 +258,45 @@ namespace AstroGuide
                         item.Visibility = ViewStates.Visible;
                     }
                     else
+                    {
+                        item.Visibility = ViewStates.Gone;
+                    }
+                }
+            };
+
+            #endregion
+
+            searchView.QueryTextChange += (o, e) =>
+            {
+
+                List<Craft> gefunden = new List<Craft>();
+
+                if (e.NewText == "" || e.NewText == null)
+                {
+                    searchlv.Adapter = new AddCraft(this, gefunden);
+                    searchlv.LayoutParameters.Height = (gefunden.Count * Einstellungen.ListPlanetHeight);
+                    RLcraft.Visibility = ViewStates.Visible;
+                    RLcrafter.Visibility = ViewStates.Visible;
+                }
+                else
+                {
+                    List<Verwendung> treffer = new List<Verwendung>();
+
+                    gefunden = CraftingTest.AllCraft().FindAll(x => x.Name.ToLower().Contains(e.NewText.ToLower()));
+
+                    foreach (var item in gefunden)
+                    {
+                        treffer.Add(new Verwendung(item.Name, item.Image, VerwendungsTyp.Craft));
+                    }
+
+                    searchlv.Adapter = new AddCraft(this, gefunden);
+                    searchlv.LayoutParameters.Height = (gefunden.Count * Einstellungen.ListPlanetHeight);
+
+                    RLcraft.Visibility = ViewStates.Gone;
+                    RLcrafter.Visibility = ViewStates.Gone;
+                    LLCrafter.Visibility = ViewStates.Gone;
+
+                    foreach (var item in Layouts)
                     {
                         item.Visibility = ViewStates.Gone;
                     }

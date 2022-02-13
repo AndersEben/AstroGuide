@@ -102,6 +102,7 @@
     <Compile Include="Scripts\CustViews\AddRezept.cs" />
     <Compile Include="Scripts\CustViews\AddTrade.cs" />
     <Compile Include="Scripts\CustViews\AddVerwendung.cs" />
+    <Compile Include="Scripts\CustViews\AddVerwendungen.cs" />
     <Compile Include="Scripts\CustViews\AddVorkommen.cs" />
     <Compile Include="Scripts\Enums.cs" />
     <Compile Include="Scripts\Galastropode.cs" />
@@ -118,6 +119,8 @@
     <Compile Include="Scripts\Settings\Einstellungen.cs" />
     <Compile Include="Scripts\Trade.cs" />
     <Compile Include="Scripts\Verwendung.cs" />
+    <Compile Include="Scripts\VerwendungTest.cs" />
+    <Compile Include="SearchActivity.cs" />
     <Compile Include="StartActivity.cs" />
   </ItemGroup>
   <ItemGroup>

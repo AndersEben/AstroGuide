@@ -16,14 +16,12 @@ using System.Text;
 namespace AstroGuide
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    class GalastropodenActivity : AppCompatActivity
+    class SearchActivity : AppCompatActivity
     {
-        
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-
 
             LinearLayout LL = new LinearLayout(this);
             LinearLayout.LayoutParams Lparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
@@ -36,7 +34,7 @@ namespace AstroGuide
             txtv.LayoutParameters = param;
             txtv.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_HeaderSize);
 
-            txtv.Text = "Galstropoden";
+            txtv.Text = "Suchen";
 
             txtv.SetPadding(Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip);
             txtv.Gravity = GravityFlags.Center;
@@ -59,24 +57,44 @@ namespace AstroGuide
 
             SetContentView(LL);
 
-            ListView LGalastro = new ListView(this);
-            LGalastro.NestedScrollingEnabled = true;
-            LGalastro.LayoutParameters = new LinearLayout.LayoutParams( LinearLayout.LayoutParams.MatchParent,
+
+            ListView LSearch = new ListView(this);
+            LSearch.NestedScrollingEnabled = true;
+            LSearch.LayoutParameters = new LinearLayout.LayoutParams( LinearLayout.LayoutParams.MatchParent,
                                                                         LinearLayout.LayoutParams.WrapContent);
 
-            LGalastro.Adapter = new AddGalastro(this, GalastropodenTest.Alle_Galastro);
-            LGalastro.ItemClick += (o, e) =>
+            LSearch.Adapter = new AddVerwendungen(this, new List<Verwendung>());
+            LSearch.ItemClick += (o, e) =>
             {
-                var item = LGalastro.Adapter as AddGalastro;
-                var gal = item[e.Position];
 
-                Intent intent = new Intent(this, typeof(GalastroActivity));
-                intent.PutExtra("Galastropode", gal.Name);
-                this.StartActivity(intent);
             };
 
-            SVLL.AddView(LGalastro);
-            LGalastro.LayoutParameters.Height = (GalastropodenTest.Alle_Galastro.Count * Einstellungen.ListPlanetHeight);
+            SearchView searchView = new SearchView(this);
+            searchView.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent,
+                                                                        LinearLayout.LayoutParams.WrapContent);
+            searchView.QueryTextChange += (o, e) =>
+            {
+                List<Verwendung> gefunden = new List<Verwendung>();
+
+                if (e.NewText == "" || e.NewText == null)
+                {
+                    LSearch.Adapter = new AddVerwendungen(this, gefunden);
+                    LSearch.LayoutParameters.Height = (gefunden.Count * Einstellungen.ListPlanetHeight);
+                }
+                else
+                {
+                    gefunden = VerwendungTest.AlleElemente.FindAll(x => x.Name.ToLower().Contains(e.NewText.ToLower()));
+
+                    LSearch.Adapter = new AddVerwendungen(this, gefunden);
+                    LSearch.LayoutParameters.Height = (gefunden.Count * Einstellungen.ListPlanetHeight);
+                }
+            };
+
+            SVLL.AddView(searchView);
+            SVLL.AddView(LSearch);
+
+            LSearch.LayoutParameters.Height = (0 * Einstellungen.ListPlanetHeight);
+
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

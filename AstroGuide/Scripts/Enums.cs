@@ -51,7 +51,8 @@ namespace AstroGuide.Scripts
         Crafter,
         Craft,
         Pflanze,
-        Galastropode
+        Galastropode,
+        Planet
     }
 
     public enum TauschObjekt

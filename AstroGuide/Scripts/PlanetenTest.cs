@@ -1,16 +1,6 @@
-﻿using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-
+﻿
 using AstroGuide.Scripts.Planeten;
-
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace AstroGuide.Scripts
 {
@@ -47,6 +37,43 @@ namespace AstroGuide.Scripts
             }
 
             return Sylva;
+        }
+
+        public static List<Planet> AllPlanet()
+        {
+            var fields = typeof(PlanetenTest).GetFields();
+            List<Planet> planet = new List<Planet>();
+
+            for (int i = 0; i < fields.Length; i++)
+            {
+                var type = fields[i].FieldType;
+                if (type == typeof(Planet))
+                {
+                    planet.Add((Planet)fields[i].GetValue(null));
+                }
+
+            }
+
+            return planet;
+        }
+
+        public static List<Verwendung> AllPlanetToVerwendung()
+        {
+            var fields = typeof(PlanetenTest).GetFields();
+            List<Verwendung> verwendung = new List<Verwendung>();
+
+            for (int i = 0; i < fields.Length; i++)
+            {
+                var type = fields[i].FieldType;
+                if (type == typeof(Planet))
+                {
+                    var file = (Planet)fields[i].GetValue(null);
+                    verwendung.Add(new Verwendung(file.Name,file.Image,VerwendungsTyp.Planet));
+                }
+
+            }
+
+            return verwendung;
         }
     }
 }

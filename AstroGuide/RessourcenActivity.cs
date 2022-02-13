@@ -55,7 +55,7 @@ namespace AstroGuide
             return RL;
         }
 
-        private LinearLayout SetLinearLayout(RelativeLayout RL, List<Ressource> test)
+        private Tuple<LinearLayout,ListView> SetLinearLayout(RelativeLayout RL, List<Ressource> test)
         {
             int pixel = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 10, Resources.DisplayMetrics);
 
@@ -99,7 +99,7 @@ namespace AstroGuide
                 }
             };
 
-            return LL;
+            return Tuple.Create(LL,lv);
         }
 
 
@@ -144,7 +144,40 @@ namespace AstroGuide
 
             SetContentView(LL);
 
-            List<LinearLayout> Layouts = new List<LinearLayout>();
+
+
+            ListView searchlv = new ListView(this);
+            searchlv.Adapter = new AddPflanze(this, new List<Pflanze>());
+
+            searchlv.NestedScrollingEnabled = true;
+            searchlv.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent,
+                                                                        LinearLayout.LayoutParams.WrapContent);
+
+            searchlv.ItemClick += (o, e) =>
+            {
+                var item = searchlv.Adapter as AddPflanze;
+                var ress = item[e.Position];
+
+                Intent intent = new Intent(this, typeof(PflanzeActivity));
+                intent.PutExtra("Pflanze", ress.Name);
+                this.StartActivity(intent);
+            };
+
+            SearchView searchView = new SearchView(this);
+            searchView.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent,
+                                                                        LinearLayout.LayoutParams.WrapContent);
+
+
+            SVLL.AddView(searchView);
+            SVLL.AddView(searchlv);
+            searchlv.LayoutParameters.Height = (0 * Einstellungen.ListPlanetHeight);
+
+
+
+
+            List<ListView> LvList = new List<ListView>();
+            List<RelativeLayout> LayoutsR = new List<RelativeLayout>();
+
             foreach (string item in Enum.GetNames(typeof(ResType)))
             {
                 var selCrafts = MaterialTest.Alle_Ressourcen.FindAll(x => x.Type.ToString() == item);
@@ -152,9 +185,47 @@ namespace AstroGuide
                 var layout = SetLinearLayout(Rlayout, selCrafts);
 
                 SVLL.AddView(Rlayout);
-                SVLL.AddView(layout);
-                Layouts.Add(layout);
+                SVLL.AddView(layout.Item1);
+
+                LvList.Add(layout.Item2);
+                LayoutsR.Add(Rlayout);
             }
+
+
+            searchView.QueryTextChange += (o, e) =>
+            {
+
+                List<Ressource> gefunden = new List<Ressource>();
+
+                if (e.NewText == "" || e.NewText == null)
+                {
+                    searchlv.Adapter = new AddRessourcen(this, gefunden);
+                    searchlv.LayoutParameters.Height = (gefunden.Count * Einstellungen.ListPlanetHeight);
+
+                    foreach (var item in LayoutsR)
+                    {
+                        item.Visibility = ViewStates.Visible;
+                    }
+
+                }
+                else
+                {
+                    gefunden = MaterialTest.AllRessource().FindAll(x => x.Name.ToLower().Contains(e.NewText.ToLower()));
+
+                    searchlv.Adapter = new AddRessourcen(this, gefunden);
+                    searchlv.LayoutParameters.Height = (gefunden.Count * Einstellungen.ListPlanetHeight);
+
+
+                    foreach (var item in LvList)
+                    {
+                        item.Visibility = ViewStates.Gone;
+                    }
+                    foreach (var item in LayoutsR)
+                    {
+                        item.Visibility = ViewStates.Gone;
+                    }
+                }
+            };
 
         }
 

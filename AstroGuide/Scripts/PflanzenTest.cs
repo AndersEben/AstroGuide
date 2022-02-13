@@ -52,5 +52,42 @@ namespace AstroGuide.Scripts
 
             return Knallkoralle;
         }
+
+        public static List<Pflanze> AllPlant()
+        {
+            var fields = typeof(PflanzenTest).GetFields();
+            List<Pflanze> plant = new List<Pflanze>();
+
+            for (int i = 0; i < fields.Length; i++)
+            {
+                var type = fields[i].FieldType;
+                if (type == typeof(Pflanze))
+                {
+                    plant.Add((Pflanze)fields[i].GetValue(null));
+                }
+
+            }
+
+            return plant;
+        }
+
+        public static List<Verwendung> AllPlantToVerwendung()
+        {
+            var fields = typeof(PflanzenTest).GetFields();
+            List<Verwendung> verwendung = new List<Verwendung>();
+
+            for (int i = 0; i < fields.Length; i++)
+            {
+                var type = fields[i].FieldType;
+                if (type == typeof(Pflanze))
+                {
+                    var file = (Pflanze)fields[i].GetValue(null);
+                    verwendung.Add(new Verwendung(file.Name,file.Image,VerwendungsTyp.Pflanze));
+                }
+
+            }
+
+            return verwendung;
+        }
     }
 }

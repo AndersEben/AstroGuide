@@ -108,5 +108,41 @@ namespace AstroGuide.Scripts
 
             return quartz;
         }
+
+        public static List<Ressource> AllRessource()
+        {
+            var fields = typeof(MaterialTest).GetFields();
+            List<Ressource> ressour = new List<Ressource>();
+
+            for (int i = 0; i < fields.Length; i++)
+            {
+                var type = fields[i].FieldType;
+                if (type == typeof(Ressource))
+                {
+                    ressour.Add((Ressource)fields[i].GetValue(null));
+                }
+
+            }
+
+            return ressour;
+        }
+
+        public static List<Verwendung> AllRessourceToVerwendung()
+        {
+            var fields = typeof(MaterialTest).GetFields();
+            List<Verwendung> verwendung = new List<Verwendung>();
+
+            for (int i = 0; i < fields.Length; i++)
+            {
+                var type = fields[i].FieldType;
+                if (type == typeof(Ressource))
+                {
+                    var file = (Ressource)fields[i].GetValue(null);
+                    verwendung.Add(new Verwendung(file.Name,file.Image,VerwendungsTyp.Ressource));
+                }
+            }
+
+            return verwendung;
+        }
     }
 }
