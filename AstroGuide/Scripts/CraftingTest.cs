@@ -109,12 +109,12 @@ namespace AstroGuide.Scripts
         public static Craft feuerwerk = new Craft("Feuerwerk", Resource.Drawable.Icon_Fireworks,3750,CraftType.freizeitGegenstand,7);
         public static Craft kleineKamera = new Craft("Kleine Kamera", Resource.Drawable.Icon_Small_Camera, 2500,CraftType.freizeitGegenstand,8);
         public static Craft hoverboard = new Craft("Hoverboard", Resource.Drawable.Icon_Hoverboard, 0,CraftType.fortbewegungsGegenstand,9);
-        public static Craft sondenscanner = new Craft("Sondenscanner", Resource.Drawable.Icon_Astronium, 4000,CraftType.erkennungsGegenstand,8);
-        public static Craft kTrompetenhupe = new Craft("Kleine Trompetenhupe", Resource.Drawable.Icon_Astronium, 1000,CraftType.freizeitGegenstand,8);
-        public static Craft hydrazinJezpack = new Craft("Hydrazin Jetpack", Resource.Drawable.Icon_Astronium, 15000,CraftType.fortbewegungsGegenstand,8);
-        public static Craft holografischeFigur = new Craft("Holografische Figur", Resource.Drawable.Icon_Astronium, 3000,CraftType.freizeitGegenstand,8);
-        public static Craft feststoffSprungbooster = new Craft("Feststoff Sprung-Booster", Resource.Drawable.Icon_Astronium, 5000, CraftType.fortbewegungsGegenstand,9);
-        public static Craft einebnungsblock = new Craft("Einebnungsblock", Resource.Drawable.Icon_Astronium, 500,CraftType.nutzgegenstand,7);
+        public static Craft sondenscanner = new Craft("Sondenscanner", Resource.Drawable.Icon_Probe_Scanner, 4000,CraftType.erkennungsGegenstand,8);
+        public static Craft kTrompetenhupe = new Craft("Kleine Trompetenhupe", Resource.Drawable.Icon_Horn, 1000,CraftType.freizeitGegenstand,8);
+        public static Craft hydrazinJezpack = new Craft("Hydrazin Jetpack", Resource.Drawable.Icon_Feststoff_Schubduese, 15000,CraftType.fortbewegungsGegenstand,8);
+        public static Craft holografischeFigur = new Craft("Holografische Figur", Resource.Drawable.Icon_Figurine, 3000,CraftType.freizeitGegenstand,8);
+        public static Craft feststoffSprungbooster = new Craft("Feststoff Sprung-Booster", Resource.Drawable.Icon_Feststoff_Schubduese, 5000, CraftType.fortbewegungsGegenstand,9);
+        public static Craft einebnungsblock = new Craft("Einebnungsblock", Resource.Drawable.Icon_Leveling_Block, 500,CraftType.nutzgegenstand,7);
         #endregion
 
         #region Tier2
@@ -144,11 +144,11 @@ namespace AstroGuide.Scripts
         public static Craft feststoffSchubduese = new Craft("Feststoff-Schubdüse", Resource.Drawable.Icon_Feststoff_Schubduese,500,CraftType.fahrzeugGegensatnd,11);
         public static Craft hydrazinSchubduese = new Craft("Hydrazin-Schubdüse", Resource.Drawable.Icon_Hydrazin_Schubduese,3750,CraftType.fahrzeugGegensatnd,11);
         public static Craft winde = new Craft("Winde", Resource.Drawable.Icon_Winde,3750, CraftType.fahrzeugGegensatnd,9);
-        public static Craft autoArm = new Craft("Auto-Arm", Resource.Drawable.Icon_Astronium, 1500, CraftType.aktivierungsObjekt,2);
-        public static Craft feldunterkunft = new Craft("Feldunterkunft", Resource.Drawable.Icon_Astronium, 8000,CraftType.basisGegenstand,1);
-        public static Craft mgKanister = new Craft("Mittlerer Ressourcenkanister", Resource.Drawable.Icon_Astronium, 2000,CraftType.werkzeuge,2);
-        public static Craft mgFlKanister = new Craft("Mittlerer Flüssig/Erdkanister", Resource.Drawable.Icon_Astronium, 2500,CraftType.werkzeuge,2);
-        public static Craft mgGaskanister = new Craft("Mittlerer Gaskanister", Resource.Drawable.Icon_Astronium, 4000,CraftType.werkzeuge,2);
+        public static Craft autoArm = new Craft("Auto-Arm", Resource.Drawable.Icon_Crane, 1500, CraftType.aktivierungsObjekt,2);
+        public static Craft feldunterkunft = new Craft("Feldunterkunft", Resource.Drawable.Icon_Unterkunft, 8000,CraftType.basisGegenstand,1);
+        public static Craft mgKanister = new Craft("Mittlerer Ressourcenkanister", Resource.Drawable.Icon_Kleiner_Kanister, 2000,CraftType.werkzeuge,2);
+        public static Craft mgFlKanister = new Craft("Mittlerer Flüssig/Erdkanister", Resource.Drawable.Icon_Kleiner_Kanister, 2500,CraftType.werkzeuge,2);
+        public static Craft mgGaskanister = new Craft("Mittlerer Gaskanister", Resource.Drawable.Icon_Kleiner_Kanister, 4000,CraftType.werkzeuge,2);
         public static Craft energiesensor = new Craft("Energiesensor", Resource.Drawable.Icon_Astronium, 500,CraftType.aktivierungsObjekt,3);
         public static Craft lagersensor = new Craft("Lagersensor", Resource.Drawable.Icon_Astronium, 750,CraftType.aktivierungsObjekt,3);
         public static Craft batteriesensor = new Craft("Batteriesensor", Resource.Drawable.Icon_Astronium, 750,CraftType.aktivierungsObjekt,3);
@@ -156,9 +156,9 @@ namespace AstroGuide.Scripts
         public static Craft naeherungsinitiator = new Craft("Näherungsinitiator", Resource.Drawable.Icon_Astronium, 700,CraftType.aktivierungsObjekt,4);
         public static Craft verzoegerungswiederholer = new Craft("Verzögerungswiederholer", Resource.Drawable.Icon_Astronium, 1000,CraftType.aktivierungsObjekt,4);
         public static Craft zahlwiederholer = new Craft("Zahlwiederholer", Resource.Drawable.Icon_Astronium, 1000,CraftType.aktivierungsObjekt,4);
-        public static Craft netzschalter = new Craft("Netzschalter", Resource.Drawable.Icon_Astronium, 750,CraftType.stromGegenstand,5);
-        public static Craft mgroßeHupe = new Craft("Mittelgroße Hupe", Resource.Drawable.Icon_Astronium, 2000,CraftType.fahrzeugGegensatnd,9);
-        public static Craft planierer = new Craft("Planierer", Resource.Drawable.Icon_Astronium, 5000,CraftType.fahrzeugGegensatnd,10);
+        public static Craft netzschalter = new Craft("Netzschalter", Resource.Drawable.Icon_Splitter, 750,CraftType.stromGegenstand,5);
+        public static Craft mgroßeHupe = new Craft("Mittelgroße Hupe", Resource.Drawable.Icon_Horn, 2000,CraftType.fahrzeugGegensatnd,9);
+        public static Craft planierer = new Craft("Planierer", Resource.Drawable.Icon_Paver, 5000,CraftType.fahrzeugGegensatnd,10);
         #endregion
 
         #region Tier3
