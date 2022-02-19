@@ -7,6 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="250px"
         android:src="@drawable/astroneer_char"
-        android:id="@+id/ResImageHolder"/>
+        android:id="@+id/ResImageHolder"
+        android:layout_marginBottom="90px"/>
 
 </LinearLayout>

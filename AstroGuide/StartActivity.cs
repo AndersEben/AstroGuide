@@ -161,6 +161,54 @@ namespace AstroGuide
             }
 
             MaterialTest.gemisch.AddImage(Resource.Drawable.Nugget_Gemisch);
+            MaterialTest.harz.AddImage(Resource.Drawable.Nugget_Harz);
+            MaterialTest.organisch.AddImage(Resource.Drawable.Nugget_Organisch);
+            MaterialTest.graphit.AddImage(Resource.Drawable.Nugget_Graphit);
+            MaterialTest.ammonium.AddImage(Resource.Drawable.Nugget_Ammonium);
+            MaterialTest.astronium.AddImage(Resource.Drawable.Nugget_Astronium);
+            MaterialTest.lehm.AddImage(Resource.Drawable.Nugget_Lehm);
+            MaterialTest.laterit.AddImage(Resource.Drawable.Nugget_Laterit);
+            MaterialTest.quartz.AddImage(Resource.Drawable.Nugget_Quartz);
+
+            MaterialTest.malachit.AddImage(Resource.Drawable.Nugget_Malachit);
+            MaterialTest.zinkblende.AddImage(Resource.Drawable.Nugget_Zinkblende);
+            MaterialTest.hämatit.AddImage(Resource.Drawable.Nugget_Haematit);
+            MaterialTest.wolframit.AddImage(Resource.Drawable.Nugget_Wolframit);
+            MaterialTest.titanit.AddImage(Resource.Drawable.Nugget_Titanit);
+            MaterialTest.lithium.AddImage(Resource.Drawable.Nugget_Lithium);
+
+            MaterialTest.kohlenstoff.AddImage(Resource.Drawable.Nugget_Kohlenstoff);
+            MaterialTest.keramik.AddImage(Resource.Drawable.Nugget_Keramik);
+            MaterialTest.glas.AddImage(Resource.Drawable.Nugget_Glas);
+            MaterialTest.aluminium.AddImage(Resource.Drawable.Nugget_Aluminum);
+            MaterialTest.kupfer.AddImage(Resource.Drawable.Nugget_Kupfer);
+            MaterialTest.zink.AddImage(Resource.Drawable.Icon_Zink);
+            MaterialTest.wolfram.AddImage(Resource.Drawable.Nugget_Wolfram);
+            MaterialTest.eisen.AddImage(Resource.Drawable.Nugget_Eisen);
+            MaterialTest.titan.AddImage(Resource.Drawable.Nugget_Titan);
+
+            MaterialTest.gummi.AddImage(Resource.Drawable.Nugget_Gummi);
+            MaterialTest.kunststoff.AddImage(Resource.Drawable.Nugget_Kunststoff);
+            MaterialTest.aluminiumlegierung.AddImage(Resource.Drawable.Nugget_Aluminumlegierung);
+            MaterialTest.wolframkarbid.AddImage(Resource.Drawable.Nugget_Wolframkarbid);
+            MaterialTest.graphen.AddImage(Resource.Drawable.Nugget_Graphen);
+            MaterialTest.diamant.AddImage(Resource.Drawable.Nugget_Diamand);
+            MaterialTest.hydrazin.AddImage(Resource.Drawable.Nugget_Hydrazin);
+            MaterialTest.silikon.AddImage(Resource.Drawable.Nugget_Silikon);
+            MaterialTest.sprengpulver.AddImage(Resource.Drawable.Nugget_Sprengpulver);
+            MaterialTest.stahl.AddImage(Resource.Drawable.Nugget_Stahlpng);
+            MaterialTest.titanlegierung.AddImage(Resource.Drawable.Nugget_Titanlegierung);
+            MaterialTest.nanocarbonlegierung.AddImage(Resource.Drawable.Nugget_Nanocarbonlegierung);
+
+            MaterialTest.argon.AddImage(Resource.Drawable.Nugget_Argon);
+            MaterialTest.helium.AddImage(Resource.Drawable.Nugget_Helium);
+            MaterialTest.methan.AddImage(Resource.Drawable.Nugget_Methan);
+            MaterialTest.schwefel.AddImage(Resource.Drawable.Nugget_Schwefel);
+            MaterialTest.stickstoff.AddImage(Resource.Drawable.Nugget_Stickstoff);
+            MaterialTest.wasserstoff.AddImage(Resource.Drawable.Nugget_Wasserstoff);
+
+            MaterialTest.erde.AddImage(Resource.Drawable.Nugget_Erde);
+            MaterialTest.exo_chip.AddImage(Resource.Drawable.Nugget_EXOChip);
 
             MaterialTest.kohlenstoff.SetHerstellung(new List<Ressource>() { MaterialTest.organisch }, Herstellung.Schmelzofen);
             MaterialTest.kohlenstoff.SetDescription("");

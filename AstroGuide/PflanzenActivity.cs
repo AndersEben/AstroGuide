@@ -163,8 +163,10 @@ namespace AstroGuide
             };
 
             SearchView searchView = new SearchView(this);
-            searchView.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent,
+            var LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent,
                                                                         LinearLayout.LayoutParams.WrapContent);
+            LayoutParameters.SetMargins(0, 0, 0, 45);
+            searchView.LayoutParameters = LayoutParameters;
             searchView.SetIconifiedByDefault(false);
 
             SVLL.AddView(searchView);
