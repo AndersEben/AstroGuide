@@ -160,6 +160,7 @@ namespace AstroGuide
                 }
             }
 
+            MaterialTest.gemisch.AddImage(Resource.Drawable.Nugget_Gemisch);
 
             MaterialTest.kohlenstoff.SetHerstellung(new List<Ressource>() { MaterialTest.organisch }, Herstellung.Schmelzofen);
             MaterialTest.kohlenstoff.SetDescription("");

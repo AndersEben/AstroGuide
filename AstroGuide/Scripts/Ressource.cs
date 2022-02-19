@@ -30,6 +30,8 @@ namespace AstroGuide.Scripts
 
         public List<Trade> Tauschen { get; set; } = new List<Trade>();
 
+        public List<int> Images { get; set; }
+
 
         public Ressource(string name, int image, ResType type, int wert)
         {
@@ -37,6 +39,7 @@ namespace AstroGuide.Scripts
             this.Image = image;
             this.Type = type;
             this.Forschungswert = wert;
+            this.Images = new List<int>() { image };
         }
 
         public void SetDescription(string text)
@@ -48,6 +51,11 @@ namespace AstroGuide.Scripts
         {
             this.Rezept = rezept;
             this.Hersteller = hersteller;
+        }
+
+        public void AddImage(int image)
+        {
+            this.Images.Add(image);
         }
 
         public void SetTauschObjekt(TauschObjekt obj)

@@ -5,7 +5,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
-
+using AndroidX.RecyclerView.Widget;
 using AstroGuide.Scripts;
 using AstroGuide.Scripts.CustViews;
 using AstroGuide.Scripts.Settings;
@@ -283,7 +283,21 @@ namespace AstroGuide
 
                 };
             }
-            
+
+            if(res.Images != null)
+            {
+                var imageholder = FindViewById<RecyclerView>(Resource.Id.ResImageViewer);
+
+                RecyclerView.LayoutManager mLayoutManager2 = new LinearLayoutManager(this, LinearLayoutManager.Horizontal, false);
+                imageholder.SetLayoutManager(mLayoutManager2);
+
+                SnapHelper snapHelper = new PagerSnapHelper();
+                snapHelper.AttachToRecyclerView(imageholder);
+
+                AddRessourceImage mAdapter2 = new AddRessourceImage(this, res.Images);
+                imageholder.SetAdapter(mAdapter2);
+            }
+
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
