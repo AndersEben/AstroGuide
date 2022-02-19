@@ -178,19 +178,19 @@ namespace AstroGuide.Scripts
         public static Craft mGrover = new Craft("Mittelgroßer Rover", Resource.Drawable.Icon_Rover,3750,CraftType.fahrzeugGegensatnd,6);
         public static Craft gRoverSitz = new Craft("Großer Rover Sitz", Resource.Drawable.Icon_Grosser_Rover_Sitz,2000,CraftType.fahrzeugGegensatnd,6);
         public static Craft kran = new Craft("Kran", Resource.Drawable.Icon_Kran,4500,CraftType.modul,6);
-        public static Craft exoPlattform = new Craft("EXO Auftrags-Plattform", Resource.Drawable.Icon_Astronium, 0,CraftType.modul,2);
-        public static Craft gRessourcenkanister = new Craft("Großer Ressourcenkanister", Resource.Drawable.Icon_Astronium, 5000,CraftType.werkzeuge,5);
-        public static Craft gSolarmodul = new Craft("Großes Solarmodul", Resource.Drawable.Icon_Astronium, 4000,CraftType.stromGegenstand,3);
-        public static Craft gWindturbine = new Craft("Große Windturbine", Resource.Drawable.Icon_Astronium, 3500, CraftType.stromGegenstand,3);
-        public static Craft gTPlattform = new Craft("Große T-Plattform", Resource.Drawable.Icon_Astronium, 1000,CraftType.basisGegenstand,4);
-        public static Craft gGPlattform = new Craft("Große Gewölbte Plattform", Resource.Drawable.Icon_Astronium, 1000,CraftType.basisGegenstand,4);
-        public static Craft gSiloA = new Craft("Großes Silo A", Resource.Drawable.Icon_Astronium, 5000,CraftType.nutzgegenstand,5);
-        public static Craft gSiloB = new Craft("Großes Silo B", Resource.Drawable.Icon_Astronium, 7500, CraftType.nutzgegenstand,5);
-        public static Craft gEPlattform = new Craft("Große Erweiterte Plattform", Resource.Drawable.Icon_Astronium, 500,CraftType.basisGegenstand,4);
-        public static Craft gASpeicher = new Craft("Großer Aktiver Speicher", Resource.Drawable.Icon_Astronium, 2000,CraftType.nutzgegenstand,5);
-        public static Craft vtol = new Craft("VTOL", Resource.Drawable.Icon_Astronium, 0,CraftType.fahrzeugGegensatnd,6);
-        public static Craft gNebelhorn = new Craft("Großes Nebelhorn", Resource.Drawable.Icon_Astronium, 4000,CraftType.fahrzeugGegensatnd,6);
-        public static Craft freizeitKugel = new Craft("Freizeit-Kugel", Resource.Drawable.Icon_Astronium, 4500,CraftType.freizeitGegenstand,7);
+        public static Craft exoPlattform = new Craft("EXO Auftrags-Plattform", Resource.Drawable.Icon_Trade_Platform, 0,CraftType.modul,2);
+        public static Craft gRessourcenkanister = new Craft("Großer Ressourcenkanister", Resource.Drawable.Icon_Canister, 5000,CraftType.werkzeuge,5);
+        public static Craft gSolarmodul = new Craft("Großes Solarmodul", Resource.Drawable.Icon_Solar, 4000,CraftType.stromGegenstand,3);
+        public static Craft gWindturbine = new Craft("Große Windturbine", Resource.Drawable.Icon_Wind_Turbine, 3500, CraftType.stromGegenstand,3);
+        public static Craft gTPlattform = new Craft("Große T-Plattform", Resource.Drawable.Icon_Extragrosse_Plattform_A, 1000,CraftType.basisGegenstand,4);
+        public static Craft gGPlattform = new Craft("Große Gewölbte Plattform", Resource.Drawable.Icon_Extragrosse_Plattform_A, 1000,CraftType.basisGegenstand,4);
+        public static Craft gSiloA = new Craft("Großes Silo A", Resource.Drawable.Icon_Storage, 5000,CraftType.nutzgegenstand,5);
+        public static Craft gSiloB = new Craft("Großes Silo B", Resource.Drawable.Icon_Storage, 7500, CraftType.nutzgegenstand,5);
+        public static Craft gEPlattform = new Craft("Große Erweiterte Plattform", Resource.Drawable.Icon_Extragrosse_Plattform_A, 500,CraftType.basisGegenstand,4);
+        public static Craft gASpeicher = new Craft("Großer Aktiver Speicher", Resource.Drawable.Icon_Storage, 2000,CraftType.nutzgegenstand,5);
+        public static Craft vtol = new Craft("VTOL", Resource.Drawable.Icon_VTOL, 0,CraftType.fahrzeugGegensatnd,6);
+        public static Craft gNebelhorn = new Craft("Großes Nebelhorn", Resource.Drawable.Icon_Horn, 4000,CraftType.fahrzeugGegensatnd,6);
+        public static Craft freizeitKugel = new Craft("Freizeit-Kugel", Resource.Drawable.Icon_Recreational_Sphere, 4500,CraftType.freizeitGegenstand,7);
 
         #endregion
 
@@ -206,20 +206,20 @@ namespace AstroGuide.Scripts
         public static Craft gShuttle = new Craft("Großes Shuttle", Resource.Drawable.Icon_Grosses_Shuttle,5000,CraftType.fahrzeugGegensatnd,7);
         public static Craft unterkunft = new Craft("Unterkunft", Resource.Drawable.Icon_Unterkunft,0,CraftType.basisGegenstand,1);
         public static Craft solarstromanlage = new Craft("Solarstromanlage", Resource.Drawable.Icon_Solarstromanlage,6000,CraftType.stromGegenstand,2);
-        public static Craft autoExtraktor = new Craft("Auto-Extraktor", Resource.Drawable.Icon_Astronium, 7500,CraftType.aktivierungsObjekt,1);
-        public static Craft windturbineXl = new Craft("Windturbine XL", Resource.Drawable.Icon_Astronium, 4500,CraftType.stromGegenstand,2);
+        public static Craft autoExtraktor = new Craft("Auto-Extraktor", Resource.Drawable.Icon_Auto_Extractor, 7500,CraftType.aktivierungsObjekt,1);
+        public static Craft windturbineXl = new Craft("Windturbine XL", Resource.Drawable.Icon_Wind_Turbine, 4500,CraftType.stromGegenstand,2);
         public static Craft mSensorbogen = new Craft("Mittlerer Sensorbogen", Resource.Drawable.Icon_Astronium, 750,CraftType.aktivierungsObjekt,3);
         public static Craft xlSensorbogen = new Craft("XL-Sensorbogen", Resource.Drawable.Icon_Astronium, 1000,CraftType.aktivierungsObjekt,3);
-        public static Craft xlSensorbaladachin = new Craft("XL-Sensorbaladachin", Resource.Drawable.Icon_Astronium, 1000,CraftType.aktivierungsObjekt,3);
+        public static Craft xlSensorbaladachin = new Craft("XL-Sensorbaldachin", Resource.Drawable.Icon_Astronium, 1000,CraftType.aktivierungsObjekt,3);
         public static Craft gSensorring = new Craft("Großer Sensorring", Resource.Drawable.Icon_Astronium, 500,CraftType.aktivierungsObjekt,4);
         public static Craft gSensorringA = new Craft("Großer Sensorring A", Resource.Drawable.Icon_Astronium, 750,CraftType.aktivierungsObjekt,4);
         public static Craft gSensorringB = new Craft("Großer Sensorring B", Resource.Drawable.Icon_Astronium, 750,CraftType.aktivierungsObjekt,4);
         public static Craft xlSensorringA = new Craft("XL-Sensorring A", Resource.Drawable.Icon_Astronium, 750,CraftType.aktivierungsObjekt,4);
         public static Craft xlSensorringB = new Craft("XL-Sensorring B", Resource.Drawable.Icon_Astronium, 1000,CraftType.aktivierungsObjekt,4);
-        public static Craft egGPlattform = new Craft("Extra große Gewölbte Plattform", Resource.Drawable.Icon_Astronium, 2000, CraftType.basisGegenstand,5);
-        public static Craft xlEPlattform = new Craft("XL Erweiterte Plattform", Resource.Drawable.Icon_Astronium, 750,CraftType.basisGegenstand,5);
-        public static Craft fPlattform = new Craft("Figuren-Plattform", Resource.Drawable.Icon_Astronium, 3000,CraftType.basisGegenstand,6);
-        public static Craft landeplattform = new Craft("Landeplattform", Resource.Drawable.Icon_Astronium, 750,CraftType.basisGegenstand,7);
+        public static Craft egGPlattform = new Craft("Extra große Gewölbte Plattform", Resource.Drawable.Icon_Extragrosse_Plattform_A, 2000, CraftType.basisGegenstand,5);
+        public static Craft xlEPlattform = new Craft("XL Erweiterte Plattform", Resource.Drawable.Icon_Extragrosse_Plattform_A, 750,CraftType.basisGegenstand,5);
+        public static Craft fPlattform = new Craft("Figuren-Plattform", Resource.Drawable.Icon_Extragrosse_Plattform_A, 3000,CraftType.basisGegenstand,6);
+        public static Craft landeplattform = new Craft("Landeplattform", Resource.Drawable.Icon_Landeplattform, 750,CraftType.basisGegenstand,7);
         //public static Craft KUnterkunkt = new Craft("Kürbis-Unterkunft", Resource.Drawable.Icon_Astronium, 0);
         #endregion
 
