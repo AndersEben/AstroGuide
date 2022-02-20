@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
+using AndroidX.RecyclerView.Widget;
 using AstroGuide.Scripts;
 using AstroGuide.Scripts.CustViews;
 using AstroGuide.Scripts.Settings;
@@ -75,8 +76,22 @@ namespace AstroGuide
                 };
 
             FindViewById<TextView>(Resource.Id.GalastFood).Text = galast.Food.Name + " Samen";
+            FindViewById<TextView>(Resource.Id.GalastBeschreibung).Text = galast.Beschreibung;
+            FindViewById<TextView>(Resource.Id.GalastBuff).Text = galast.Buff;
 
-            
+            if (galast.Images != null)
+            {
+                var imageholder = FindViewById<RecyclerView>(Resource.Id.GalasImageViewer);
+
+                RecyclerView.LayoutManager mLayoutManager2 = new LinearLayoutManager(this, LinearLayoutManager.Horizontal, false);
+                imageholder.SetLayoutManager(mLayoutManager2);
+
+                SnapHelper snapHelper = new PagerSnapHelper();
+                snapHelper.AttachToRecyclerView(imageholder);
+
+                AddRessourceImage mAdapter2 = new AddRessourceImage(this, galast.Images);
+                imageholder.SetAdapter(mAdapter2);
+            }
 
         }
 

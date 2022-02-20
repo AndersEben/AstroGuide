@@ -25,7 +25,15 @@
                 android:layout_height="250px"
                 android:src="@drawable/icon_quartz"
                 android:layout_marginBottom="70px"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="horizontal"
+                android:layout_marginTop="50px"
+                android:layout_marginBottom="70px"
+                android:id="@+id/GalasImageViewer"/>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -68,7 +76,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="25px"
+                android:layout_marginBottom="50px"
                 android:padding="12px">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -80,6 +88,27 @@
                         android:text="Beschreibung :"/>
                     <TextView
                         android:id="@+id/GalastBeschreibung"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="20px"
+                        android:text="Placeholder"/>
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50px"
+                android:padding="12px">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Buff :"/>
+                    <TextView
+                        android:id="@+id/GalastBuff"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="20px"

@@ -182,7 +182,7 @@ namespace AstroGuide
             MaterialTest.glas.AddImage(Resource.Drawable.Nugget_Glas);
             MaterialTest.aluminium.AddImage(Resource.Drawable.Nugget_Aluminum);
             MaterialTest.kupfer.AddImage(Resource.Drawable.Nugget_Kupfer);
-            MaterialTest.zink.AddImage(Resource.Drawable.Icon_Zink);
+            MaterialTest.zink.AddImage(Resource.Drawable.Nugget_Zink);
             MaterialTest.wolfram.AddImage(Resource.Drawable.Nugget_Wolfram);
             MaterialTest.eisen.AddImage(Resource.Drawable.Nugget_Eisen);
             MaterialTest.titan.AddImage(Resource.Drawable.Nugget_Titan);
@@ -560,20 +560,42 @@ namespace AstroGuide
 
         private void CreateTerrarium()
         {
+            GalastropodenTest.Sylvie.AddImage(Resource.Drawable.Galas_Sylva_Shell);
+            GalastropodenTest.Sylvie.AddImage(Resource.Drawable.Icon_Sylvie);
+            GalastropodenTest.Usagi.AddImage(Resource.Drawable.Galas_Desolo_Shell);
+            GalastropodenTest.Usagi.AddImage(Resource.Drawable.Icon_Usagi);
+            GalastropodenTest.Stilgar.AddImage(Resource.Drawable.Galas_Calidor_Shell);
+            GalastropodenTest.Stilgar.AddImage(Resource.Drawable.Icon_Stilgar);
+            GalastropodenTest.Princess.AddImage(Resource.Drawable.Galas_Vesania_Shell);
+            GalastropodenTest.Princess.AddImage(Resource.Drawable.Icon_Princess);
+            GalastropodenTest.Rogal.AddImage(Resource.Drawable.Galas_Novus_Shell);
+            GalastropodenTest.Rogal.AddImage(Resource.Drawable.Icon_Rogal);
+            GalastropodenTest.Bestefar.AddImage(Resource.Drawable.Galas_Glacio_Shell);
+            GalastropodenTest.Bestefar.AddImage(Resource.Drawable.Icon_Bestefar);
+            GalastropodenTest.Enoki.AddImage(Resource.Drawable.Galas_Atrox_Shell);
+            GalastropodenTest.Enoki.AddImage(Resource.Drawable.Icon_Enoki);
+
             GalastropodenTest.Sylvie.SetTerrarium(new GTerrarium(MaterialTest.erde,MaterialTest.zink,PflanzenTest.Huepfranke));
             GalastropodenTest.Sylvie.SetBuff("Leuchtet einen Bereich stark aus");
+            GalastropodenTest.Sylvie.SetDescription("Ein mutiger und neugieriger Gefährte, der ein helles Licht von seinem Körper ausstrahlt, wenn er gut ernährt ist. Sylvie erleuchtet die dunkelsten Orte, egal wo sie sich aufhalten.");
             GalastropodenTest.Usagi.SetTerrarium(new GTerrarium(MaterialTest.erde, MaterialTest.wolfram, PflanzenTest.Dolchwurzel));
             GalastropodenTest.Usagi.SetBuff("Verfolgt auf dem aktuellen Planeten die nächstgelegenen wertvollen Kuriositäten auf dem Kompass");
+            GalastropodenTest.Usagi.SetDescription("Eine abenteuerlustige und verspielte Gefährtin, die Expertin darin ist, glänzende Dinge zu finden, wenn sie gut genährt ist. Usagi hilft Ihnen gerne dabei, auf jedem Planeten, auf dem Sie sich befinden, Orte zu finden, an denen Sie nachsehen können, egal wo sie wohnt.");
             GalastropodenTest.Stilgar.SetTerrarium(new GTerrarium(MaterialTest.erde, MaterialTest.kupfer, PflanzenTest.Keuchkraut));
             GalastropodenTest.Stilgar.SetBuff("Produziert passiv Sauerstoff, der Tanks und Haltenetze füllt");
+            GalastropodenTest.Stilgar.SetDescription("Ein widerstandsfähiger Begleiter, der dich bei jedem Abenteuer gut durchatmen lässt. Stilgar ist eine würzige Ergänzung für jeden Rucksack: THE AIR MUST FLOW!");
             GalastropodenTest.Princess.SetTerrarium(new GTerrarium(MaterialTest.erde, MaterialTest.lithium, PflanzenTest.Peitschenblatt));
             GalastropodenTest.Princess.SetBuff("Verhindert beim Tragen im Rucksack alle Formen von Schäden außer Ersticken");
+            GalastropodenTest.Princess.SetDescription("folgt noch :)");
             GalastropodenTest.Rogal.SetTerrarium(new GTerrarium(MaterialTest.erde, MaterialTest.eisen, PflanzenTest.Distelgerte));
             GalastropodenTest.Rogal.SetBuff("Erzeugt eine beträchtliche Menge an Strom");
+            GalastropodenTest.Sylvie.SetDescription("folgt noch :)");
             GalastropodenTest.Bestefar.SetTerrarium(new GTerrarium(MaterialTest.erde, MaterialTest.argon, PflanzenTest.Knallkoralle));
             GalastropodenTest.Bestefar.SetBuff("Verbessert, während es am Terrain Tool befestigt ist, seine Breite, Verstärkung und Bohrfähigkeit");
+            GalastropodenTest.Sylvie.SetDescription("folgt noch :)");
             GalastropodenTest.Enoki.SetTerrarium(new GTerrarium(MaterialTest.erde, MaterialTest.helium, PflanzenTest.Stachellilie));
             GalastropodenTest.Enoki.SetBuff("Erhöht beim Tragen im Rucksack die Sprunghöhe, die Sprintgeschwindigkeit und verringert die Bewegungseinbußen beim Tragen schwerer Gegenstände");
+            GalastropodenTest.Sylvie.SetDescription("folgt noch :)");
         }
 
 
