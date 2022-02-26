@@ -28,7 +28,10 @@ namespace AstroGuide
 
             var plant = PflanzenTest.FindPLant(Intent.GetStringExtra("Pflanze"));
 
-            FindViewById<TextView>(Resource.Id.PflanzeName).Text = plant.Name;
+            var pName = FindViewById<TextView>(Resource.Id.PflanzeName);
+            pName.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementM);
+            pName.Text = plant.Name;
+
             FindViewById<ImageView>(Resource.Id.PflanzeBild).SetImageResource(plant.Image);
             FindViewById<TextView>(Resource.Id.PflanzeType).Text = plant.Typ.ToString();
             FindViewById<TextView>(Resource.Id.PflanzeBeschreibung).Text = plant.Beschreibung;

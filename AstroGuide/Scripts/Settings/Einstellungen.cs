@@ -31,7 +31,7 @@ namespace AstroGuide.Scripts.Settings
         public static int TXT_pixel10dip { get; set; }
 
 
-
+        public static int RecImageSize { get; set; } = 4;
         public static int TXT_HeaderSize { get; set; } = 10;
         public static int TXT_ElementXL { get; set; } = 13;
         public static int TXT_ElementL { get; set; } = 16;

@@ -255,7 +255,11 @@ namespace AstroGuide
                 FindViewById<RelativeLayout>(Resource.Id.LayoutTauschwert).Visibility = ViewStates.Visible;
             }
 
-            FindViewById<TextView>(Resource.Id.RessourceName).Text = res.Name;
+            var rName = FindViewById<TextView>(Resource.Id.RessourceName);
+            rName.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementM);
+            rName.Text = res.Name;
+
+
             FindViewById<ImageView>(Resource.Id.RessourceBild).SetImageResource(res.Image);
             //FindViewById<TextView>(Resource.Id.RessourceType).Text = res.Type.ToString();
             FindViewById<TextView>(Resource.Id.RessourceType).Text = Funktionen.ShowEnumLabel(res.Type);

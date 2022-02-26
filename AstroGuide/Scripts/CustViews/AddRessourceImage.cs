@@ -6,6 +6,7 @@ using Android.Views;
 using Android.Widget;
 using AndroidX.RecyclerView.Widget;
 using AstroGuide.Scripts.Planeten;
+using AstroGuide.Scripts.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,11 +34,10 @@ namespace AstroGuide.Scripts.CustViews
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             ViewHolder vh = holder as ViewHolder;
-            //vh.Image.SetImageResource(Karten[position].Image);
-
-            //vh.Image.SetImageDrawable(Generatecard(Karten[position].Nummer, Karten[position].Image));
-
             vh.Image.SetImageResource(Items[position]);
+            var para = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, Einstellungen.TextSizeListOffset / Einstellungen.RecImageSize);
+            para.BottomMargin = 90;
+            vh.Image.LayoutParameters = para; //new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, Einstellungen.TextSizeListOffset / Einstellungen.RecImageSize);
 
             vh.SetItemClickListener(this);
         }

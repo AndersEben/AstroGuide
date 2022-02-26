@@ -27,7 +27,10 @@ namespace AstroGuide
 
             var plan = PlanetenTest.FindPlanet(Intent.GetStringExtra("Planet"));
 
-            FindViewById<TextView>(Resource.Id.PlanetName).Text = plan.Name;
+            var pName = FindViewById<TextView>(Resource.Id.PlanetName);
+            pName.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementM);
+            pName.Text = plan.Name;
+
             FindViewById<ImageView>(Resource.Id.PlanetBild).SetImageResource(plan.Image);
             FindViewById<TextView>(Resource.Id.PlanetType).Text = plan.Typ;
             FindViewById<TextView>(Resource.Id.PlanetSize).Text = plan.Groesse.ToString();

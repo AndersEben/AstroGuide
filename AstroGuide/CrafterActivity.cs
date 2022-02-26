@@ -50,7 +50,9 @@ namespace AstroGuide
                 this.StartActivity(intent);
             };
 
-            FindViewById<TextView>(Resource.Id.CraftName).Text = craf.Name;
+            var cName = FindViewById<TextView>(Resource.Id.CraftName);
+            cName.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementM);
+            cName.Text = craf.Name;
 
             FindViewById<ImageView>(Resource.Id.CraftBild).SetImageResource(craf.Image);
 
