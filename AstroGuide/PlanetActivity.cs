@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
+using AndroidX.RecyclerView.Widget;
 using AstroGuide.Scripts;
 using AstroGuide.Scripts.CustViews;
 using AstroGuide.Scripts.Settings;
@@ -31,7 +32,31 @@ namespace AstroGuide
             pName.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementM);
             pName.Text = plan.Name;
 
-            FindViewById<ImageView>(Resource.Id.PlanetBild).SetImageResource(plan.Image);
+            if (plan.Images != null)
+            {
+                var imageholder = FindViewById<RecyclerView>(Resource.Id.PlanteImageViewer);
+
+                RecyclerView.LayoutManager mLayoutManager2 = new LinearLayoutManager(this, LinearLayoutManager.Horizontal, false);
+                imageholder.SetLayoutManager(mLayoutManager2);
+
+                SnapHelper snapHelper = new PagerSnapHelper();
+                snapHelper.AttachToRecyclerView(imageholder);
+
+                AddRessourceImage mAdapter2 = new AddRessourceImage(this, plan.Images);
+                mAdapter2.onItemClick += (o, e) =>
+                {
+                    var ad = new AndroidX.AppCompat.App.AlertDialog.Builder(this).Create();
+                    ad.SetView(LayoutInflater.Inflate(Resource.Layout.imagePopup, null, false));
+
+                    ad.Show();
+                    ad.FindViewById<ImageView>(Resource.Id.PopupImageView).SetImageResource(e.Picture);
+                };
+
+                imageholder.SetAdapter(mAdapter2);
+
+            }
+
+
             FindViewById<TextView>(Resource.Id.PlanetType).Text = plan.Typ;
             FindViewById<TextView>(Resource.Id.PlanetSize).Text = plan.Groesse.ToString();
             FindViewById<TextView>(Resource.Id.PlanetDiff).Text = plan.Schwierigkeitsgrad.ToString();

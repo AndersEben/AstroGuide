@@ -111,6 +111,7 @@
     <Compile Include="Scripts\GalastropodenTest.cs" />
     <Compile Include="Scripts\GTerrarium.cs" />
     <Compile Include="Scripts\IItemClickListenener.cs" />
+    <Compile Include="Scripts\ImageEventArgs.cs" />
     <Compile Include="Scripts\MaterialTest.cs" />
     <Compile Include="Scripts\Pflanze.cs" />
     <Compile Include="Scripts\PflanzenTest.cs" />
@@ -870,6 +871,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Nugget_Zinkblende.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\imagePopup.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

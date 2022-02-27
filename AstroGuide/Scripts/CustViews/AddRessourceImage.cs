@@ -37,7 +37,7 @@ namespace AstroGuide.Scripts.CustViews
             vh.Image.SetImageResource(Items[position]);
             var para = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, Einstellungen.TextSizeListOffset / Einstellungen.RecImageSize);
             para.BottomMargin = 90;
-            vh.Image.LayoutParameters = para; //new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, Einstellungen.TextSizeListOffset / Einstellungen.RecImageSize);
+            vh.Image.LayoutParameters = para;
 
             vh.SetItemClickListener(this);
         }
@@ -45,8 +45,9 @@ namespace AstroGuide.Scripts.CustViews
         public void onClick(View itemView, int position, bool isLongClick)
         {
             Console.WriteLine(isLongClick.ToString());
-            //EventHandler<ImageTestEventArgs> handler = onItemClick;
-            //handler?.Invoke(this, new ImageTestEventArgs(itemView, position, isLongClick, Karten[position]));
+            
+            EventHandler<ImageEventArgs> handler = onItemClick;
+            handler?.Invoke(this, new ImageEventArgs(itemView, position, isLongClick, Items[position]));
         }
 
         public void removeView(int position)
@@ -59,7 +60,7 @@ namespace AstroGuide.Scripts.CustViews
             //Karten.Add(karte);
         }
 
-        //public event EventHandler<ImageTestEventArgs> onItemClick;
+        public event EventHandler<ImageEventArgs> onItemClick;
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {

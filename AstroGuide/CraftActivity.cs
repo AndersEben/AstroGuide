@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
+using AndroidX.RecyclerView.Widget;
 using AstroGuide.Scripts;
 using AstroGuide.Scripts.CustViews;
 using AstroGuide.Scripts.Settings;
@@ -56,7 +57,31 @@ namespace AstroGuide
             cName.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementM);
             cName.Text = craf.Name;
 
-            FindViewById<ImageView>(Resource.Id.CraftBild).SetImageResource(craf.Image);
+            //FindViewById<ImageView>(Resource.Id.CraftBild).SetImageResource(craf.Image);
+
+            if (craf.Images != null)
+            {
+                var imageholder = FindViewById<RecyclerView>(Resource.Id.CraftImageViewer);
+
+                RecyclerView.LayoutManager mLayoutManager2 = new LinearLayoutManager(this, LinearLayoutManager.Horizontal, false);
+                imageholder.SetLayoutManager(mLayoutManager2);
+
+                SnapHelper snapHelper = new PagerSnapHelper();
+                snapHelper.AttachToRecyclerView(imageholder);
+
+                AddRessourceImage mAdapter2 = new AddRessourceImage(this, craf.Images);
+                mAdapter2.onItemClick += (o, e) =>
+                {
+                    var ad = new AndroidX.AppCompat.App.AlertDialog.Builder(this).Create();
+                    ad.SetView(LayoutInflater.Inflate(Resource.Layout.imagePopup, null, false));
+
+                    ad.Show();
+                    ad.FindViewById<ImageView>(Resource.Id.PopupImageView).SetImageResource(e.Picture);
+                };
+
+                imageholder.SetAdapter(mAdapter2);
+
+            }
 
             FindViewById<TextView>(Resource.Id.CraftBeschreibung).Text = craf.Description;
             FindViewById<TextView>(Resource.Id.CWert).Text = craf.Forschungskosten.ToString() + " Bytes";

@@ -21,8 +21,8 @@ namespace AstroGuide.Scripts.CustViews
         {
 
             Image = itemView.FindViewById<ImageView>(Resource.Id.ResImageHolder);
-            //itemView.SetOnClickListener(this);
-            //itemView.SetOnLongClickListener(this);
+            itemView.SetOnClickListener(this);
+            itemView.SetOnLongClickListener(this);
         }
 
         public void SetItemClickListener(IItemClickListenener clicklistener)

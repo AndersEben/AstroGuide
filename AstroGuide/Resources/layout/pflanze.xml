@@ -25,7 +25,15 @@
                 android:layout_height="250px"
                 android:src="@drawable/icon_quartz"
                 android:layout_marginBottom="70px"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="horizontal"
+                android:layout_marginTop="50px"
+                android:layout_marginBottom="70px"
+                android:id="@+id/PflanzeImageViewer"/>
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

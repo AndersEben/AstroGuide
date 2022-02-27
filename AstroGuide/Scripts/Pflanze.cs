@@ -16,6 +16,7 @@ namespace AstroGuide.Scripts
         public string Name { get; }
         public PlantType Typ { get; }
         public int Image { get; set; }
+        public List<int> Images { get; set; }
 
         public string Beschreibung { get; set; }
 
@@ -24,6 +25,11 @@ namespace AstroGuide.Scripts
             this.Name = name;
             this.Typ = type;
             this.Image = image;
+            this.Images = new List<int>() { image };
+        }
+        public void AddImage(int image)
+        {
+            this.Images.Add(image);
         }
 
         public void SetDescription(string text)

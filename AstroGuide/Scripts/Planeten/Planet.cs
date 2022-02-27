@@ -30,6 +30,7 @@ namespace AstroGuide.Scripts.Planeten
         public Galastropode Galastro { get; set; }
 
         public int Image { get; set; }
+        public List<int> Images { get; set; }
 
         public Planet(string name, string type, PlanetSize groesse, Difficulty diff, int image,Ressource res)
         {
@@ -38,7 +39,13 @@ namespace AstroGuide.Scripts.Planeten
             this.Groesse = groesse;
             this.Schwierigkeitsgrad = diff;
             this.Image = image;
+            this.Images = new List<int>() { image };
             this.PortalElement = res;
+        }
+
+        public void AddImage(int image)
+        {
+            this.Images.Add(image);
         }
 
         public void SetEnergie(List<Energie> quellen)

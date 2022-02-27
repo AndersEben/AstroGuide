@@ -94,7 +94,17 @@ namespace AstroGuide
                 snapHelper.AttachToRecyclerView(imageholder);
 
                 AddRessourceImage mAdapter2 = new AddRessourceImage(this, galast.Images);
+                mAdapter2.onItemClick += (o, e) =>
+                {
+                    var ad = new AndroidX.AppCompat.App.AlertDialog.Builder(this).Create();
+                    ad.SetView(LayoutInflater.Inflate(Resource.Layout.imagePopup, null, false));
+                    
+                    ad.Show();
+                    ad.FindViewById<ImageView>(Resource.Id.PopupImageView).SetImageResource(e.Picture);
+                };
+
                 imageholder.SetAdapter(mAdapter2);
+
             }
 
         }

@@ -15,6 +15,7 @@ namespace AstroGuide.Scripts
     {
         public string Name { get; set; }
         public int Image { get; set; }
+        public List<int> Images { get; set; }
 
         public List<Ressource> Rezept { get; set; }
         public Crafter Hersteller { get; set; }
@@ -28,6 +29,7 @@ namespace AstroGuide.Scripts
         {
             this.Name = name;
             this.Image = image;
+            this.Images = new List<int>() { image };
             this.Forschungskosten = forschungskosten;
             
         }
@@ -36,9 +38,15 @@ namespace AstroGuide.Scripts
         {
             this.Name = name;
             this.Image = image;
+            this.Images = new List<int>() { image };
             this.Forschungskosten = forschungskosten;
             this.Typ = typ;
             this.Forschungsebene = ebene;
+        }
+
+        public void AddImage(int image)
+        {
+            this.Images.Add(image);
         }
 
         public void SetDescription(string text)
