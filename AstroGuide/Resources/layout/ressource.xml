@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:id="@+id/toolbar1">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="100px"
+                    android:layout_height="100px"
+                    android:paddingRight="25px"
+                    android:layout_gravity="left | center_vertical"
+                    android:src="@drawable/backbutton"
+                android:id="@+id/TBImageLeft"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@android:color/white"
+                    android:text="test"
+                    android:textSize="85px"
+                    android:layout_gravity="center"
+                    android:id="@+id/TBTextCenter"/>
+                <ImageView
+                    android:layout_width="100px"
+                    android:layout_height="100px"
+                    android:layout_gravity="right | center_vertical"
+                    android:paddingRight="25px"
+                    android:src="@drawable/homebutton"
+                    android:id="@+id/TBImageRight"/>
+            </FrameLayout>
+        </androidx.appcompat.widget.Toolbar>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -212,4 +249,5 @@
     </RelativeLayout>
         </LinearLayout>
     </ScrollView>
+</LinearLayout>
 </LinearLayout>

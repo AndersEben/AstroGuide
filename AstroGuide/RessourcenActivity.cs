@@ -15,7 +15,7 @@ using System.Text;
 
 namespace AstroGuide
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.CustTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class RessourcenActivity : AppCompatActivity
     {
         private RelativeLayout SetRelativeLayout(string name)
@@ -103,17 +103,70 @@ namespace AstroGuide
         }
 
 
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
 
-            LinearLayout LL = new LinearLayout(this);
+            LinearLayout TBLL = new LinearLayout(this);
             LinearLayout.LayoutParams Lparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
+            TBLL.LayoutParameters = Lparam;
+            TBLL.Orientation = Orientation.Vertical;
+
+            Toolbar ToolBar = new Toolbar(this);
+            var toolbarparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
+            ToolBar.Background = Resources.GetDrawable(Resource.Color.colorPrimary);
+            ToolBar.LayoutParameters = toolbarparam;
+            ToolBar.SetContentInsetsAbsolute(10, 10);
+            ToolBar.ContentInsetStartWithNavigation = 0;
+
+            TBLL.AddView(ToolBar);
+
+            FrameLayout TBFrameLayout = new FrameLayout(this);
+            var FrameLparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
+            TBFrameLayout.LayoutParameters = FrameLparam;
+            ToolBar.AddView(TBFrameLayout);
+
+
+
+            FrameLayout.LayoutParams ImageparamLeft = new FrameLayout.LayoutParams(100, 100);
+            ImageView TBImageLeft = new ImageView(this);
+            ImageparamLeft.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
+            TBImageLeft.LayoutParameters = ImageparamLeft;
+            TBImageLeft.SetImageResource(Resource.Drawable.backbutton);
+            TBFrameLayout.AddView(TBImageLeft);
+            TBImageLeft.Click += (o, e) =>
+            {
+                base.OnBackPressed();
+            };
+
+            FrameLayout.LayoutParams Textparam = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WrapContent, FrameLayout.LayoutParams.MatchParent);
+            TextView TBText = new TextView(this);
+            Textparam.Gravity = GravityFlags.Center;
+            TBText.LayoutParameters = Textparam;
+            TBText.SetTextColor(Android.Graphics.Color.White);
+            TBText.SetTextSize(Android.Util.ComplexUnitType.Px, 85);
+            TBFrameLayout.AddView(TBText);
+
+            FrameLayout.LayoutParams ImageparamRight = new FrameLayout.LayoutParams(100, 100);
+            ImageView TBImageRight = new ImageView(this);
+            ImageparamRight.Gravity = GravityFlags.Right | GravityFlags.CenterVertical;
+            TBImageRight.LayoutParameters = ImageparamRight;
+            TBImageRight.SetImageResource(Resource.Drawable.homebutton);
+            TBFrameLayout.AddView(TBImageRight);
+            TBImageRight.Click += (o, e) =>
+            {
+                FinishAffinity();
+                Intent intent = new Intent(this, typeof(MainActivity));
+                this.StartActivity(intent);
+            };
+
+
+            LinearLayout LL = new LinearLayout(this);
             LL.LayoutParameters = Lparam;
             LL.Orientation = Orientation.Vertical;
+            TBLL.AddView(LL);
 
             TextView txtv = new TextView(this);
             var param = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
@@ -122,7 +175,8 @@ namespace AstroGuide
             txtv.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_HeaderSize);
             
             txtv.Text = "Ressourcen";
-            
+            TBText.Text = "Ressourcen";
+
             txtv.SetPadding(Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip, Einstellungen.TXT_pixel10dip);
             txtv.Gravity = GravityFlags.Center;
 
@@ -142,7 +196,7 @@ namespace AstroGuide
             SV.AddView(SVLL);
 
 
-            SetContentView(LL);
+            SetContentView(TBLL);
 
 
 

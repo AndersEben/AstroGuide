@@ -27,12 +27,26 @@ namespace AstroGuide
 
             SetContentView(Resource.Layout.pflanze);
 
+            var plant = PflanzenTest.FindPLant(Intent.GetStringExtra("Pflanze"));
+
+
             var TBText = FindViewById<TextView>(Resource.Id.TBTextCenter);
+            TBText.Text = plant.Name;
 
             var TBImageRigth = FindViewById<ImageView>(Resource.Id.TBImageRight);
-            var TBImageLeft = FindViewById<ImageView>(Resource.Id.TBImageLeft);
+            TBImageRigth.Click += (o, e) =>
+            {
+                FinishAffinity();
+                Intent intent = new Intent(this, typeof(MainActivity));
+                this.StartActivity(intent);
+            };
 
-            var plant = PflanzenTest.FindPLant(Intent.GetStringExtra("Pflanze"));
+            var TBImageLeft = FindViewById<ImageView>(Resource.Id.TBImageLeft);
+            TBImageLeft.Click += (o, e) =>
+            {
+                base.OnBackPressed();
+            };
+
 
             var pName = FindViewById<TextView>(Resource.Id.PflanzeName);
             pName.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementM);

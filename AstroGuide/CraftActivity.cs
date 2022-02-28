@@ -16,7 +16,7 @@ using System.Text;
 
 namespace AstroGuide
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.CustTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class CraftActivity : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
