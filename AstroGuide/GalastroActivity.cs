@@ -28,6 +28,23 @@ namespace AstroGuide
 
             var galast = GalastropodenTest.FindGalast(Intent.GetStringExtra("Galastropode"));
 
+            var TBText = FindViewById<TextView>(Resource.Id.TBTextCenter);
+            TBText.Text = galast.Name;
+
+            var TBImageRigth = FindViewById<ImageView>(Resource.Id.TBImageRight);
+            TBImageRigth.Click += (o, e) =>
+            {
+                FinishAffinity();
+                Intent intent = new Intent(this, typeof(MainActivity));
+                this.StartActivity(intent);
+            };
+
+            var TBImageLeft = FindViewById<ImageView>(Resource.Id.TBImageLeft);
+            TBImageLeft.Click += (o, e) =>
+            {
+                base.OnBackPressed();
+            };
+
             var gName = FindViewById<TextView>(Resource.Id.GalastName);
             gName.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementM);
             gName.Text = galast.Name;

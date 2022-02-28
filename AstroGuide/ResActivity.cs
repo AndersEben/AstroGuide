@@ -30,7 +30,25 @@ namespace AstroGuide
 
             var res = MaterialTest.FindRessource(Intent.GetStringExtra("Ressource"));
 
-            if(res.Type != ResType.naturalResource && res.Type != ResType.naturalMineral && res.Type != ResType.atmoRessource && res.Type != ResType.sonstigeRessource)
+            var TBText = FindViewById<TextView>(Resource.Id.TBTextCenter);
+            TBText.Text = res.Name;
+
+            var TBImageRigth = FindViewById<ImageView>(Resource.Id.TBImageRight);
+            TBImageRigth.Click += (o, e) =>
+            {
+                FinishAffinity();
+                Intent intent = new Intent(this, typeof(MainActivity));
+                this.StartActivity(intent);
+            };
+
+            var TBImageLeft = FindViewById<ImageView>(Resource.Id.TBImageLeft);
+            TBImageLeft.Click += (o, e) =>
+            {
+                base.OnBackPressed();
+            };
+
+
+            if (res.Type != ResType.naturalResource && res.Type != ResType.naturalMineral && res.Type != ResType.atmoRessource && res.Type != ResType.sonstigeRessource)
             {
                 FindViewById<TextView>(Resource.Id.LabelVorkommen).Text = "Rezept :";
 

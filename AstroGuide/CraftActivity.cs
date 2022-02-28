@@ -28,6 +28,23 @@ namespace AstroGuide
 
             var craf = CraftingTest.FindCraft(Intent.GetStringExtra("Craft"));
 
+            var TBText = FindViewById<TextView>(Resource.Id.TBTextCenter);
+            TBText.Text = craf.Name;
+
+            var TBImageRigth = FindViewById<ImageView>(Resource.Id.TBImageRight);
+            TBImageRigth.Click += (o, e) =>
+            {
+                FinishAffinity();
+                Intent intent = new Intent(this, typeof(MainActivity));
+                this.StartActivity(intent);
+            };
+
+            var TBImageLeft = FindViewById<ImageView>(Resource.Id.TBImageLeft);
+            TBImageLeft.Click += (o, e) =>
+            {
+                base.OnBackPressed();
+            };
+
             var LHer = FindViewById<ListView>(Resource.Id.CLHerstellung);
             LHer.Adapter = new AddRezept(this, craf.Rezept);
             LHer.LayoutParameters.Height = (craf.Rezept.Count * Einstellungen.ListItemHeight);
