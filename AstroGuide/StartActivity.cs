@@ -280,6 +280,40 @@ namespace AstroGuide
             MaterialTest.exo_chip.SetDescription("");
 
         }
+        private void CreatePflanzen()
+        {
+
+            PflanzenTest.Knallkoralle.SetDescription("");
+            PflanzenTest.Dolchwurzel.SetDescription("");
+            PflanzenTest.Keuchkraut.SetDescription("");
+            PflanzenTest.Stachellilie.SetDescription("");
+            PflanzenTest.Peitschenblatt.SetDescription("");
+            PflanzenTest.Huepfranke.SetDescription("");
+            PflanzenTest.Distelgerte.SetDescription("");
+
+            PflanzenTest.Zischrebe.SetDescription("");
+            PflanzenTest.Knalloon.SetDescription("");
+            PflanzenTest.Katapflanze.SetDescription("");
+            PflanzenTest.Attaktus.SetDescription("");
+            PflanzenTest.Spuckblume.SetDescription("");
+            
+            /*
+            PflanzenTest.Knallkoralle.AddImage();
+            PflanzenTest.Dolchwurzel.AddImage();
+            PflanzenTest.Keuchkraut.AddImage();
+            PflanzenTest.Stachellilie.AddImage();
+            PflanzenTest.Peitschenblatt.AddImage();
+            PflanzenTest.Huepfranke.AddImage();
+            PflanzenTest.Distelgerte.AddImage();
+
+            PflanzenTest.Zischrebe.AddImage();
+            PflanzenTest.Knalloon.AddImage();
+            PflanzenTest.Katapflanze.AddImage();
+            PflanzenTest.Attaktus.AddImage();
+            PflanzenTest.Spuckblume.AddImage(); 
+            */
+
+        }
 
         private void CreateCrafting()
         {

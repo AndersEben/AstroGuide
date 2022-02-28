@@ -28,28 +28,53 @@ namespace AstroGuide
 
             var craf = CraftingTest.FindCrafter(Intent.GetStringExtra("Crafter"));
 
-            var LHer = FindViewById<ListView>(Resource.Id.CLHerstellung);
-            LHer.Adapter = new AddRezept(this, craf.Rezept);
-            LHer.LayoutParameters.Height = (craf.Rezept.Count * Einstellungen.ListItemHeight);
-            LHer.ItemClick += (o, e) =>
+            if(craf.Rezept != null)
             {
-                var item = LHer.Adapter as AddRezept;
-                var ress = item[e.Position];
+                var LHer = FindViewById<ListView>(Resource.Id.CLHerstellung);
+                LHer.Adapter = new AddRezept(this, craf.Rezept);
+                LHer.LayoutParameters.Height = (craf.Rezept.Count * Einstellungen.ListItemHeight);
+                LHer.ItemClick += (o, e) =>
+                {
+                    var item = LHer.Adapter as AddRezept;
+                    var ress = item[e.Position];
 
-                Intent intent = new Intent(this, typeof(ResActivity));
-                intent.PutExtra("Ressource", ress.Name);
-                this.StartActivity(intent);
-            };
-
-
-            var txtHersteller = FindViewById<TextView>(Resource.Id.CraftHerstellung);
-            txtHersteller.Text = craf.Hersteller.Name;
-            txtHersteller.Click += (o, e) =>
+                    Intent intent = new Intent(this, typeof(ResActivity));
+                    intent.PutExtra("Ressource", ress.Name);
+                    this.StartActivity(intent);
+                };
+            }
+            else
             {
-                Intent intent = new Intent(this, typeof(CrafterActivity));
-                intent.PutExtra("Crafter", craf.Hersteller.Name);
-                this.StartActivity(intent);
-            };
+                FindViewById<TextView>(Resource.Id.RLCraftRezept).Visibility = ViewStates.Gone;
+            }
+            
+
+
+            if(craf.Hersteller.Name != craf.Name)
+            {
+                var txtHersteller = FindViewById<TextView>(Resource.Id.CraftHerstellung);
+                txtHersteller.Text = craf.Hersteller.Name;
+                txtHersteller.Click += (o, e) =>
+                {
+                    Intent intent = new Intent(this, typeof(CrafterActivity));
+                    intent.PutExtra("Crafter", craf.Hersteller.Name);
+                    this.StartActivity(intent);
+                };
+
+                var imgHersteller = FindViewById<ImageView>(Resource.Id.CraftHerstellungImage);
+                imgHersteller.SetImageResource(craf.Hersteller.Image);
+                imgHersteller.Click += (o, e) =>
+                {
+                    Intent intent = new Intent(this, typeof(CrafterActivity));
+                    intent.PutExtra("Crafter", craf.Hersteller.Name);
+                    this.StartActivity(intent);
+                };
+            }
+            else
+            {
+                FindViewById<TextView>(Resource.Id.RLCraftHerstellungsort).Visibility = ViewStates.Gone;
+            }
+            
 
             var cName = FindViewById<TextView>(Resource.Id.CraftName);
             cName.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementM);
@@ -81,7 +106,7 @@ namespace AstroGuide
 
             }
 
-            FindViewById<TextView>(Resource.Id.CWert).Text = "0 Bytes";
+            FindViewById<TextView>(Resource.Id.CWert).Text = "nicht erforschbar";
 
             FindViewById<TextView>(Resource.Id.CraftBeschreibung).Text = craf.Description;
 

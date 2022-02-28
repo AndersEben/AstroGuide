@@ -16,7 +16,7 @@ using System.Text;
 
 namespace AstroGuide
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.CustTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class PflanzeActivity : AppCompatActivity
     {
 
@@ -26,6 +26,11 @@ namespace AstroGuide
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
             SetContentView(Resource.Layout.pflanze);
+
+            var TBText = FindViewById<TextView>(Resource.Id.TBTextCenter);
+
+            var TBImageRigth = FindViewById<ImageView>(Resource.Id.TBImageRight);
+            var TBImageLeft = FindViewById<ImageView>(Resource.Id.TBImageLeft);
 
             var plant = PflanzenTest.FindPLant(Intent.GetStringExtra("Pflanze"));
 
@@ -75,7 +80,6 @@ namespace AstroGuide
                 imageholder.SetAdapter(mAdapter2);
 
             }
-
 
         }
 

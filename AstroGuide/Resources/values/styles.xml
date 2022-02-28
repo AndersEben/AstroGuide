@@ -17,4 +17,12 @@
 		<item name="android:windowActionBar">true</item>
 	</style>
 
+	<style name="AppTheme.CustTheme" parent="Theme.AppCompat.Light.NoActionBar">
+		<!-- Customize your theme here. -->
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowFullscreen">false</item>
+		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowActionBar">true</item>
+	</style>
+
 </resources>

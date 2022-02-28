@@ -38,6 +38,11 @@ namespace AstroGuide.Scripts.CustViews
             return position;
         }
 
+        public Trade GetTrade(int position)
+        {
+            return Items[position];
+        }
+
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             var item = Items[position];

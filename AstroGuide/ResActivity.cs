@@ -284,7 +284,33 @@ namespace AstroGuide
                 LVork.LayoutParameters.Height = (res.Tauschen.Count * Einstellungen.ListItemHeight);
                 LVork.ItemClick += (o, e) =>
                 {
+                    var verw = LVork.Adapter as AddTrade;
+                    var type = verw.GetTrade(e.Position);
 
+                    switch (type.Typ)
+                    {
+                        case VerwendungsTyp.Ressource:
+                            Intent intent = new Intent(this, typeof(ResActivity));
+                            intent.PutExtra("Ressource", type.Item);
+                            this.StartActivity(intent);
+                            break;
+                        case VerwendungsTyp.Crafter:
+                            Intent intent2 = new Intent(this, typeof(CrafterActivity));
+                            intent2.PutExtra("Crafter", type.Item);
+                            this.StartActivity(intent2);
+                            break;
+                        case VerwendungsTyp.Craft:
+                            Intent intent3 = new Intent(this, typeof(CraftActivity));
+                            intent3.PutExtra("Craft", type.Item);
+                            this.StartActivity(intent3);
+                            break;
+                        case VerwendungsTyp.Pflanze:
+                            break;
+                        case VerwendungsTyp.Galastropode:
+                            break;
+                        case VerwendungsTyp.Planet:
+                            break;
+                    }
                 };
             }
 
