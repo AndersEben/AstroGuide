@@ -2,6 +2,7 @@
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
 
@@ -13,7 +14,7 @@ using System.Collections.Generic;
 
 namespace AstroGuide
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.MainTheme", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class MainActivity : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -23,15 +24,40 @@ namespace AstroGuide
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
 
-            //SetContentView(Resource.Layout.start);
+            LinearLayout TBLL = new LinearLayout(this);
+            LinearLayout.LayoutParams Lparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
+            TBLL.LayoutParameters = Lparam;
+            TBLL.Orientation = Orientation.Vertical;
+
+            Toolbar ToolBar = new Toolbar(this);
+            var toolbarparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
+            ToolBar.Background = Resources.GetDrawable(Resource.Color.colorPrimary);
+            ToolBar.LayoutParameters = toolbarparam;
+            ToolBar.SetContentInsetsAbsolute(10, 10);
+            ToolBar.ContentInsetStartWithNavigation = 0;
+
+            TBLL.AddView(ToolBar);
+
+            FrameLayout TBFrameLayout = new FrameLayout(this);
+            var FrameLparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
+            TBFrameLayout.LayoutParameters = FrameLparam;
+            ToolBar.AddView(TBFrameLayout);
 
 
-            //var LL = FindViewById<LinearLayout>(Resource.Id.MainTestLayout);
+            FrameLayout.LayoutParams Textparam = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WrapContent, FrameLayout.LayoutParams.MatchParent);
+            TextView TBText = new TextView(this);
+            Textparam.Gravity = GravityFlags.Center;
+            TBText.LayoutParameters = Textparam;
+            TBText.SetTextColor(Android.Graphics.Color.White);
+            TBText.SetTextSize(Android.Util.ComplexUnitType.Px, 85);
+            TBFrameLayout.AddView(TBText);
+
 
             LinearLayout LL = new LinearLayout(this);
             LL.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
             LL.Orientation = Orientation.Vertical;
-
+            LL.SetPadding(0, 55, 0, 0);
+            TBLL.AddView(LL);
 
 
             var buttonParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent);
@@ -110,6 +136,8 @@ namespace AstroGuide
                 this.StartActivity(intent);
             };
 
+            TBText.Text = "Hauptmenü";
+
             LL.AddView(PlanetenButton);
             LL.AddView(ressourcenButton);
             LL.AddView(craftingButton);
@@ -117,7 +145,7 @@ namespace AstroGuide
             LL.AddView(galastroButton);
             LL.AddView(searchButton);
 
-            SetContentView(LL);
+            SetContentView(TBLL);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
