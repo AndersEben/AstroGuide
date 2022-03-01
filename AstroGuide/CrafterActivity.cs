@@ -46,7 +46,7 @@ namespace AstroGuide
             };
 
 
-            if (craf.Rezept != null)
+            if (craf.Rezept.Count > 0)
             {
                 var LHer = FindViewById<ListView>(Resource.Id.CLHerstellung);
                 LHer.Adapter = new AddRezept(this, craf.Rezept);
@@ -63,7 +63,7 @@ namespace AstroGuide
             }
             else
             {
-                FindViewById<TextView>(Resource.Id.RLCraftRezept).Visibility = ViewStates.Gone;
+                FindViewById<RelativeLayout>(Resource.Id.RLCraftRezept).Visibility = ViewStates.Gone;
             }
             
 
@@ -90,7 +90,7 @@ namespace AstroGuide
             }
             else
             {
-                FindViewById<TextView>(Resource.Id.RLCraftHerstellungsort).Visibility = ViewStates.Gone;
+                FindViewById<RelativeLayout>(Resource.Id.RLCraftHerstellungsort).Visibility = ViewStates.Gone;
             }
             
 
