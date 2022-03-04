@@ -29,9 +29,11 @@ namespace AstroGuide
             var galast = GalastropodenTest.FindGalast(Intent.GetStringExtra("Galastropode"));
 
             var TBText = FindViewById<TextView>(Resource.Id.TBTextCenter);
+            TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementXL);
             TBText.Text = galast.Name;
 
             var TBImageRigth = FindViewById<ImageView>(Resource.Id.TBImageRight);
+            TBImageRigth.LayoutParameters = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / Einstellungen.TB_Image, Einstellungen.TextSizeListOffset / Einstellungen.TB_Image);
             TBImageRigth.Click += (o, e) =>
             {
                 FinishAffinity();
@@ -40,6 +42,7 @@ namespace AstroGuide
             };
 
             var TBImageLeft = FindViewById<ImageView>(Resource.Id.TBImageLeft);
+            TBImageLeft.LayoutParameters = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / Einstellungen.TB_Image, Einstellungen.TextSizeListOffset / Einstellungen.TB_Image);
             TBImageLeft.Click += (o, e) =>
             {
                 base.OnBackPressed();

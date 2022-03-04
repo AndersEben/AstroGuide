@@ -47,11 +47,11 @@ namespace AstroGuide
 
 
 
-            FrameLayout.LayoutParams ImageparamLeft = new FrameLayout.LayoutParams(100, 100);
+            FrameLayout.LayoutParams ImageparamLeft = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / Einstellungen.TB_Image, Einstellungen.TextSizeListOffset / Einstellungen.TB_Image);
             ImageView TBImageLeft = new ImageView(this);
             ImageparamLeft.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
             TBImageLeft.LayoutParameters = ImageparamLeft;
-            TBImageLeft.SetImageResource(Resource.Drawable.backbutton);
+            TBImageLeft.SetImageResource(Resource.Drawable.backbutton_white);
             TBFrameLayout.AddView(TBImageLeft);
             TBImageLeft.Click += (o, e) =>
             {
@@ -66,11 +66,11 @@ namespace AstroGuide
             TBText.SetTextSize(Android.Util.ComplexUnitType.Px, 85);
             TBFrameLayout.AddView(TBText);
 
-            FrameLayout.LayoutParams ImageparamRight = new FrameLayout.LayoutParams(100, 100);
+            FrameLayout.LayoutParams ImageparamRight = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / Einstellungen.TB_Image, Einstellungen.TextSizeListOffset / Einstellungen.TB_Image);
             ImageView TBImageRight = new ImageView(this);
             ImageparamRight.Gravity = GravityFlags.Right | GravityFlags.CenterVertical;
             TBImageRight.LayoutParameters = ImageparamRight;
-            TBImageRight.SetImageResource(Resource.Drawable.homebutton);
+            TBImageRight.SetImageResource(Resource.Drawable.homebutton_white);
             TBFrameLayout.AddView(TBImageRight);
             TBImageRight.Click += (o, e) =>
             {

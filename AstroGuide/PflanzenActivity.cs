@@ -89,13 +89,25 @@ namespace AstroGuide
 
             RL.Click += (o, e) =>
             {
-                if (lv.Visibility == ViewStates.Gone)
+                for (int i = 0; i < RL.ChildCount; i++)
                 {
-                    lv.Visibility = ViewStates.Visible;
-                }
-                else
-                {
-                    lv.Visibility = ViewStates.Gone;
+                    if (RL.GetChildAt(i).GetType() == typeof(ImageView))
+                    {
+                        var image = (ImageView)RL.GetChildAt(i);
+
+                        if (lv.Visibility == ViewStates.Gone)
+                        {
+                            image.SetImageResource(Resource.Drawable.minus);
+                            lv.Visibility = ViewStates.Visible;
+                        }
+                        else
+                        {
+                            image.SetImageResource(Resource.Drawable.plus);
+                            lv.Visibility = ViewStates.Gone;
+                        }
+
+                        break;
+                    }
                 }
             };
 
@@ -131,11 +143,11 @@ namespace AstroGuide
 
 
 
-            FrameLayout.LayoutParams ImageparamLeft = new FrameLayout.LayoutParams(100,100);
+            FrameLayout.LayoutParams ImageparamLeft = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / Einstellungen.TB_Image, Einstellungen.TextSizeListOffset / Einstellungen.TB_Image);
             ImageView TBImageLeft = new ImageView(this);
             ImageparamLeft.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
             TBImageLeft.LayoutParameters = ImageparamLeft;
-            TBImageLeft.SetImageResource(Resource.Drawable.backbutton);
+            TBImageLeft.SetImageResource(Resource.Drawable.backbutton_white);
             TBFrameLayout.AddView(TBImageLeft);
             TBImageLeft.Click += (o, e) =>
             {
@@ -147,14 +159,14 @@ namespace AstroGuide
             Textparam.Gravity = GravityFlags.Center;
             TBText.LayoutParameters = Textparam;
             TBText.SetTextColor(Android.Graphics.Color.White);
-            TBText.SetTextSize(Android.Util.ComplexUnitType.Px, 85);
+            TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementXL);
             TBFrameLayout.AddView(TBText);
 
-            FrameLayout.LayoutParams ImageparamRight = new FrameLayout.LayoutParams(100,100);
+            FrameLayout.LayoutParams ImageparamRight = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / Einstellungen.TB_Image, Einstellungen.TextSizeListOffset / Einstellungen.TB_Image);
             ImageView TBImageRight = new ImageView(this);
             ImageparamRight.Gravity = GravityFlags.Right | GravityFlags.CenterVertical;
             TBImageRight.LayoutParameters = ImageparamRight;
-            TBImageRight.SetImageResource(Resource.Drawable.homebutton);
+            TBImageRight.SetImageResource(Resource.Drawable.homebutton_white);
             TBFrameLayout.AddView(TBImageRight);
             TBImageRight.Click += (o, e) =>
             {

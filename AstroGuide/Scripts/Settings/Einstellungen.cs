@@ -40,7 +40,7 @@ namespace AstroGuide.Scripts.Settings
 
 
         public static int Margin_M { get; set; } = 15;
-
+        public static int TB_Image { get; set; } = 10;
 
         public static int LL_E1_margin_left { get; set; } = 0;
         public static int LL_E1_margin_right { get; set; } = 0;

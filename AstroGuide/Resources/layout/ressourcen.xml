@@ -17,7 +17,7 @@
                     android:layout_height="100px"
                     android:paddingRight="25px"
                     android:layout_gravity="left | center_vertical"
-                    android:src="@drawable/backbutton"
+                    android:src="@drawable/backbutton_white"
                 android:id="@+id/TBImageLeft"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -32,7 +32,7 @@
                     android:layout_height="100px"
                     android:layout_gravity="right | center_vertical"
                     android:paddingRight="25px"
-                    android:src="@drawable/homebutton"
+                    android:src="@drawable/homebutton_white"
                     android:id="@+id/TBImageRight"/>
             </FrameLayout>
         </androidx.appcompat.widget.Toolbar>

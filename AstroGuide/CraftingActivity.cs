@@ -142,11 +142,11 @@ namespace AstroGuide
 
 
 
-            FrameLayout.LayoutParams ImageparamLeft = new FrameLayout.LayoutParams(100, 100);
+            FrameLayout.LayoutParams ImageparamLeft = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / Einstellungen.TB_Image, Einstellungen.TextSizeListOffset / Einstellungen.TB_Image);
             ImageView TBImageLeft = new ImageView(this);
             ImageparamLeft.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
             TBImageLeft.LayoutParameters = ImageparamLeft;
-            TBImageLeft.SetImageResource(Resource.Drawable.backbutton);
+            TBImageLeft.SetImageResource(Resource.Drawable.backbutton_white);
             TBFrameLayout.AddView(TBImageLeft);
             TBImageLeft.Click += (o, e) =>
             {
@@ -158,14 +158,14 @@ namespace AstroGuide
             Textparam.Gravity = GravityFlags.Center;
             TBText.LayoutParameters = Textparam;
             TBText.SetTextColor(Android.Graphics.Color.White);
-            TBText.SetTextSize(Android.Util.ComplexUnitType.Px, 85);
+            TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementXL);
             TBFrameLayout.AddView(TBText);
 
-            FrameLayout.LayoutParams ImageparamRight = new FrameLayout.LayoutParams(100, 100);
+            FrameLayout.LayoutParams ImageparamRight = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / Einstellungen.TB_Image, Einstellungen.TextSizeListOffset / Einstellungen.TB_Image);
             ImageView TBImageRight = new ImageView(this);
             ImageparamRight.Gravity = GravityFlags.Right | GravityFlags.CenterVertical;
             TBImageRight.LayoutParameters = ImageparamRight;
-            TBImageRight.SetImageResource(Resource.Drawable.homebutton);
+            TBImageRight.SetImageResource(Resource.Drawable.homebutton_white);
             TBFrameLayout.AddView(TBImageRight);
             TBImageRight.Click += (o, e) =>
             {
@@ -280,14 +280,25 @@ namespace AstroGuide
 
             RLcrafter.Click += (o, e) =>
             {
+                for (int i = 0; i < RLcrafter.ChildCount; i++)
+                {
+                    if (RLcrafter.GetChildAt(i).GetType() == typeof(ImageView))
+                    {
+                        var image = (ImageView)RLcrafter.GetChildAt(i);
 
-                if (LLCrafter.Visibility == ViewStates.Gone)
-                {
-                    LLCrafter.Visibility = ViewStates.Visible;
-                }
-                else
-                {
-                    LLCrafter.Visibility = ViewStates.Gone;
+                        if (LLCrafter.Visibility == ViewStates.Gone)
+                        {
+                            image.SetImageResource(Resource.Drawable.minus);
+                            LLCrafter.Visibility = ViewStates.Visible;
+                        }
+                        else
+                        {
+                            image.SetImageResource(Resource.Drawable.plus);
+                            LLCrafter.Visibility = ViewStates.Gone;
+                        }
+
+                        break;
+                    }
                 }
             };
 
@@ -310,6 +321,26 @@ namespace AstroGuide
 
             RLcraft.Click += (o, e) =>
             {
+                for (int i = 0; i < RLcraft.ChildCount; i++)
+                {
+                    if (RLcraft.GetChildAt(i).GetType() == typeof(ImageView))
+                    {
+                        var image = (ImageView)RLcraft.GetChildAt(i);
+
+                        if(Layouts[0].Visibility == ViewStates.Gone)
+                        {
+                            image.SetImageResource(Resource.Drawable.minus);
+                        }
+                        else
+                        {
+                            image.SetImageResource(Resource.Drawable.plus);
+                        }
+
+                        break;
+                    }
+
+                }
+
                 foreach (var item in Layouts)
                 {
                     if (item.Visibility == ViewStates.Gone)

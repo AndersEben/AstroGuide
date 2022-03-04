@@ -49,7 +49,7 @@ namespace AstroGuide
             ImageView TBImageLeft = new ImageView(this);
             ImageparamLeft.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
             TBImageLeft.LayoutParameters = ImageparamLeft;
-            TBImageLeft.SetImageResource(Resource.Drawable.backbutton);
+            TBImageLeft.SetImageResource(Resource.Drawable.backbutton_white);
             TBFrameLayout.AddView(TBImageLeft);
             TBImageLeft.Click += (o, e) =>
             {
@@ -68,7 +68,7 @@ namespace AstroGuide
             ImageView TBImageRight = new ImageView(this);
             ImageparamRight.Gravity = GravityFlags.Right | GravityFlags.CenterVertical;
             TBImageRight.LayoutParameters = ImageparamRight;
-            TBImageRight.SetImageResource(Resource.Drawable.homebutton);
+            TBImageRight.SetImageResource(Resource.Drawable.homebutton_white);
             TBFrameLayout.AddView(TBImageRight);
             TBImageRight.Click += (o, e) =>
             {

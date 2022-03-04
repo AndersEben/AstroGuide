@@ -31,9 +31,13 @@ namespace AstroGuide
             var res = MaterialTest.FindRessource(Intent.GetStringExtra("Ressource"));
 
             var TBText = FindViewById<TextView>(Resource.Id.TBTextCenter);
+            TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementXL);
             TBText.Text = res.Name;
 
             var TBImageRigth = FindViewById<ImageView>(Resource.Id.TBImageRight);
+            FrameLayout.LayoutParams ImageparamRight = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / Einstellungen.TB_Image, Einstellungen.TextSizeListOffset / Einstellungen.TB_Image);
+            ImageparamRight.Gravity = GravityFlags.Right | GravityFlags.CenterVertical;
+            TBImageRigth.LayoutParameters = ImageparamRight;
             TBImageRigth.Click += (o, e) =>
             {
                 FinishAffinity();
@@ -42,6 +46,9 @@ namespace AstroGuide
             };
 
             var TBImageLeft = FindViewById<ImageView>(Resource.Id.TBImageLeft);
+            FrameLayout.LayoutParams ImageparamLeft = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / Einstellungen.TB_Image, Einstellungen.TextSizeListOffset / Einstellungen.TB_Image);
+            ImageparamLeft.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
+            TBImageLeft.LayoutParameters = ImageparamLeft;
             TBImageLeft.Click += (o, e) =>
             {
                 base.OnBackPressed();
@@ -352,6 +359,11 @@ namespace AstroGuide
 
                 imageholder.SetAdapter(mAdapter2);
             }
+
+            var RessLL = FindViewById<LinearLayout>(Resource.Id.RessourceContentLL);
+            ScrollView.LayoutParams para = new ScrollView.LayoutParams(ScrollView.LayoutParams.MatchParent, ScrollView.LayoutParams.WrapContent);
+            para.TopMargin = Einstellungen.TextSizeListOffset / Einstellungen.Margin_M;
+            RessLL.LayoutParameters = para;
 
         }
 

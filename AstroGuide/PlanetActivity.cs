@@ -29,10 +29,13 @@ namespace AstroGuide
             var plan = PlanetenTest.FindPlanet(Intent.GetStringExtra("Planet"));
 
             var TBText = FindViewById<TextView>(Resource.Id.TBTextCenter);
+            TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementXL);
             TBText.Text = plan.Name;
 
             var TBImageRigth = FindViewById<ImageView>(Resource.Id.TBImageRight);
-            TBImageRigth.Click += (o, e) =>
+            FrameLayout.LayoutParams ImageparamRight = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / Einstellungen.TB_Image, Einstellungen.TextSizeListOffset / Einstellungen.TB_Image);
+            ImageparamRight.Gravity = GravityFlags.Right | GravityFlags.CenterVertical;
+            TBImageRigth.LayoutParameters = ImageparamRight; TBImageRigth.Click += (o, e) =>
             {
                 FinishAffinity();
                 Intent intent = new Intent(this, typeof(MainActivity));
@@ -40,6 +43,9 @@ namespace AstroGuide
             };
 
             var TBImageLeft = FindViewById<ImageView>(Resource.Id.TBImageLeft);
+            FrameLayout.LayoutParams ImageparamLeft = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / Einstellungen.TB_Image, Einstellungen.TextSizeListOffset / Einstellungen.TB_Image);
+            ImageparamLeft.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
+            TBImageLeft.LayoutParameters = ImageparamLeft;
             TBImageLeft.Click += (o, e) =>
             {
                 base.OnBackPressed();

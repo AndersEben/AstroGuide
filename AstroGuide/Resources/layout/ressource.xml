@@ -17,7 +17,7 @@
                     android:layout_height="100px"
                     android:paddingRight="25px"
                     android:layout_gravity="left | center_vertical"
-                    android:src="@drawable/backbutton"
+                    android:src="@drawable/backbutton_white"
                 android:id="@+id/TBImageLeft"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -32,7 +32,7 @@
                     android:layout_height="100px"
                     android:layout_gravity="right | center_vertical"
                     android:paddingRight="25px"
-                    android:src="@drawable/homebutton"
+                    android:src="@drawable/homebutton_white"
                     android:id="@+id/TBImageRight"/>
             </FrameLayout>
         </androidx.appcompat.widget.Toolbar>
@@ -48,6 +48,7 @@
         android:text="Placeholder"
         android:layout_gravity="center"
         android:gravity="center"
+        android:visibility="gone"
         android:textSize="55px"/>
     <ScrollView
         android:layout_width="match_parent"
@@ -56,7 +57,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:id="@+id/RessourceContentLL">
     <ImageView
         android:id="@+id/RessourceBild"
         android:layout_width="250px"
