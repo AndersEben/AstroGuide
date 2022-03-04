@@ -45,6 +45,7 @@ namespace AstroGuide
                 base.OnBackPressed();
             };
 
+            var CType = FindViewById<TextView>(Resource.Id.CraftType).Text = "Crafter";
 
             if (craf.Rezept.Count > 0)
             {
@@ -149,6 +150,11 @@ namespace AstroGuide
                 intent.PutExtra("Craft", ress.Name);
                 this.StartActivity(intent);
             };
+
+            var CraftLL = FindViewById<LinearLayout>(Resource.Id.CraftContentLL);
+            ScrollView.LayoutParams para = new ScrollView.LayoutParams(ScrollView.LayoutParams.MatchParent, ScrollView.LayoutParams.WrapContent);
+            para.TopMargin = Einstellungen.TextSizeListOffset / Einstellungen.Margin_M;
+            CraftLL.LayoutParameters = para;
 
         }
 

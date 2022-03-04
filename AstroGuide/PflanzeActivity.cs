@@ -95,6 +95,11 @@ namespace AstroGuide
 
             }
 
+            var PflanzeLL = FindViewById<LinearLayout>(Resource.Id.PflanzeContentLL);
+            ScrollView.LayoutParams para = new ScrollView.LayoutParams(ScrollView.LayoutParams.MatchParent, ScrollView.LayoutParams.WrapContent);
+            para.TopMargin = Einstellungen.TextSizeListOffset / Einstellungen.Margin_M;
+            PflanzeLL.LayoutParameters = para;
+
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

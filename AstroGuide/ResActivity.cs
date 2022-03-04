@@ -279,9 +279,7 @@ namespace AstroGuide
 
 
             FindViewById<ImageView>(Resource.Id.RessourceBild).SetImageResource(res.Image);
-            //FindViewById<TextView>(Resource.Id.RessourceType).Text = res.Type.ToString();
             FindViewById<TextView>(Resource.Id.RessourceType).Text = Funktionen.ShowEnumLabel(res.Type);
-            //FindViewById<TextView>(Resource.Id.RVorkommen).Text = "Sylva";
 
             if(res.Forschungswert <= 0)
             {

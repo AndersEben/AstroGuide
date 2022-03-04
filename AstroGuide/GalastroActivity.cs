@@ -124,6 +124,11 @@ namespace AstroGuide
 
             }
 
+            var GalastLL = FindViewById<LinearLayout>(Resource.Id.GalastroContentLL);
+            ScrollView.LayoutParams para = new ScrollView.LayoutParams(ScrollView.LayoutParams.MatchParent, ScrollView.LayoutParams.WrapContent);
+            para.TopMargin = Einstellungen.TextSizeListOffset / Einstellungen.Margin_M;
+            GalastLL.LayoutParameters = para;
+
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

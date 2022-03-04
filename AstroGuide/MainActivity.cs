@@ -57,7 +57,7 @@ namespace AstroGuide
             LL.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
             LL.Orientation = Orientation.Vertical;
             LL.SetPadding(0, 55, 0, 0);
-            TBLL.AddView(LL);
+            //TBLL.AddView(LL);
 
 
             var buttonParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent);
@@ -144,6 +144,13 @@ namespace AstroGuide
             LL.AddView(pflanzenButton);
             LL.AddView(galastroButton);
             LL.AddView(searchButton);
+
+            ScrollView SV = new ScrollView(this);
+            LinearLayout.LayoutParams SVparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
+            SV.LayoutParameters = SVparam;
+
+            SV.AddView(LL);
+            TBLL.AddView(SV);
 
             SetContentView(TBLL);
         }

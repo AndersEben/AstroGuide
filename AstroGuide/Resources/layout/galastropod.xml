@@ -48,6 +48,7 @@
             android:text="Placeholder"
             android:layout_gravity="center"
             android:gravity="center"
+            android:visibility="gone"
             android:textSize="55px"/>
         <ScrollView
             android:layout_width="match_parent"
@@ -55,7 +56,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:id="@+id/GalastroContentLL">
                 <ImageView
                     android:id="@+id/GalastroBild"
                     android:layout_width="250px"

@@ -68,6 +68,16 @@ namespace AstroGuide
                     this.StartActivity(intent);
             };
 
+            var imgHersteller = FindViewById<ImageView>(Resource.Id.CraftHerstellungImage);
+            imgHersteller.SetImageResource(craf.Hersteller.Image);
+            imgHersteller.Click += (o, e) =>
+            {
+                Intent intent = new Intent(this, typeof(CrafterActivity));
+                intent.PutExtra("Crafter", craf.Hersteller.Name);
+                this.StartActivity(intent);
+            };
+
+
             FindViewById<TextView>(Resource.Id.CraftType).Text = Funktionen.ShowEnumLabel(craf.Typ);
 
             var cName = FindViewById<TextView>(Resource.Id.CraftName);
@@ -101,7 +111,21 @@ namespace AstroGuide
             }
 
             FindViewById<TextView>(Resource.Id.CraftBeschreibung).Text = craf.Description;
-            FindViewById<TextView>(Resource.Id.CWert).Text = craf.Forschungskosten.ToString() + " Bytes";
+
+
+            if(craf.Forschungskosten <= 0)
+            {
+                FindViewById<TextView>(Resource.Id.CWert).Text = "nicht erforschbar";
+            }
+            else
+            {
+                FindViewById<TextView>(Resource.Id.CWert).Text = craf.Forschungskosten.ToString() + " Bytes";
+            }
+
+            var CraftLL = FindViewById<LinearLayout>(Resource.Id.CraftContentLL);
+            ScrollView.LayoutParams para = new ScrollView.LayoutParams(ScrollView.LayoutParams.MatchParent, ScrollView.LayoutParams.WrapContent);
+            para.TopMargin = Einstellungen.TextSizeListOffset / Einstellungen.Margin_M;
+            CraftLL.LayoutParameters = para;
 
         }
 

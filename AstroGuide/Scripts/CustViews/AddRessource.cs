@@ -59,7 +59,12 @@ namespace AstroGuide.Scripts.CustViews
             }
                 
             view.FindViewById<TextView>(Resource.Id.Ressource).Text = item.Ress.Name;
-            view.FindViewById<TextView>(Resource.Id.Haeufigkeit).Text = item.Haeufigkeit;
+
+            if(item.Haeufigkeit != "Oft")
+            {
+                view.FindViewById<TextView>(Resource.Id.Haeufigkeit).Text = item.Haeufigkeit;
+            }
+            
 
             view.FindViewById<ImageView>(Resource.Id.RImage).SetImageResource(item.Ress.Image);
 

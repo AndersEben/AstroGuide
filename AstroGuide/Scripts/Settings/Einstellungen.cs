@@ -39,6 +39,8 @@ namespace AstroGuide.Scripts.Settings
         public static int TXT_ElementS { get; set; } = 28;
 
 
+        public static int Margin_M { get; set; } = 15;
+
 
         public static int LL_E1_margin_left { get; set; } = 0;
         public static int LL_E1_margin_right { get; set; } = 0;
