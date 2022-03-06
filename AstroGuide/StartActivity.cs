@@ -66,6 +66,7 @@ namespace AstroGuide
             CreateMaterial();
             CreateCrafting();
             CreateTerrarium();
+            CreatePflanzen();
             CreatePlaneten();
 
             await Task.Delay(2000);
@@ -293,45 +294,46 @@ namespace AstroGuide
             MaterialTest.exo_chip.SetDescription("");
 
         }
+
         private void CreatePflanzen()
         {
 
-            PflanzenTest.Knallkoralle.SetDescription("");
-            PflanzenTest.Dolchwurzel.SetDescription("");
-            PflanzenTest.Keuchkraut.SetDescription("");
-            PflanzenTest.Stachellilie.SetDescription("");
-            PflanzenTest.Peitschenblatt.SetDescription("");
-            PflanzenTest.Huepfranke.SetDescription("");
-            PflanzenTest.Distelgerte.SetDescription("");
+            PflanzenTest.Knallkoralle.SetDescription("Knallkorallen kommen auf allen Planeten in großen Mengen in Höhlen vor. Sie sind harmlos, außer man verändert das Terrain um sie, dann explodieren sie. Steht man zu nah, kann man an der Explosion sterben. Knallkorallen können mit dem Geländewerkzeug aus sicherer Entfernung abgebaut werden.");
+            PflanzenTest.Dolchwurzel.SetDescription("Die Dolchwurzel ist auf Atrox und Desolo anzutreffen. Sie fährt gefährliche Stacheln aus, wenn man ihr zu nahe kommt. Sie können einen Astroneer mit zwei bis drei Schlägen töten. Auf den ausgewachsenen Dolchwurzel kann man gefahrlos stehen und springen, da sich an der oberen Seite keine Stacheln befinden.");
+            PflanzenTest.Keuchkraut.SetDescription("Das Keuchkraut ist eine rundliche grüne Pflanzen mit großen Löchern, die eine rote Membran zeigen. Es kommt auf Atrox und Calidor vor. Wenn der Astroneer in seine Nähe kommt, gibt es ein keuchendes Geräusch von sich und stößt die rote Membran raus, die den Astroneer wegstößt, wodurch er im ungünstigen Fall Fallschaden erleiden kann.");
+            PflanzenTest.Stachellilie.SetDescription("Bei der Stachellilie handelt es sich um ein stacheliges Seerosenblatt, das in kleinen Ansammlungen an der Oberfläche von Calidor und Atrox gefunden werden kann. Wenn man auf sie rauftritt, wird man in die Luft katapultiert und erhält etwas Schaden. Zusätzlich kann man im ungünstigen Fall Fallschaden erleiden.");
+            PflanzenTest.Peitschenblatt.SetDescription("Das Peitschenblatt sieht aus wie eine Zunge und ist an der Oberfläche von Vesania und Novus heimisch. Wenn man auf es drauf tritt, wird man in die Luft katapultiert und kann im ungünstigen Fall Fallschaden erleiden.");
+            PflanzenTest.Huepfranke.SetDescription("Die Hüpfranke ist auf Sylva heimisch. Normalerweise findet man sie in Gruppen von 3 bis 4 Pflanzen an den Hängen von Bergen. Wenn man auf sie drauftritt, erhält man Schaden.");
+            PflanzenTest.Distelgerte.SetDescription("Die Distelgerte ähnelt vom Aussehen her dem Staubblatt einer Blüte. Sie kommen auf Vesania und Novus vor. Kommt man in ihre Nähe, fängt sie an zu zittern und gibt Partikel von sich. Kommt man in ihren Attackradius, schlägt sie nach dem Astroneer aus und stößt ihn weg. Dabei erhält man eine gute Menge Schaden und kann im ungünstigen");
 
-            PflanzenTest.Zischrebe.SetDescription("");
-            PflanzenTest.Knalloon.SetDescription("");
-            PflanzenTest.Katapflanze.SetDescription("");
-            PflanzenTest.Attaktus.SetDescription("");
-            PflanzenTest.Spuckblume.SetDescription("");
+            PflanzenTest.Zischrebe.SetDescription("Die Zischrebe kommt im Untergrund von allen Planeten vor. Kommt man in ihren Radius, gibt sie eine kleine grüne Giftwolke von sich, die dem Spieler folgt. Nach einer gewissen Strecke verschwindet sie. Holt die Giftwolke einen aber ein, kann dies tödlich enden..");
+            PflanzenTest.Knalloon.SetDescription("Knalloone sind auf der Oberfläche von Glacio anzutreffen. Kommt man ihnen zu nahe, explodieren sie und geben eine Giftwolke von sich. Ist man dabei zu nah an ihr dran, stirbt man.");
+            PflanzenTest.Katapflanze.SetDescription("Katapflanzen sind Pflanzen, die gefährliche Projektile nach einem wirft, wenn man ihr zu nahe kommt. Sie kommt auf der Oberfläche von Vesania und Novus vor, wo ihre Projektile in einer kleinen Giftwolke explodieren, und auf Atrox und Glacio, wo die Projektile richtig explodieren und auch Boden und Gegenstände zerstören. Auf Glacio kommen Katapflanzen außerdem in Gruppen bis 3 Pflanzen vor, was sie besonders gefährlich macht. Unter Ihr findet man oft größere Forschungsobjekte.");
+            PflanzenTest.Attaktus.SetDescription("Attakti spucken gefährliche Projektile nach dem Spieler, wenn er sich in ihrem Radius befindet. Bei den Attakti auf Calidor explodiert das Projektil in einer kleinen Gaswolke, bei den Attakti auf Atrox explodieren die Projektile richtig, dabei wird der Boden und auch Gegenstände zerstört.");
+            PflanzenTest.Spuckblume.SetDescription("Die Spuckblume kommt nur auf Atrox vor. Kommt man ihr zu nahe, zieht sie ihr schirmartiges Blatt ein und sprüht Gift in die Umgebung. Die Giftwolke von den Spuckblumen im Untergrund macht weitaus mehr Schaden als die der Spuckblumen an der Oberfläche.");
             
-            /*
-            PflanzenTest.Knallkoralle.AddImage();
-            PflanzenTest.Dolchwurzel.AddImage();
-            PflanzenTest.Keuchkraut.AddImage();
-            PflanzenTest.Stachellilie.AddImage();
-            PflanzenTest.Peitschenblatt.AddImage();
-            PflanzenTest.Huepfranke.AddImage();
-            PflanzenTest.Distelgerte.AddImage();
+            
+            PflanzenTest.Knallkoralle.AddImage(Resource.Drawable.Pic_Popcoral);
+            PflanzenTest.Dolchwurzel.AddImage(Resource.Drawable.Pic_Hazard_Needlers);
+            PflanzenTest.Keuchkraut.AddImage(Resource.Drawable.Pic_Wheezeweed);
+            PflanzenTest.Stachellilie.AddImage(Resource.Drawable.Pic_Spinelily);
+            PflanzenTest.Peitschenblatt.AddImage(Resource.Drawable.Pic_LashleafClear);
+            PflanzenTest.Huepfranke.AddImage(Resource.Drawable.Pic_Bouncevine);
+            PflanzenTest.Distelgerte.AddImage(Resource.Drawable.Pic_Thistlewhip);
 
-            PflanzenTest.Zischrebe.AddImage();
-            PflanzenTest.Knalloon.AddImage();
-            PflanzenTest.Katapflanze.AddImage();
-            PflanzenTest.Attaktus.AddImage();
-            PflanzenTest.Spuckblume.AddImage(); 
-            */
+            PflanzenTest.Zischrebe.AddImage(Resource.Drawable.Pic_Hazard_Sprayer);
+            PflanzenTest.Knalloon.AddImage(Resource.Drawable.Pic_Hazard_Popper);
+            PflanzenTest.Katapflanze.AddImage(Resource.Drawable.Pic_Hazard_Lobber);
+            PflanzenTest.Attaktus.AddImage(Resource.Drawable.Pic_Hazard_Shooter);
+            PflanzenTest.Spuckblume.AddImage(Resource.Drawable.Pic_Noxious_Spewflower); 
+            
 
         }
 
         private void CreateCrafting()
         {
             CraftingTest.rucksack.SetHerstellung(new List<Ressource>() { }, CraftingTest.rucksack);
-            CraftingTest.rucksack.SetDescription("");
+            CraftingTest.rucksack.SetDescription("Der Rucksack ist Lager und Produktionsstätte in einem. Er hat 8 Steckplätze, 2 Ausrüstungsplätze, einen Drucker und hält kleine Portionen Sauerstoff und Energie für den Astroneer bereit.");
             CraftingTest.kleinerDrucker.SetHerstellung(new List<Ressource>() { MaterialTest.gemisch }, CraftingTest.rucksack);
             CraftingTest.kleinerDrucker.SetDescription("Druckt kleine bis mittlere Gegenstände aus Ressourcen.");
             CraftingTest.mittlerDrucker.SetHerstellung(new List<Ressource>() { MaterialTest.gemisch, MaterialTest.gemisch }, CraftingTest.kleinerDrucker);
@@ -645,7 +647,6 @@ namespace AstroGuide
             GalastropodenTest.Sylvie.SetDescription("folgt noch :)");
         }
 
-
         private void CreatePlaneten()
         {
 
@@ -671,7 +672,8 @@ namespace AstroGuide
             Ressourcen Res13Sylva = new Ressourcen(MaterialTest.stickstoff, ResArt.Gase, "100ppu");
 
             PlanetenTest.Sylva.SetGalastropode(GalastropodenTest.Sylvie);
-
+            PlanetenTest.Sylva.AddImage(Resource.Drawable.Sylva);
+            PlanetenTest.Sylva.AddImage(Resource.Drawable.Icon_Gateway_Sylva);
             PlanetenTest.Sylva.SetPflanzen(new List<Pflanze>() { PflanzenTest.Knallkoralle, PflanzenTest.Huepfranke, PflanzenTest.Dolchwurzel, PflanzenTest.Zischrebe });
 
             PlanetenTest.Sylva.SetRessourcen(new List<Ressourcen>() { Res1Sylva, Res2Sylva, Res3Sylva, Res4Sylva, Res5Sylva, Res6Sylva, Res7Sylva, Res8Sylva, Res9Sylva, Res10Sylva, Res11Sylva, Res12Sylva, Res13Sylva });
@@ -695,7 +697,8 @@ namespace AstroGuide
             Ressourcen Res10Desolo = new Ressourcen(MaterialTest.astronium, ResArt.Universale, "Oft");
 
             PlanetenTest.Desolo.SetGalastropode(GalastropodenTest.Usagi);
-
+            PlanetenTest.Desolo.AddImage(Resource.Drawable.Desolo);
+            PlanetenTest.Desolo.AddImage(Resource.Drawable.Icon_Gateway_Desolo);
             PlanetenTest.Desolo.SetPflanzen(new List<Pflanze>() { PflanzenTest.Knallkoralle, PflanzenTest.Dolchwurzel, PflanzenTest.Zischrebe });
 
             PlanetenTest.Desolo.SetRessourcen(new List<Ressourcen>() { Res1Desolo, Res2Desolo, Res3Desolo, Res4Desolo, Res5Desolo, Res6Desolo, Res7Desolo, Res8Desolo, Res9Desolo, Res10Desolo });
@@ -723,7 +726,8 @@ namespace AstroGuide
             Ressourcen Res12Vesania = new Ressourcen(MaterialTest.stickstoff, ResArt.Gase, "75ppu");
 
             PlanetenTest.Vesania.SetGalastropode(GalastropodenTest.Princess);
-
+            PlanetenTest.Vesania.AddImage(Resource.Drawable.Vesania);
+            PlanetenTest.Vesania.AddImage(Resource.Drawable.Icon_Gateway_Vesania);
             PlanetenTest.Vesania.SetPflanzen(new List<Pflanze>() { PflanzenTest.Knallkoralle, PflanzenTest.Peitschenblatt, PflanzenTest.Distelgerte, PflanzenTest.Zischrebe, PflanzenTest.Katapflanze });
 
             PlanetenTest.Vesania.SetRessourcen(new List<Ressourcen>() { Res1Vesania, Res2Vesania, Res3Vesania, Res4Vesania, Res5Vesania, Res6Vesania, Res7Vesania, Res8Vesania, Res9Vesania, Res13Vesania, Res10Vesania, Res11Vesania, Res12Vesania });
@@ -751,7 +755,8 @@ namespace AstroGuide
             Ressourcen Res13Novus = new Ressourcen(MaterialTest.methan, ResArt.Gase, "75ppu");
 
             PlanetenTest.Novus.SetGalastropode(GalastropodenTest.Rogal);
-
+            PlanetenTest.Novus.AddImage(Resource.Drawable.Novus);
+            PlanetenTest.Novus.AddImage(Resource.Drawable.Icon_Gateway_Novus);
             PlanetenTest.Novus.SetPflanzen(new List<Pflanze>() { PflanzenTest.Knallkoralle, PflanzenTest.Peitschenblatt, PflanzenTest.Distelgerte, PflanzenTest.Zischrebe, PflanzenTest.Katapflanze });
 
             PlanetenTest.Novus.SetRessourcen(new List<Ressourcen>() { Res1Novus, Res2Novus, Res3Novus, Res4Novus, Res5Novus, Res6Novus, Res7Novus, Res8Novus, Res9Novus, Res10Novus, Res11Novus, Res12Novus, Res13Novus });
@@ -778,7 +783,8 @@ namespace AstroGuide
             Ressourcen Res11Calidor = new Ressourcen(MaterialTest.schwefel, ResArt.Gase, "100ppu");
 
             PlanetenTest.Calidor.SetGalastropode(GalastropodenTest.Stilgar);
-
+            PlanetenTest.Calidor.AddImage(Resource.Drawable.Calidor);
+            PlanetenTest.Calidor.AddImage(Resource.Drawable.Icon_Gateway_Calidor);
             PlanetenTest.Calidor.SetPflanzen(new List<Pflanze>() { PflanzenTest.Knallkoralle, PflanzenTest.Keuchkraut, PflanzenTest.Stachellilie, PflanzenTest.Zischrebe, PflanzenTest.Attaktus });
 
             PlanetenTest.Calidor.SetRessourcen(new List<Ressourcen>() { Res1Calidor, Res2Calidor, Res3Calidor, Res4Calidor, Res5Calidor, Res6Calidor, Res7Calidor, Res8Calidor, Res9Calidor, Res12Calidor, Res10Calidor, Res11Calidor });
@@ -804,7 +810,8 @@ namespace AstroGuide
             Ressourcen Res10Glacio = new Ressourcen(MaterialTest.argon, ResArt.Gase, "100ppu");
 
             PlanetenTest.Glacio.SetGalastropode(GalastropodenTest.Bestefar);
-
+            PlanetenTest.Glacio.AddImage(Resource.Drawable.Glacio);
+            PlanetenTest.Glacio.AddImage(Resource.Drawable.Icon_Gateway_Glacio);
             PlanetenTest.Glacio.SetPflanzen(new List<Pflanze>() { PflanzenTest.Knallkoralle, PflanzenTest.Zischrebe, PflanzenTest.Knalloon, PflanzenTest.Katapflanze });
 
             PlanetenTest.Glacio.SetRessourcen(new List<Ressourcen>() { Res1Glacio, Res2Glacio, Res3Glacio, Res4Glacio, Res5Glacio, Res6Glacio, Res7Glacio, Res8Glacio, Res9Glacio, Res11Glacio, Res10Glacio });
@@ -832,7 +839,8 @@ namespace AstroGuide
             Ressourcen Res12Atrox = new Ressourcen(MaterialTest.schwefel, ResArt.Gase, "75ppu");
 
             PlanetenTest.Atrox.SetGalastropode(GalastropodenTest.Enoki);
-
+            PlanetenTest.Atrox.AddImage(Resource.Drawable.Atrox);
+            PlanetenTest.Atrox.AddImage(Resource.Drawable.Icon_Gateway_Atrox);
             PlanetenTest.Atrox.SetPflanzen(new List<Pflanze>() { PflanzenTest.Knallkoralle, PflanzenTest.Keuchkraut, PflanzenTest.Stachellilie, PflanzenTest.Dolchwurzel, PflanzenTest.Zischrebe, PflanzenTest.Katapflanze, PflanzenTest.Attaktus, PflanzenTest.Spuckblume });
 
             PlanetenTest.Atrox.SetRessourcen(new List<Ressourcen>() { Res1Atrox, Res2Atrox, Res3Atrox, Res4Atrox, Res5Atrox, Res6Atrox, Res7Atrox, Res8Atrox, Res13Atrox, Res9Atrox, Res10Atrox, Res11Atrox, Res12Atrox });
