@@ -61,7 +61,7 @@ namespace AstroGuide
 
                 var LVork = FindViewById<ListView>(Resource.Id.RLVorkommen);
                 LVork.Adapter = new AddRezept(this, res.Rezept);
-                LVork.LayoutParameters.Height = (res.Rezept.Count * Einstellungen.ListItemHeight);
+                LVork.LayoutParameters.Height = res.Rezept.Count * Einstellungen.AdapterSpaceCalc;
                 LVork.ItemClick += (o, e) =>
                 {
                     var item = LVork.Adapter as AddRezept;
@@ -72,7 +72,6 @@ namespace AstroGuide
                     this.StartActivity(intent);
                 };
 
-                //FindViewById<TextView>(Resource.Id.RHerstellung).Text = res.Hersteller.ToString();
 
                 var txtHersteller = FindViewById<TextView>(Resource.Id.RHerstellung);
                 txtHersteller.Text = res.Hersteller.ToString();
@@ -95,7 +94,7 @@ namespace AstroGuide
 
                 var LVork = FindViewById<ListView>(Resource.Id.RLVorkommen);
                 LVork.Adapter = new AddVorkommen(this, planets);
-                LVork.LayoutParameters.Height = (planets.Count * Einstellungen.ListItemHeight);
+                LVork.LayoutParameters.Height = planets.Count * Einstellungen.AdapterSpaceCalc;
                 LVork.ItemClick += (o, e) =>
                 {
                     var item = LVork.Adapter as AddVorkommen;
@@ -108,7 +107,7 @@ namespace AstroGuide
 
                 var LHer = FindViewById<ListView>(Resource.Id.RLHerstellung);
                 LHer.Adapter = new AddRezept(this, res.Rezept);
-                LHer.LayoutParameters.Height = (res.Rezept.Count * Einstellungen.ListItemHeight);
+                LHer.LayoutParameters.Height = res.Rezept.Count * Einstellungen.AdapterSpaceCalc;
                 LHer.ItemClick += (o, e) =>
                 {
                     var item = LHer.Adapter as AddRezept;
@@ -119,7 +118,6 @@ namespace AstroGuide
                     this.StartActivity(intent);
                 };
 
-                //FindViewById<TextView>(Resource.Id.RHerstellung).Text = res.Hersteller.ToString();
 
                 var txtHersteller = FindViewById<TextView>(Resource.Id.RHerstellung);
                 txtHersteller.Text = res.Hersteller.ToString();
@@ -164,7 +162,7 @@ namespace AstroGuide
                 
                 var LVork = FindViewById<ListView>(Resource.Id.RLVorkommen);
                 LVork.Adapter = new AddVorkommen(this, planets);
-                LVork.LayoutParameters.Height = (planets.Count * Einstellungen.ListItemHeight);
+                LVork.LayoutParameters.Height = planets.Count * Einstellungen.AdapterSpaceCalc;
                 LVork.ItemClick += (o, e) =>
                 {
                     var item = LVork.Adapter as AddVorkommen;
@@ -238,7 +236,7 @@ namespace AstroGuide
             {
                 var LL = FindViewById<ListView>(Resource.Id.RLVerwendung);
                 LL.Adapter = new AddVerwendung(this, test);
-                LL.LayoutParameters.Height = (test.Count * Einstellungen.ListItemHeight);
+                LL.LayoutParameters.Height = (test.Count * Einstellungen.AdapterSpaceCalc);
                 LL.ItemClick += (o, e) =>
                 {
                     var verw = LL.Adapter as AddVerwendung;
@@ -304,7 +302,7 @@ namespace AstroGuide
 
                 var LVork = FindViewById<ListView>(Resource.Id.RLTrade);
                 LVork.Adapter = new AddTrade(this, res.Tauschen);
-                LVork.LayoutParameters.Height = (res.Tauschen.Count * Einstellungen.ListItemHeight);
+                LVork.LayoutParameters.Height = res.Tauschen.Count * Einstellungen.AdapterSpaceCalc;
                 LVork.ItemClick += (o, e) =>
                 {
                     var verw = LVork.Adapter as AddTrade;
@@ -361,8 +359,8 @@ namespace AstroGuide
             }
 
             var RessLL = FindViewById<LinearLayout>(Resource.Id.RessourceContentLL);
-            ScrollView.LayoutParams para = new ScrollView.LayoutParams(ScrollView.LayoutParams.MatchParent, ScrollView.LayoutParams.WrapContent);
-            para.TopMargin = Einstellungen.TextSizeListOffset / Einstellungen.Margin_M;
+            ScrollView.LayoutParams para = new ScrollView.LayoutParams(ScrollView.LayoutParams.MatchParent, ScrollView.LayoutParams.MatchParent);
+            para.SetMargins(Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0, Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0);
             RessLL.LayoutParameters = para;
 
         }

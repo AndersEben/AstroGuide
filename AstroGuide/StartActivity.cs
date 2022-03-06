@@ -48,6 +48,19 @@ namespace AstroGuide
 
             Einstellungen.TXT_pixel10dip = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 10, Resources.DisplayMetrics);
 
+
+            Einstellungen.AdapterSpaceCalc = (Einstellungen.TextSizeListOffset / Einstellungen.ListSize) + Einstellungen.AdapterSpace + (Einstellungen.TextSizeListOffset / Einstellungen.ListSpace);
+
+            Einstellungen.AdapterSize = (Einstellungen.TextSizeListOffset / Einstellungen.ListSize) + (Einstellungen.TextSizeListOffset / Einstellungen.ListSpace);
+            Einstellungen.AdapterImgSize = (Einstellungen.TextSizeListOffset / Einstellungen.ListSize);
+
+
+            Einstellungen.BigAdapterSpaceCalc = (Einstellungen.TextSizeListOffset / Einstellungen.BigListSize) + Einstellungen.BigAdapterSpace + (Einstellungen.TextSizeListOffset / Einstellungen.BigListSpace);
+
+            Einstellungen.BigAdapterSize = (Einstellungen.TextSizeListOffset / Einstellungen.BigListSize) + (Einstellungen.TextSizeListOffset / Einstellungen.BigListSpace);
+            Einstellungen.BigAdapterImgSize = (Einstellungen.TextSizeListOffset / Einstellungen.BigListSize);
+
+
             LoadAll();
 
             CreateMaterial();

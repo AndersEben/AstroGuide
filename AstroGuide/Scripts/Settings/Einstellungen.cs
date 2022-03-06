@@ -39,8 +39,47 @@ namespace AstroGuide.Scripts.Settings
         public static int TXT_ElementS { get; set; } = 28;
 
 
+
         public static int Margin_M { get; set; } = 15;
         public static int TB_Image { get; set; } = 10;
+
+
+
+        public static int PageMargin { get; set; } = 30;
+
+
+
+        public static int ListMarginRigth { get; set; } = 43;
+        public static int ListMarginRigthText { get; set; } = 9;
+
+        public static int ListMarginLeft { get; set; } = 43;
+        public static int ListMarginLeftText { get; set; } = 9;
+        public static int ListMarginLeftText2 { get; set; } = 3;
+
+        public static int ListSize { get; set; } = 14;
+        public static int ListSpace { get; set; } = 36;
+
+        public static int AdapterSize { get; set; } = 0;
+        public static int AdapterImgSize { get; set; } = 0;
+        public static int AdapterSpaceCalc { get; set; } = 0;
+        public static int AdapterSpace { get; set; } = 3;
+
+
+
+        public static int BigListMarginRigth { get; set; } = 43;
+        public static int BigListMarginRigthText { get; set; } = 9;
+        public static int BigListMarginLeft { get; set; } = 31;
+        public static int BigListMarginLeftText { get; set; } = 5;
+
+        public static int BigListSize { get; set; } = 7;
+        public static int BigListSpace { get; set; } = 21;
+
+        public static int BigAdapterSize { get; set; } = 0;
+        public static int BigAdapterImgSize { get; set; } = 0;
+        public static int BigAdapterSpaceCalc { get; set; } = 0;
+        public static int BigAdapterSpace { get; set; } = 4;
+
+
 
         public static int LL_E1_margin_left { get; set; } = 0;
         public static int LL_E1_margin_right { get; set; } = 0;

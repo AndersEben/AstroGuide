@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="5dip">
+    android:layout_height="100px"
+    android:id="@+id/PRRL">
     <ImageView
         android:id="@+id/RImage"
         android:layout_width="70px"
-        android:layout_height="70px"
+        android:layout_height="match_parent"
         android:layout_marginLeft="25px"
         android:src="@drawable/icon_quartz"/>
     <LinearLayout
@@ -15,14 +15,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_vertical"
-        android:layout_marginLeft="50px">
+        android:layout_marginLeft="0px">
         <TextView
             android:id="@+id/Ressource"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="100px"
             android:text="PlaceHolder"
-            android:gravity="center"
-            android:layout_marginLeft="50px"/>
+            android:layout_marginLeft="130px"
+            android:gravity="center_vertical"/>
     </LinearLayout>
     <TextView
         android:id="@+id/RTyp"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="400px"
         android:gravity="center"
-        android:text="PlaceHolder"/>
+        android:text=""/>
     <TextView
         android:id="@+id/Haeufigkeit"
         android:layout_width="wrap_content"

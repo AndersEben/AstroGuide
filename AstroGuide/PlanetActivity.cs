@@ -90,7 +90,7 @@ namespace AstroGuide
 
             var pressource = FindViewById<ListView>(Resource.Id.PlanetRessourcen);
             pressource.Adapter = new AddRessource(this, plan.Ress);
-            pressource.LayoutParameters.Height = (plan.Ress.Count * Einstellungen.ListItemHeight + Einstellungen.PlanetOffset);
+            pressource.LayoutParameters.Height = plan.Ress.Count * Einstellungen.AdapterSpaceCalc;
             pressource.ItemClick += (o,e) =>
             {
                 var item = pressource.Adapter as AddRessource;
@@ -152,8 +152,8 @@ namespace AstroGuide
             };
 
             var PlanetLL = FindViewById<LinearLayout>(Resource.Id.PlanetContentLL);
-            ScrollView.LayoutParams para = new ScrollView.LayoutParams(ScrollView.LayoutParams.MatchParent, ScrollView.LayoutParams.WrapContent);
-            para.TopMargin = Einstellungen.TextSizeListOffset / Einstellungen.Margin_M;
+            ScrollView.LayoutParams para = new ScrollView.LayoutParams(ScrollView.LayoutParams.MatchParent, ScrollView.LayoutParams.MatchParent);
+            para.SetMargins(Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0, Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0);
             PlanetLL.LayoutParameters = para;
 
         }

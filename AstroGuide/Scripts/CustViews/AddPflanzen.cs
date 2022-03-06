@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using AstroGuide.Scripts.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,10 +46,24 @@ namespace AstroGuide.Scripts.CustViews
             if (view == null)
                 view = Context.LayoutInflater.Inflate(Resource.Layout.planet_pflanzen, null);
 
+            var RL = view.FindViewById<RelativeLayout>(Resource.Id.PPRL);
+            LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, Einstellungen.AdapterSize);
+            RL.LayoutParameters = param;
 
-            view.FindViewById<TextView>(Resource.Id.PflanzenName).Text = item.Name;
+            var text = view.FindViewById<TextView>(Resource.Id.PflanzenName);
+            RelativeLayout.LayoutParams txtparam = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WrapContent, Einstellungen.AdapterSize);
+            txtparam.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigthText, 0);
+            txtparam.AddRule(LayoutRules.AlignParentRight);
+            txtparam.AddRule(LayoutRules.CenterInParent);
+            text.LayoutParameters = txtparam;
+            text.Text = item.Name;
 
-            view.FindViewById<ImageView>(Resource.Id.PflanzenImage).SetImageResource(item.Image);
+            var image = view.FindViewById<ImageView>(Resource.Id.PflanzenImage);
+            RelativeLayout.LayoutParams imgparam = new RelativeLayout.LayoutParams(Einstellungen.AdapterImgSize, RelativeLayout.LayoutParams.MatchParent);
+            imgparam.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigth, 0);
+            imgparam.AddRule(LayoutRules.AlignParentRight);
+            image.LayoutParameters = imgparam;
+            image.SetImageResource(item.Image);
 
             return view;
         }

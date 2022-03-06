@@ -84,7 +84,7 @@ namespace AstroGuide
                 this.StartActivity(intent);
             };
 
-            lv.LayoutParameters.Height = (test.Count * Einstellungen.ListPlanetHeight);
+            lv.LayoutParameters.Height = test.Count * Einstellungen.BigAdapterSpaceCalc;
             lv.Visibility = ViewStates.Gone;
 
             RL.Click += (o, e) =>
@@ -269,7 +269,7 @@ namespace AstroGuide
                 if (e.NewText == "" || e.NewText == null)
                 {
                     searchlv.Adapter = new AddPflanze(this, gefunden);
-                    searchlv.LayoutParameters.Height = (gefunden.Count * Einstellungen.ListPlanetHeight);
+                    searchlv.LayoutParameters.Height = gefunden.Count * Einstellungen.BigAdapterSpaceCalc;
 
                     foreach (var item in LayoutsR)
                     {
@@ -282,7 +282,7 @@ namespace AstroGuide
                     gefunden = PflanzenTest.AllPlant().FindAll(x => x.Name.ToLower().Contains(e.NewText.ToLower()));
 
                     searchlv.Adapter = new AddPflanze(this, gefunden);
-                    searchlv.LayoutParameters.Height = (gefunden.Count * Einstellungen.ListPlanetHeight);
+                    searchlv.LayoutParameters.Height = gefunden.Count * Einstellungen.BigAdapterSpaceCalc;
 
 
                     foreach (var item in LvList)

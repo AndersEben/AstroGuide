@@ -94,7 +94,7 @@ namespace AstroGuide
                 this.StartActivity(intent);
             };
 
-            lv.LayoutParameters.Height = (test.Count * Einstellungen.ListPlanetHeight);
+            lv.LayoutParameters.Height = test.Count * Einstellungen.BigAdapterSpaceCalc;
             lv.Visibility = ViewStates.Gone;
 
             txtv.Click += (o, e) =>
@@ -274,7 +274,7 @@ namespace AstroGuide
                 this.StartActivity(intent);
             };
 
-            lv.LayoutParameters.Height = (CraftingTest.Alle_crafter.Count * Einstellungen.ListPlanetHeight);
+            lv.LayoutParameters.Height = CraftingTest.Alle_crafter.Count * Einstellungen.BigAdapterSpaceCalc;
 
             CraftHolder.AddView(LLCrafter);
 
@@ -364,7 +364,7 @@ namespace AstroGuide
                 if (e.NewText == "" || e.NewText == null)
                 {
                     searchlv.Adapter = new AddCraft(this, gefunden);
-                    searchlv.LayoutParameters.Height = (gefunden.Count * Einstellungen.ListPlanetHeight);
+                    searchlv.LayoutParameters.Height = gefunden.Count * Einstellungen.BigAdapterSpaceCalc;
                     RLcraft.Visibility = ViewStates.Visible;
                     RLcrafter.Visibility = ViewStates.Visible;
                 }
@@ -380,7 +380,7 @@ namespace AstroGuide
                     }
 
                     searchlv.Adapter = new AddCraft(this, gefunden);
-                    searchlv.LayoutParameters.Height = (gefunden.Count * Einstellungen.ListPlanetHeight);
+                    searchlv.LayoutParameters.Height = gefunden.Count * Einstellungen.BigAdapterSpaceCalc;
 
                     RLcraft.Visibility = ViewStates.Gone;
                     RLcrafter.Visibility = ViewStates.Gone;

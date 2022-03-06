@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="25px">
+    android:layout_height="200px"
+    android:id="@+id/RResRL">
     <LinearLayout
         android:id="@+id/addText" 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <ImageView
             android:id="@+id/ResListBild"
             android:layout_width="150px"
-            android:layout_height="150px"
+            android:layout_height="match_parent"
             android:layout_marginLeft="35px"
             android:src="@drawable/icon_quartz"/>
     </LinearLayout>

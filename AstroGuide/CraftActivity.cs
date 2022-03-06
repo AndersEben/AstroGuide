@@ -53,7 +53,7 @@ namespace AstroGuide
 
             var LHer = FindViewById<ListView>(Resource.Id.CLHerstellung);
             LHer.Adapter = new AddRezept(this, craf.Rezept);
-            LHer.LayoutParameters.Height = (craf.Rezept.Count * Einstellungen.ListItemHeight);
+            LHer.LayoutParameters.Height = craf.Rezept.Count * Einstellungen.AdapterSpaceCalc;
             LHer.ItemClick += (o, e) =>
             {
                 var item = LHer.Adapter as AddRezept;
@@ -130,7 +130,8 @@ namespace AstroGuide
 
             var CraftLL = FindViewById<LinearLayout>(Resource.Id.CraftContentLL);
             ScrollView.LayoutParams para = new ScrollView.LayoutParams(ScrollView.LayoutParams.MatchParent, ScrollView.LayoutParams.WrapContent);
-            para.TopMargin = Einstellungen.TextSizeListOffset / Einstellungen.Margin_M;
+            //para.TopMargin = Einstellungen.TextSizeListOffset / Einstellungen.Margin_M;
+            para.SetMargins(Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0, Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0);
             CraftLL.LayoutParameters = para;
 
         }

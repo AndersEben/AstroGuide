@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using AstroGuide.Scripts.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,8 +51,24 @@ namespace AstroGuide.Scripts.CustViews
             if (view == null)
                 view = Context.LayoutInflater.Inflate(Resource.Layout.ressource_vorkommen, null);
 
-            view.FindViewById<ImageView>(Resource.Id.RVIcon).SetImageResource(item.Image);
-            view.FindViewById<TextView>(Resource.Id.VorkommenName).Text = item.Name;
+            var RL = view.FindViewById<RelativeLayout>(Resource.Id.RVRL);
+            LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, Einstellungen.AdapterSize);
+            RL.LayoutParameters = param;
+
+            var text = view.FindViewById<TextView>(Resource.Id.VorkommenName);
+            RelativeLayout.LayoutParams txtparam = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WrapContent, Einstellungen.AdapterSize);
+            txtparam.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigthText, 0);
+            txtparam.AddRule(LayoutRules.AlignParentRight);
+            txtparam.AddRule(LayoutRules.CenterInParent);
+            text.LayoutParameters = txtparam;
+            text.Text = item.Name;
+
+            var image = view.FindViewById<ImageView>(Resource.Id.RVIcon);
+            RelativeLayout.LayoutParams imgparam = new RelativeLayout.LayoutParams(Einstellungen.AdapterImgSize, RelativeLayout.LayoutParams.MatchParent);
+            imgparam.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigth, 0);
+            imgparam.AddRule(LayoutRules.AlignParentRight);
+            image.LayoutParameters = imgparam;
+            image.SetImageResource(item.Image);
 
             return view;
         }

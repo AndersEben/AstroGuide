@@ -63,7 +63,7 @@ namespace AstroGuide
 
             var LV = FindViewById<ListView>(Resource.Id.GalastTerrarium);
             LV.Adapter = new AddVerwendung(this, verwendung);
-            LV.LayoutParameters.Height = (verwendung.Count * Einstellungen.ListItemHeight);
+            LV.LayoutParameters.Height = (verwendung.Count * Einstellungen.AdapterSpaceCalc);
             LV.ItemClick += (o, e) =>
                 {
                     var verw = LV.Adapter as AddVerwendung;
@@ -129,7 +129,8 @@ namespace AstroGuide
 
             var GalastLL = FindViewById<LinearLayout>(Resource.Id.GalastroContentLL);
             ScrollView.LayoutParams para = new ScrollView.LayoutParams(ScrollView.LayoutParams.MatchParent, ScrollView.LayoutParams.WrapContent);
-            para.TopMargin = Einstellungen.TextSizeListOffset / Einstellungen.Margin_M;
+            para.SetMargins(Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0, Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0);
+            //para.TopMargin = Einstellungen.TextSizeListOffset / Einstellungen.Margin_M;
             GalastLL.LayoutParameters = para;
 
         }

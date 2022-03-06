@@ -6,7 +6,7 @@ using Android.Views;
 using Android.Widget;
 
 using AstroGuide.Scripts.Planeten;
-
+using AstroGuide.Scripts.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,25 +49,46 @@ namespace AstroGuide.Scripts.CustViews
             if (view == null)
                 view = Context.LayoutInflater.Inflate(Resource.Layout.planet_ressource, null);
 
-            if(item.Art.ToString() != ResArt.Universale.ToString())
-            {
-                view.FindViewById<TextView>(Resource.Id.RTyp).Text = item.Art.ToString();
-            }
-            else
-            {
-                view.FindViewById<TextView>(Resource.Id.RTyp).Text = "";
-            }
-                
-            view.FindViewById<TextView>(Resource.Id.Ressource).Text = item.Ress.Name;
+            var RL = view.FindViewById<RelativeLayout>(Resource.Id.PRRL);
+            RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MatchParent, Einstellungen.AdapterSize);
+            RL.LayoutParameters = param;
 
-            if(item.Haeufigkeit != "Oft")
+            var texttyp = view.FindViewById<TextView>(Resource.Id.RTyp);
+            var txtTparam = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WrapContent, Einstellungen.AdapterSize);
+            txtTparam.AddRule(LayoutRules.CenterInParent);
+            txtTparam.SetMargins(Einstellungen.TextSizeListOffset / Einstellungen.ListMarginLeftText2, 0, 0, 0);
+            texttyp.LayoutParameters = txtTparam;
+
+            if (item.Art.ToString() != ResArt.Universale.ToString())
             {
-                view.FindViewById<TextView>(Resource.Id.Haeufigkeit).Text = item.Haeufigkeit;
+                texttyp.Text = item.Art.ToString();
             }
+
+            var texthaeufig = view.FindViewById<TextView>(Resource.Id.Haeufigkeit);
+            var txtHparam = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WrapContent, Einstellungen.AdapterSize);
+            txtHparam.AddRule(LayoutRules.CenterInParent);
+            txtHparam.AddRule(LayoutRules.AlignParentRight);
+            txtHparam.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginLeft, 0);
+            texthaeufig.LayoutParameters = txtHparam;
+
+            if (item.Haeufigkeit != "Oft")
+            {
+                texthaeufig.Text = item.Haeufigkeit;
+            }
+
+            var text = view.FindViewById<TextView>(Resource.Id.Ressource);
+            var txtparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, Einstellungen.AdapterSize);
+            txtparam.Gravity = GravityFlags.CenterVertical;
+            txtparam.SetMargins(Einstellungen.TextSizeListOffset / Einstellungen.ListMarginLeftText,0,0,0);
+            text.LayoutParameters = txtparam;
+            text.Text = item.Ress.Name;
+
+            var image = view.FindViewById<ImageView>(Resource.Id.RImage);
+            var imgparam  = new RelativeLayout.LayoutParams(Einstellungen.AdapterImgSize, RelativeLayout.LayoutParams.MatchParent);
+            imgparam.SetMargins(Einstellungen.TextSizeListOffset / Einstellungen.ListMarginLeft,0,0,0);
+            image.LayoutParameters = imgparam;
+            image.SetImageResource(item.Ress.Image);
             
-
-            view.FindViewById<ImageView>(Resource.Id.RImage).SetImageResource(item.Ress.Image);
-
             return view;
         }
     }

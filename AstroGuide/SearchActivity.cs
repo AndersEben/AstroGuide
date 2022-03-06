@@ -174,14 +174,14 @@ namespace AstroGuide
                 if (e.NewText == "" || e.NewText == null)
                 {
                     LSearch.Adapter = new AddVerwendungen(this, gefunden);
-                    LSearch.LayoutParameters.Height = (gefunden.Count * Einstellungen.ListPlanetHeight);
+                    LSearch.LayoutParameters.Height = gefunden.Count * Einstellungen.BigAdapterSpaceCalc;
                 }
                 else
                 {
                     gefunden = VerwendungTest.AlleElemente.FindAll(x => x.Name.ToLower().Contains(e.NewText.ToLower()));
 
                     LSearch.Adapter = new AddVerwendungen(this, gefunden);
-                    LSearch.LayoutParameters.Height = (gefunden.Count * Einstellungen.ListPlanetHeight);
+                    LSearch.LayoutParameters.Height = gefunden.Count * Einstellungen.BigAdapterSpaceCalc;
                 }
             };
 

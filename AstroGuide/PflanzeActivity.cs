@@ -47,7 +47,8 @@ namespace AstroGuide
             var TBImageLeft = FindViewById<ImageView>(Resource.Id.TBImageLeft);
             FrameLayout.LayoutParams ImageparamLeft = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / Einstellungen.TB_Image, Einstellungen.TextSizeListOffset / Einstellungen.TB_Image);
             ImageparamLeft.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
-            TBImageLeft.LayoutParameters = ImageparamLeft; TBImageLeft.Click += (o, e) =>
+            TBImageLeft.LayoutParameters = ImageparamLeft;
+            TBImageLeft.Click += (o, e) =>
             {
                 base.OnBackPressed();
             };
@@ -65,7 +66,7 @@ namespace AstroGuide
 
             var pfPlanetenList = FindViewById<ListView>(Resource.Id.PflanzePlaneten);
             pfPlanetenList.Adapter = new AddVorkommen(this, planeten);
-            pfPlanetenList.LayoutParameters.Height = (planeten.Count * Einstellungen.ListItemHeight);
+            pfPlanetenList.LayoutParameters.Height = planeten.Count * Einstellungen.AdapterSpaceCalc;
             pfPlanetenList.ItemClick += (o, e) =>
             {
                 var item = pfPlanetenList.Adapter as AddVorkommen;
@@ -102,7 +103,8 @@ namespace AstroGuide
 
             var PflanzeLL = FindViewById<LinearLayout>(Resource.Id.PflanzeContentLL);
             ScrollView.LayoutParams para = new ScrollView.LayoutParams(ScrollView.LayoutParams.MatchParent, ScrollView.LayoutParams.WrapContent);
-            para.TopMargin = Einstellungen.TextSizeListOffset / Einstellungen.Margin_M;
+            para.SetMargins(Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0, Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0);
+            //para.TopMargin = Einstellungen.TextSizeListOffset / Einstellungen.Margin_M;
             PflanzeLL.LayoutParameters = para;
 
         }
