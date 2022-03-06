@@ -33,7 +33,8 @@ namespace AstroGuide
             TBText.Text = galast.Name;
 
             var TBImageRigth = FindViewById<ImageView>(Resource.Id.TBImageRight);
-            TBImageRigth.LayoutParameters = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / Einstellungen.TB_Image, Einstellungen.TextSizeListOffset / Einstellungen.TB_Image);
+            FrameLayout.LayoutParams ImageparamRight = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / Einstellungen.TB_Image, Einstellungen.TextSizeListOffset / Einstellungen.TB_Image);
+            ImageparamRight.Gravity = GravityFlags.Right | GravityFlags.CenterVertical;
             TBImageRigth.Click += (o, e) =>
             {
                 FinishAffinity();
@@ -42,7 +43,9 @@ namespace AstroGuide
             };
 
             var TBImageLeft = FindViewById<ImageView>(Resource.Id.TBImageLeft);
-            TBImageLeft.LayoutParameters = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / Einstellungen.TB_Image, Einstellungen.TextSizeListOffset / Einstellungen.TB_Image);
+            FrameLayout.LayoutParams ImageparamLeft = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / Einstellungen.TB_Image, Einstellungen.TextSizeListOffset / Einstellungen.TB_Image);
+            ImageparamLeft.Gravity = GravityFlags.CenterVertical | GravityFlags.Left;
+            TBImageLeft.LayoutParameters = ImageparamLeft;
             TBImageLeft.Click += (o, e) =>
             {
                 base.OnBackPressed();

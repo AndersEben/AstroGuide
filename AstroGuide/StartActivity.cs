@@ -13,17 +13,34 @@ using System.Threading.Tasks;
 using AstroGuide.Scripts.Settings;
 using AstroGuide.Scripts;
 using AstroGuide.Scripts.Planeten;
+using Xamarin.Essentials;
 
 namespace AstroGuide
 {
     [Activity(Theme = "@style/AppTheme.Splash", NoHistory = true, MainLauncher = true, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class StartActivity : AppCompatActivity
     {
+        string versionCode = VersionTracking.CurrentVersion;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
 
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+
+            var LL = new LinearLayout(this);
+            LL.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
+
+            var txt = new TextView(this);
+            txt.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
+            txt.Gravity = GravityFlags.Bottom;
+            txt.Text = versionCode;//Application.Context.ApplicationContext.PackageManager.GetPackageInfo(Application.Context.ApplicationContext.PackageName, 0).VersionCode.ToString();
+
+            LL.AddView(txt);
+            SetContentView(LL);
+
+            Task startupWork = new Task(() => { Startup(); });
+            startupWork.Start();
 
         }
 
@@ -36,8 +53,25 @@ namespace AstroGuide
         protected override void OnResume()
         {
             base.OnResume();
-            Task startupWork = new Task(() => { Startup(); });
+
+            var LL = new LinearLayout(this);
+            LL.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
+
+            var txt = new TextView(this);
+            txt.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
+            txt.Gravity = GravityFlags.Bottom | GravityFlags.Center;
+            txt.Text = versionCode;//Application.Context.ApplicationContext.PackageManager.GetPackageInfo(Application.Context.ApplicationContext.PackageName, 0).VersionCode.ToString();
+
+            LL.AddView(txt);
+            SetContentView(LL);
+
+            Task startupWork = new Task(() => { Waiter(); });
             startupWork.Start();
+        }
+
+        async void Waiter()
+        {
+            await Task.Delay(2000);
         }
 
         async void Startup()
@@ -63,16 +97,22 @@ namespace AstroGuide
 
             LoadAll();
 
+
             CreateMaterial();
+
             CreateCrafting();
+
             CreateTerrarium();
+
             CreatePflanzen();
+
             CreatePlaneten();
 
-            await Task.Delay(2000);
+            await Task.Delay(1000);
 
             StartActivity(new Intent(Application.Context, typeof(MainActivity)));
         }
+
 
         private void LoadAll()
         {
@@ -299,14 +339,14 @@ namespace AstroGuide
         {
 
             PflanzenTest.Knallkoralle.SetDescription("Knallkorallen kommen auf allen Planeten in großen Mengen in Höhlen vor. Sie sind harmlos, außer man verändert das Terrain um sie, dann explodieren sie. Steht man zu nah, kann man an der Explosion sterben. Knallkorallen können mit dem Geländewerkzeug aus sicherer Entfernung abgebaut werden.");
-            PflanzenTest.Dolchwurzel.SetDescription("Die Dolchwurzel ist auf Atrox und Desolo anzutreffen. Sie fährt gefährliche Stacheln aus, wenn man ihr zu nahe kommt. Sie können einen Astroneer mit zwei bis drei Schlägen töten. Auf den ausgewachsenen Dolchwurzel kann man gefahrlos stehen und springen, da sich an der oberen Seite keine Stacheln befinden.");
+            PflanzenTest.Dolchwurzel.SetDescription("Die Dolchwurzel ist auf Sylva, Atrox und Desolo anzutreffen. Sie fährt gefährliche Stacheln aus, wenn man ihr zu nahe kommt. Sie können einen Astroneer mit zwei bis drei Schlägen töten. Auf den ausgewachsenen Dolchwurzel kann man gefahrlos stehen und springen, da sich an der oberen Seite keine Stacheln befinden.");
             PflanzenTest.Keuchkraut.SetDescription("Das Keuchkraut ist eine rundliche grüne Pflanzen mit großen Löchern, die eine rote Membran zeigen. Es kommt auf Atrox und Calidor vor. Wenn der Astroneer in seine Nähe kommt, gibt es ein keuchendes Geräusch von sich und stößt die rote Membran raus, die den Astroneer wegstößt, wodurch er im ungünstigen Fall Fallschaden erleiden kann.");
             PflanzenTest.Stachellilie.SetDescription("Bei der Stachellilie handelt es sich um ein stacheliges Seerosenblatt, das in kleinen Ansammlungen an der Oberfläche von Calidor und Atrox gefunden werden kann. Wenn man auf sie rauftritt, wird man in die Luft katapultiert und erhält etwas Schaden. Zusätzlich kann man im ungünstigen Fall Fallschaden erleiden.");
             PflanzenTest.Peitschenblatt.SetDescription("Das Peitschenblatt sieht aus wie eine Zunge und ist an der Oberfläche von Vesania und Novus heimisch. Wenn man auf es drauf tritt, wird man in die Luft katapultiert und kann im ungünstigen Fall Fallschaden erleiden.");
             PflanzenTest.Huepfranke.SetDescription("Die Hüpfranke ist auf Sylva heimisch. Normalerweise findet man sie in Gruppen von 3 bis 4 Pflanzen an den Hängen von Bergen. Wenn man auf sie drauftritt, erhält man Schaden.");
             PflanzenTest.Distelgerte.SetDescription("Die Distelgerte ähnelt vom Aussehen her dem Staubblatt einer Blüte. Sie kommen auf Vesania und Novus vor. Kommt man in ihre Nähe, fängt sie an zu zittern und gibt Partikel von sich. Kommt man in ihren Attackradius, schlägt sie nach dem Astroneer aus und stößt ihn weg. Dabei erhält man eine gute Menge Schaden und kann im ungünstigen");
 
-            PflanzenTest.Zischrebe.SetDescription("Die Zischrebe kommt im Untergrund von allen Planeten vor. Kommt man in ihren Radius, gibt sie eine kleine grüne Giftwolke von sich, die dem Spieler folgt. Nach einer gewissen Strecke verschwindet sie. Holt die Giftwolke einen aber ein, kann dies tödlich enden..");
+            PflanzenTest.Zischrebe.SetDescription("Die Zischrebe kommt im Untergrund von allen Planeten vor. Kommt man in ihren Radius, gibt sie eine kleine grüne Giftwolke von sich, die dem Spieler folgt. Nach einer gewissen Strecke verschwindet sie. Holt die Giftwolke einen aber ein, kann dies tödlich enden.");
             PflanzenTest.Knalloon.SetDescription("Knalloone sind auf der Oberfläche von Glacio anzutreffen. Kommt man ihnen zu nahe, explodieren sie und geben eine Giftwolke von sich. Ist man dabei zu nah an ihr dran, stirbt man.");
             PflanzenTest.Katapflanze.SetDescription("Katapflanzen sind Pflanzen, die gefährliche Projektile nach einem wirft, wenn man ihr zu nahe kommt. Sie kommt auf der Oberfläche von Vesania und Novus vor, wo ihre Projektile in einer kleinen Giftwolke explodieren, und auf Atrox und Glacio, wo die Projektile richtig explodieren und auch Boden und Gegenstände zerstören. Auf Glacio kommen Katapflanzen außerdem in Gruppen bis 3 Pflanzen vor, was sie besonders gefährlich macht. Unter Ihr findet man oft größere Forschungsobjekte.");
             PflanzenTest.Attaktus.SetDescription("Attakti spucken gefährliche Projektile nach dem Spieler, wenn er sich in ihrem Radius befindet. Bei den Attakti auf Calidor explodiert das Projektil in einer kleinen Gaswolke, bei den Attakti auf Atrox explodieren die Projektile richtig, dabei wird der Boden und auch Gegenstände zerstört.");
@@ -626,25 +666,25 @@ namespace AstroGuide
 
             GalastropodenTest.Sylvie.SetTerrarium(new GTerrarium(MaterialTest.erde,MaterialTest.zink,PflanzenTest.Huepfranke));
             GalastropodenTest.Sylvie.SetBuff("Leuchtet einen Bereich stark aus");
-            GalastropodenTest.Sylvie.SetDescription("Ein mutiger und neugieriger Gefährte, der ein helles Licht von seinem Körper ausstrahlt, wenn er gut ernährt ist. Sylvie erleuchtet die dunkelsten Orte, egal wo sie sich aufhalten.");
+            GalastropodenTest.Sylvie.SetDescription("Sylvie gewährt 10 Minuten lang einen Beleuchtungs-Buff, wenn sie mit einem Samen gefüttert wird, und verhält sich wie ein Arbeitslicht . Sylvie mit einem Mutant Hissbine Seed zu füttern erhöht den Buff auf 30 Minuten.");
             GalastropodenTest.Usagi.SetTerrarium(new GTerrarium(MaterialTest.erde, MaterialTest.wolfram, PflanzenTest.Dolchwurzel));
             GalastropodenTest.Usagi.SetBuff("Verfolgt auf dem aktuellen Planeten die nächstgelegenen wertvollen Kuriositäten auf dem Kompass");
-            GalastropodenTest.Usagi.SetDescription("Eine abenteuerlustige und verspielte Gefährtin, die Expertin darin ist, glänzende Dinge zu finden, wenn sie gut genährt ist. Usagi hilft Ihnen gerne dabei, auf jedem Planeten, auf dem Sie sich befinden, Orte zu finden, an denen Sie nachsehen können, egal wo sie wohnt.");
+            GalastropodenTest.Usagi.SetDescription("Usagi lässt bestimmte Kuriositäten (Wracks, Murmeln , Steinfiguren usw.) 10 Minuten lang mit einer Markierung auf dem Kompass erscheinen , wenn er mit einem Samen gefüttert wird . Das Füttern von Usagi mit einem Mutant Hissbine Seed erhöht den Buff auf 30 Minuten.");
             GalastropodenTest.Stilgar.SetTerrarium(new GTerrarium(MaterialTest.erde, MaterialTest.kupfer, PflanzenTest.Keuchkraut));
             GalastropodenTest.Stilgar.SetBuff("Produziert passiv Sauerstoff, der Tanks und Haltenetze füllt");
-            GalastropodenTest.Stilgar.SetDescription("Ein widerstandsfähiger Begleiter, der dich bei jedem Abenteuer gut durchatmen lässt. Stilgar ist eine würzige Ergänzung für jeden Rucksack: THE AIR MUST FLOW!");
+            GalastropodenTest.Stilgar.SetDescription("Stilgar versorgt den Spieler, ähnlich wie ein tragbarer Oxygenator , mit Sauerstoff, und auch nahegelegene Seile für 10 Minuten, wenn er mit einem Samen gefüttert wird . Das Füttern von Stilgar mit einem Mutanten-Attactus-Samen erhöht den Buff auf 30 Minuten.");
             GalastropodenTest.Princess.SetTerrarium(new GTerrarium(MaterialTest.erde, MaterialTest.lithium, PflanzenTest.Peitschenblatt));
             GalastropodenTest.Princess.SetBuff("Verhindert beim Tragen im Rucksack alle Formen von Schäden außer Ersticken");
-            GalastropodenTest.Princess.SetDescription("folgt noch :)");
+            GalastropodenTest.Princess.SetDescription("Princess macht den Spieler 10 Minuten lang immun gegen alle Arten von Schaden, wenn er mit einem Samen gefüttert wird, verhindert jedoch nicht das Ersticken. Das Füttern von Princess mit einem mutierten Cataplant-Samen erhöht den Buff auf 30 Minuten.");
             GalastropodenTest.Rogal.SetTerrarium(new GTerrarium(MaterialTest.erde, MaterialTest.eisen, PflanzenTest.Distelgerte));
             GalastropodenTest.Rogal.SetBuff("Erzeugt eine beträchtliche Menge an Strom");
-            GalastropodenTest.Sylvie.SetDescription("folgt noch :)");
+            GalastropodenTest.Rogal.SetDescription("Rogal produziert 10 Minuten lang eine Leistung von 6,0 U/s, wenn es mit einem Samen gefüttert wird . Die Fütterung von Rogal mit einem Mutanten-Katapflanzensamen erhöht den Buff auf 30 Minuten.");
             GalastropodenTest.Bestefar.SetTerrarium(new GTerrarium(MaterialTest.erde, MaterialTest.argon, PflanzenTest.Knallkoralle));
             GalastropodenTest.Bestefar.SetBuff("Verbessert, während es am Terrain Tool befestigt ist, seine Breite, Verstärkung und Bohrfähigkeit");
-            GalastropodenTest.Sylvie.SetDescription("folgt noch :)");
+            GalastropodenTest.Bestefar.SetDescription("Bestefar bietet eine erhöhte Bohrbreite, Schub und Bohrfähigkeit, wenn es 10 Minuten lang am Geländewerkzeug befestigt ist, wenn es mit einem Seed gefüttert wird . Das Füttern von Bestefar mit einem Mutanten-Boomalloon-Samen erhöht den Buff auf 30 Minuten.");
             GalastropodenTest.Enoki.SetTerrarium(new GTerrarium(MaterialTest.erde, MaterialTest.helium, PflanzenTest.Stachellilie));
             GalastropodenTest.Enoki.SetBuff("Erhöht beim Tragen im Rucksack die Sprunghöhe, die Sprintgeschwindigkeit und verringert die Bewegungseinbußen beim Tragen schwerer Gegenstände");
-            GalastropodenTest.Sylvie.SetDescription("folgt noch :)");
+            GalastropodenTest.Enoki.SetDescription("Enoki bietet erhöhte Sprunghöhe, Sprintgeschwindigkeit und verringert die Bewegungsstrafe für das Tragen schwerer Gegenstände, wenn es 10 Minuten lang im Rucksack aufbewahrt wird, wenn es mit einem Samen gefüttert wird . Das Füttern von Enoki mit einem mutierten Spewflower-Samen erhöht den Buff auf 30 Minuten.");
         }
 
         private void CreatePlaneten()
