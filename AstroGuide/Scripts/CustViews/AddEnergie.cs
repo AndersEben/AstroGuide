@@ -54,7 +54,7 @@ namespace AstroGuide.Scripts.CustViews
             RL.LayoutParameters = param;
 
             var LL = view.FindViewById<LinearLayout>(Resource.Id.PEnergie);
-            RelativeLayout.LayoutParams LLparam = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WrapContent, RelativeLayout.LayoutParams.MatchParent);
+            RelativeLayout.LayoutParams LLparam = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MatchParent, RelativeLayout.LayoutParams.MatchParent);
             LL.LayoutParameters = LLparam;
             LL.Orientation = Orientation.Vertical;
 
@@ -69,11 +69,11 @@ namespace AstroGuide.Scripts.CustViews
 
             var textST = view.FindViewById<TextView>(Resource.Id.EQuelle);
             var txtSTparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, Einstellungen.AdapterSize);
-            txtSTparam.Gravity = GravityFlags.Center;
+            //txtSTparam.Gravity = GravityFlags.Center;
             txtSTparam.SetMargins(Einstellungen.TextSizeListOffset / Einstellungen.ListMarginLeft, 0, 0, 0);
             textST.LayoutParameters = txtSTparam;
             textST.Text =  item.Name;
-            //textST.Gravity = GravityFlags.Center;
+            textST.Gravity = GravityFlags.Center;
 
             return view;
         }

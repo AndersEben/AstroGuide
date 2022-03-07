@@ -35,7 +35,8 @@ namespace AstroGuide
             var TBImageRigth = FindViewById<ImageView>(Resource.Id.TBImageRight);
             FrameLayout.LayoutParams ImageparamRight = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / Einstellungen.TB_Image, Einstellungen.TextSizeListOffset / Einstellungen.TB_Image);
             ImageparamRight.Gravity = GravityFlags.Right | GravityFlags.CenterVertical;
-            TBImageRigth.LayoutParameters = ImageparamRight; TBImageRigth.Click += (o, e) =>
+            TBImageRigth.LayoutParameters = ImageparamRight; 
+            TBImageRigth.Click += (o, e) =>
             {
                 FinishAffinity();
                 Intent intent = new Intent(this, typeof(MainActivity));
@@ -86,7 +87,7 @@ namespace AstroGuide
 
             var penergie = FindViewById<ListView>(Resource.Id.PlanetEnergiequellen);
             penergie.Adapter = new AddEnergie(this, plan.Energieqiellen);
-            penergie.LayoutParameters.Height = (plan.Energieqiellen.Count * Einstellungen.ListItemHeight + Einstellungen.PlanetOffset);
+            penergie.LayoutParameters.Height = (plan.Energieqiellen.Count * Einstellungen.AdapterSpaceCalc);
 
             var pressource = FindViewById<ListView>(Resource.Id.PlanetRessourcen);
             pressource.Adapter = new AddRessource(this, plan.Ress);

@@ -29,7 +29,19 @@ namespace AstroGuide
             var craf = CraftingTest.FindCraft(Intent.GetStringExtra("Craft"));
 
             var TBText = FindViewById<TextView>(Resource.Id.TBTextCenter);
-            TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementXL);
+            if(craf.Name.Length < 16)
+            {
+                TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementXL);
+            }
+            else if(craf.Name.Length < 25)
+            {
+                TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementL);
+            }
+            else
+            {
+                TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementM);
+            }
+            
             TBText.Text = craf.Name;
 
             var TBImageRigth = FindViewById<ImageView>(Resource.Id.TBImageRight);

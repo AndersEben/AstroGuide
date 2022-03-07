@@ -127,7 +127,7 @@ namespace AstroGuide.Scripts
         public static Craft hPlatform = new Craft("Hohe Plattform", Resource.Drawable.Icon_Mittelgrosse_Plattform_A, 750, CraftType.basisGegenstand,7);
         public static Craft mgTPlatform = new Craft("Mittelgroße T-Plattform", Resource.Drawable.Icon_Mittelgrosse_Plattform_A, 400,CraftType.basisGegenstand,7);
         public static Craft roverSitz = new Craft("Rover Sitz", Resource.Drawable.Icon_Rover_Sitz,0,CraftType.fahrzeugGegensatnd,9);
-        public static Craft sauerstoffmacher = new Craft("Sauerstoffmacher", Resource.Drawable.Icon_Sauerstoffmacher,1800,CraftType.sauerstoffGegenstand,1);
+        public static Craft sauerstoffmacher = new Craft("Sauerstoffgenerator", Resource.Drawable.Icon_Sauerstoffmacher,1800,CraftType.sauerstoffGegenstand,1);
         public static Craft mgroßerGenerator = new Craft("Mittelgroßer Generator", Resource.Drawable.Icon_Generator,2000,CraftType.stromGegenstand,6);
         public static Craft mgroßesSolarmodul = new Craft("Mittelgroßes Solarmodul", Resource.Drawable.Icon_Mittelgrosses_Solarmodul,2000,CraftType.stromGegenstand,6);
         public static Craft mgroßeWindturbine = new Craft("Mittelgroße Windturbine", Resource.Drawable.Icon_Mittelgrosse_Windturbine,2500,CraftType.stromGegenstand,6);
