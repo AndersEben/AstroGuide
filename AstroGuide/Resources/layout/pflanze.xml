@@ -73,13 +73,15 @@
                     android:layout_marginBottom="70px"
                     android:id="@+id/PflanzeImageViewer"/>
                     <RelativeLayout
+                        android:id="@+id/RLPfTyp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="25px">
+                        android:layout_marginBottom="50px">
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <TextView
+                                android:id="@+id/TVPfTyp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Typ :"/>
@@ -92,14 +94,16 @@
                             android:text="Placeholder"/>
                     </RelativeLayout>
                     <RelativeLayout
+                        android:id="@+id/RLPfBeschreibung"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="25px">
+                        android:layout_marginBottom="50px">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
                             <TextView
+                                android:id="@+id/TVPfBeschreibung"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Beschreibung :"/>
@@ -112,16 +116,17 @@
                         </LinearLayout>
                     </RelativeLayout>
                     <RelativeLayout
+                        android:id="@+id/RLPfPlaneten"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="25px">
+                        android:layout_marginBottom="50px">
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <TextView
+                                android:id="@+id/TVPfPlaneten"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="20px"
                                 android:text="Planeten :"/>
                         </LinearLayout>
                         <ListView

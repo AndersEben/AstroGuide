@@ -73,13 +73,15 @@
                     android:layout_marginBottom="70px"
                     android:id="@+id/GalasImageViewer"/>
                 <RelativeLayout
+                    android:id="@+id/RLGFood"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="25px">
+                    android:layout_marginBottom="50px">
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/TVGFood"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Food :"/>
@@ -93,13 +95,15 @@
                         android:text="Placeholder"/>
                 </RelativeLayout>
                 <RelativeLayout
+                    android:id="@+id/RLGTerrarium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="25px">
+                    android:layout_marginBottom="50px">
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/TVGTerrarium"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Terrarium :"/>
@@ -111,6 +115,7 @@
                         android:id="@+id/GalastTerrarium"/>
                 </RelativeLayout>
                 <RelativeLayout
+                    android:id="@+id/RLGBeschreibung"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="50px">
@@ -119,6 +124,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
                         <TextView
+                             android:id="@+id/TVGBeschreibung"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Beschreibung :"/>
@@ -131,6 +137,7 @@
                     </LinearLayout>
                 </RelativeLayout>
                 <RelativeLayout
+                    android:id="@+id/RLGBuff"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="50px">
@@ -139,6 +146,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
                         <TextView
+                            android:id="@+id/TVGBuff"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Buff :"/>

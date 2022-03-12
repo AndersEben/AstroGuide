@@ -50,6 +50,28 @@ namespace AstroGuide
                 base.OnBackPressed();
             };
 
+
+
+
+            var RLCVerwendung = FindViewById<RelativeLayout>(Resource.Id.RLCVerwendung);
+            var TVCVerwendung = FindViewById<TextView>(Resource.Id.TVCVerwendung);
+            var RLCForschungswert = FindViewById<RelativeLayout>(Resource.Id.RLCForschungswert);
+            var TVCForschungswert = FindViewById<TextView>(Resource.Id.TVCForschungswert);
+            var RLCBeschreibung = FindViewById<RelativeLayout>(Resource.Id.RLCBeschreibung);
+            var TVCBeschreibung = FindViewById<TextView>(Resource.Id.TVCBeschreibung);
+            var RLCHerstellungsort = FindViewById<RelativeLayout>(Resource.Id.RLCHerstellungsort);
+            var TVCHerstellungsort = FindViewById<TextView>(Resource.Id.TVCHerstellungsort);
+            var RLCRezept = FindViewById<RelativeLayout>(Resource.Id.RLCRezept);
+            var TVCRezept = FindViewById<TextView>(Resource.Id.TVCRezept);
+            var RLCTyp = FindViewById<RelativeLayout>(Resource.Id.RLCTyp);
+            var TVCTyp = FindViewById<TextView>(Resource.Id.TVCTyp);
+
+
+
+
+
+
+
             var CType = FindViewById<TextView>(Resource.Id.CraftType).Text = "Crafter";
 
             if (craf.Rezept.Count > 0)
@@ -69,7 +91,7 @@ namespace AstroGuide
             }
             else
             {
-                FindViewById<RelativeLayout>(Resource.Id.RLCraftRezept).Visibility = ViewStates.Gone;
+                FindViewById<RelativeLayout>(Resource.Id.RLCRezept).Visibility = ViewStates.Gone;
             }
             
 
@@ -96,7 +118,7 @@ namespace AstroGuide
             }
             else
             {
-                FindViewById<RelativeLayout>(Resource.Id.RLCraftHerstellungsort).Visibility = ViewStates.Gone;
+                FindViewById<RelativeLayout>(Resource.Id.RLCHerstellungsort).Visibility = ViewStates.Gone;
             }
             
 
@@ -134,7 +156,7 @@ namespace AstroGuide
 
             FindViewById<TextView>(Resource.Id.CraftBeschreibung).Text = craf.Description;
 
-            var Herstellung = FindViewById<RelativeLayout>(Resource.Id.LayoutCrafterHerstellung);
+            var Herstellung = FindViewById<RelativeLayout>(Resource.Id.RLCVerwendung);
             Herstellung.Visibility = ViewStates.Visible;
 
             var test = new List<Verwendung>();

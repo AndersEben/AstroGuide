@@ -63,6 +63,24 @@ namespace AstroGuide
                 base.OnBackPressed();
             };
 
+
+
+            var RLCVerwendung = FindViewById<RelativeLayout>(Resource.Id.RLCVerwendung);
+            var TVCVerwendung = FindViewById<TextView>(Resource.Id.TVCVerwendung);
+            var RLCForschungswert = FindViewById<RelativeLayout>(Resource.Id.RLCForschungswert);
+            var TVCForschungswert = FindViewById<TextView>(Resource.Id.TVCForschungswert);
+            var RLCBeschreibung = FindViewById<RelativeLayout>(Resource.Id.RLCBeschreibung);
+            var TVCBeschreibung = FindViewById<TextView>(Resource.Id.TVCBeschreibung);
+            var RLCHerstellungsort = FindViewById<RelativeLayout>(Resource.Id.RLCHerstellungsort);
+            var TVCHerstellungsort = FindViewById<TextView>(Resource.Id.TVCHerstellungsort);
+            var RLCRezept = FindViewById<RelativeLayout>(Resource.Id.RLCRezept);
+            var TVCRezept = FindViewById<TextView>(Resource.Id.TVCRezept);
+            var RLCTyp = FindViewById<RelativeLayout>(Resource.Id.RLCTyp);
+            var TVCTyp = FindViewById<TextView>(Resource.Id.TVCTyp);
+
+
+
+
             var LHer = FindViewById<ListView>(Resource.Id.CLHerstellung);
             LHer.Adapter = new AddRezept(this, craf.Rezept);
             LHer.LayoutParameters.Height = craf.Rezept.Count * Einstellungen.AdapterSpaceCalc;
@@ -102,7 +120,7 @@ namespace AstroGuide
             cName.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementM);
             cName.Text = craf.Name;
 
-            //FindViewById<ImageView>(Resource.Id.CraftBild).SetImageResource(craf.Image);
+
 
             if (craf.Images != null)
             {

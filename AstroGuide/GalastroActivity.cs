@@ -51,6 +51,23 @@ namespace AstroGuide
                 base.OnBackPressed();
             };
 
+
+
+
+            var RLGFood = FindViewById<RelativeLayout>(Resource.Id.RLGFood);
+            var TVGFood = FindViewById<TextView>(Resource.Id.TVGFood);
+            var RLGTerrarium = FindViewById<RelativeLayout>(Resource.Id.RLGTerrarium);
+            var TVGTerrarium = FindViewById<TextView>(Resource.Id.TVGTerrarium);
+            var RLGBeschreibung = FindViewById<RelativeLayout>(Resource.Id.RLGBeschreibung);
+            var TVGBeschreibung = FindViewById<TextView>(Resource.Id.TVGBeschreibung);
+            var RLGBuff = FindViewById<RelativeLayout>(Resource.Id.RLGBuff);
+            var TVGBuff = FindViewById<TextView>(Resource.Id.TVGBuff);
+
+
+
+
+
+
             var gName = FindViewById<TextView>(Resource.Id.GalastName);
             gName.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementM);
             gName.Text = galast.Name;

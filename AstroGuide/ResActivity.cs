@@ -55,9 +55,33 @@ namespace AstroGuide
             };
 
 
+
+
+            var RLRTyp = FindViewById<RelativeLayout>(Resource.Id.RLRTyp);
+            var TVRTyp = FindViewById<TextView>(Resource.Id.TVRTyp);
+            var RLRVorkommen = FindViewById<RelativeLayout>(Resource.Id.RLRVorkommen);
+            var TVRVorkommen = FindViewById<TextView>(Resource.Id.TVRVorkommen);
+            var RLRRezept = FindViewById<RelativeLayout>(Resource.Id.RLRRezept);
+            var TVRRezept = FindViewById<TextView>(Resource.Id.TVRRezept);
+            var RLRHerstellungsort = FindViewById<RelativeLayout>(Resource.Id.RLRHerstellungsort);
+            var TVRHerstellungsort = FindViewById<TextView>(Resource.Id.TVRHerstellungsort);
+            var RLRForschungswert = FindViewById<RelativeLayout>(Resource.Id.RLRForschungswert);
+            var TVRForschungswert = FindViewById<TextView>(Resource.Id.TVRForschungswert);
+            var RLRTauschwert = FindViewById<RelativeLayout>(Resource.Id.RLRTauschwert);
+            var TVRTauschwert = FindViewById<TextView>(Resource.Id.TVRTauschwert);
+            var RLRTrade = FindViewById<RelativeLayout>(Resource.Id.RLRTrade);
+            var TVRTrade = FindViewById<TextView>(Resource.Id.TVRTrade);
+            var RLRVerwendung = FindViewById<RelativeLayout>(Resource.Id.RLRVerwendung);
+            var TVRVerwendung = FindViewById<TextView>(Resource.Id.TVRVerwendung);
+
+
+
+
+
+
             if (res.Type != ResType.naturalResource && res.Type != ResType.naturalMineral && res.Type != ResType.atmoRessource && res.Type != ResType.sonstigeRessource)
             {
-                FindViewById<TextView>(Resource.Id.LabelVorkommen).Text = "Rezept :";
+                FindViewById<TextView>(Resource.Id.TVRVorkommen).Text = "Rezept :";
 
                 var LVork = FindViewById<ListView>(Resource.Id.RLVorkommen);
                 LVork.Adapter = new AddRezept(this, res.Rezept);
@@ -85,7 +109,7 @@ namespace AstroGuide
                     }
                 };
 
-                FindViewById<RelativeLayout>(Resource.Id.LayoutHerstellung).Visibility = ViewStates.Visible;
+                FindViewById<RelativeLayout>(Resource.Id.RLRHerstellungsort).Visibility = ViewStates.Visible;
 
             }
             else if(res.Type == ResType.atmoRessource)
@@ -131,8 +155,8 @@ namespace AstroGuide
                     }
                 };
 
-                FindViewById<RelativeLayout>(Resource.Id.LayoutHerstellung).Visibility = ViewStates.Visible;
-                FindViewById<RelativeLayout>(Resource.Id.LayoutLHerstellung).Visibility = ViewStates.Visible;
+                FindViewById<RelativeLayout>(Resource.Id.RLRHerstellungsort).Visibility = ViewStates.Visible;
+                FindViewById<RelativeLayout>(Resource.Id.RLRRezept).Visibility = ViewStates.Visible;
 
             }
             else if (res.Type == ResType.sonstigeRessource)
@@ -150,10 +174,10 @@ namespace AstroGuide
                     }
                 };
 
-                FindViewById<RelativeLayout>(Resource.Id.LayoutLVorkommen).Visibility = ViewStates.Gone;
-                FindViewById<RelativeLayout>(Resource.Id.LayoutVerwendung).Visibility = ViewStates.Gone;
-                FindViewById<RelativeLayout>(Resource.Id.LayoutHerstellung).Visibility = ViewStates.Visible;
-                FindViewById<RelativeLayout>(Resource.Id.LayoutLHerstellung).Visibility = ViewStates.Gone;
+                FindViewById<RelativeLayout>(Resource.Id.RLRVorkommen).Visibility = ViewStates.Gone;
+                FindViewById<RelativeLayout>(Resource.Id.RLRVerwendung).Visibility = ViewStates.Gone;
+                FindViewById<RelativeLayout>(Resource.Id.RLRHerstellungsort).Visibility = ViewStates.Visible;
+                FindViewById<RelativeLayout>(Resource.Id.RLRRezept).Visibility = ViewStates.Gone;
 
             }
             else
@@ -268,14 +292,14 @@ namespace AstroGuide
             }
             else
             {
-                FindViewById<RelativeLayout>(Resource.Id.LayoutVerwendung).Visibility = ViewStates.Gone;
+                FindViewById<RelativeLayout>(Resource.Id.RLRVerwendung).Visibility = ViewStates.Gone;
             }
 
 
             if(test2.Count > 0)
             {
                 FindViewById<TextView>(Resource.Id.RTWert).Text = test2[0].Ratio + " " + test2[0].Obj.ToString() + " / Unit";
-                FindViewById<RelativeLayout>(Resource.Id.LayoutTauschwert).Visibility = ViewStates.Visible;
+                FindViewById<RelativeLayout>(Resource.Id.RLRTauschwert).Visibility = ViewStates.Visible;
             }
 
             var rName = FindViewById<TextView>(Resource.Id.RessourceName);
@@ -298,7 +322,7 @@ namespace AstroGuide
             if(res.Tauschen.Count > 0)
             {
 
-                FindViewById<RelativeLayout>(Resource.Id.LayoutTrade).Visibility = ViewStates.Visible;
+                FindViewById<RelativeLayout>(Resource.Id.RLRTrade).Visibility = ViewStates.Visible;
 
                 var LVork = FindViewById<ListView>(Resource.Id.RLTrade);
                 LVork.Adapter = new AddTrade(this, res.Tauschen);

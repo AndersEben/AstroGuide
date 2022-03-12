@@ -65,7 +65,7 @@
         android:src="@drawable/icon_quartz"
         android:layout_gravity="center"
         android:layout_marginBottom="70px"
-                android:visibility="gone"/>
+        android:visibility="gone"/>
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -73,174 +73,181 @@
                 android:layout_marginTop="50px"
                 android:layout_marginBottom="70px"
                 android:id="@+id/ResImageViewer"/>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25px">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
+            <RelativeLayout
+                android:id="@+id/RLRTyp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Typ :"/>
-        </LinearLayout>
-        <TextView
-            android:id="@+id/RessourceType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="25px"                    
-            android:text="Placeholder"/>
-    </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/LayoutLVorkommen"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25px">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/LabelVorkommen"
+                android:layout_marginBottom="50px">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/TVRTyp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Typ :"/>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/RessourceType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="25px"                    
+                    android:text="Placeholder"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RLRVorkommen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Vorkommen :"/>
-        </LinearLayout>
-        <ListView
-            android:id="@+id/RLVorkommen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/RVorkommen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text=""/>
-    </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/LayoutLHerstellung"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_marginBottom="25px">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
+                android:layout_marginBottom="50px">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/TVRVorkommen"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Vorkommen :"/>
+                </LinearLayout>
+                <ListView
+                    android:id="@+id/RLVorkommen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/RVorkommen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text=""/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RLRRezept"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rezept :"/>
-        </LinearLayout>
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/RLHerstellung"/>
-    </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/LayoutHerstellung"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_marginBottom="25px">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
+                android:visibility="gone"
+                android:layout_marginBottom="50px">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                            android:id="@+id/TVRRezept"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Rezept :"/>
+                </LinearLayout>
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/RLHerstellung"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RLRHerstellungsort"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Herstellungsort :"/>
-        </LinearLayout>
-        <TextView
-            android:id="@+id/RHerstellung"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="25px"                    
-            android:text="PlaceHolder"/>
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25px">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
+                android:visibility="gone"
+                android:layout_marginBottom="50px">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/TVRHerstellungsort"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Herstellungsort :"/>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/RHerstellung"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="25px"                    
+                    android:text="PlaceHolder"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RLRForschungswert"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Forschungswert :"/>
-        </LinearLayout>
-        <TextView
-            android:id="@+id/RWert"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="25px"                    
-            android:text="Placeholder"/>
-    </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/LayoutTauschwert"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_marginBottom="25px">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
+                android:layout_marginBottom="50px">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/TVRForschungswert"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Forschungswert :"/>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/RWert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="25px"                    
+                    android:text="Placeholder"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RLRTauschwert"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tauschwert :"/>
-        </LinearLayout>
-        <TextView
-            android:id="@+id/RTWert"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="25px"                    
-            android:text="Placeholder"/>
-    </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/LayoutTrade"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_marginBottom="25px">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/LabelTrade"
+                android:visibility="gone"
+                android:layout_marginBottom="50px">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/TVRTauschwert"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tauschwert :"/>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/RTWert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="25px"                    
+                    android:text="Placeholder"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RLRTrade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Trade :"/>
-        </LinearLayout>
-        <ListView
-            android:id="@+id/RLTrade"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/LayoutVerwendung"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25px">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/LabelVerwendung"
+                android:visibility="gone"
+                android:layout_marginBottom="50px">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/TVRTrade"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Trade :"/>
+                </LinearLayout>
+                <ListView
+                    android:id="@+id/RLTrade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/RLRVerwendung"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Verwendung :"/>
-        </LinearLayout>
-        <ListView
-            android:id="@+id/RLVerwendung"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="65px"/>
-    </RelativeLayout>
+                android:layout_marginBottom="50px">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/TVRVerwendung"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Verwendung :"/>
+                </LinearLayout>
+                <ListView
+                    android:id="@+id/RLVerwendung"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="65px"/>
+            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

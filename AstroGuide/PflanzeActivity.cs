@@ -54,6 +54,22 @@ namespace AstroGuide
             };
 
 
+
+
+            var RLPfPlaneten = FindViewById<RelativeLayout>(Resource.Id.RLPfPlaneten);
+            var TVPfPlaneten = FindViewById<TextView>(Resource.Id.TVPfPlaneten);
+            var RLPfBeschreibung = FindViewById<RelativeLayout>(Resource.Id.RLPfBeschreibung);
+            var TVPfBeschreibung = FindViewById<TextView>(Resource.Id.TVPfBeschreibung);
+            var RLPfTyp = FindViewById<RelativeLayout>(Resource.Id.RLPfTyp);
+            var TVPfTyp = FindViewById<TextView>(Resource.Id.TVPfTyp);
+
+
+
+
+
+
+
+
             var pName = FindViewById<TextView>(Resource.Id.PflanzeName);
             pName.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementM);
             pName.Text = plant.Name;

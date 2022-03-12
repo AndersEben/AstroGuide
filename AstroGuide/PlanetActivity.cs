@@ -52,6 +52,30 @@ namespace AstroGuide
                 base.OnBackPressed();
             };
 
+
+
+            var RLPRessourcen = FindViewById<RelativeLayout>(Resource.Id.RLPRessourcen);
+            var TVPRessourcen = FindViewById<TextView>(Resource.Id.TVPRessourcen);
+            var RLPPflanzen = FindViewById<RelativeLayout>(Resource.Id.RLPPflanzen);
+            var TVPPflanzen = FindViewById<TextView>(Resource.Id.TVPPflanzen);
+            var RLPGalstropode = FindViewById<RelativeLayout>(Resource.Id.RLPGalstropode);
+            var TVPGalastropode = FindViewById<TextView>(Resource.Id.TVPGalastropode);
+            var RLPPortalMRessource = FindViewById<RelativeLayout>(Resource.Id.RLPPortalMRessource);
+            var TVPPortalMRessource = FindViewById<TextView>(Resource.Id.TVPPortalMRessource);
+            var RLPEnergiequellen = FindViewById<RelativeLayout>(Resource.Id.RLPEnergiequellen);
+            var TVPEnergiequellen = FindViewById<TextView>(Resource.Id.TVPEnergiequellen);
+            var RLPSchwierigkeitsgrad = FindViewById<RelativeLayout>(Resource.Id.RLPSchwierigkeitsgrad);
+            var TVPSchwierigkeitsgrad = FindViewById<TextView>(Resource.Id.TVPSchwierigkeitsgrad);
+            var RLPGroesse = FindViewById<RelativeLayout>(Resource.Id.RLPGroesse);
+            var TVPGroesse = FindViewById<TextView>(Resource.Id.TVPGroesse);
+            var RLPTyp = FindViewById<RelativeLayout>(Resource.Id.RLPTyp);
+            var TVPTyp = FindViewById<TextView>(Resource.Id.TVPTyp);
+
+
+
+
+
+
             var pName = FindViewById<TextView>(Resource.Id.PlanetName);
             pName.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementM);
             pName.Text = plan.Name;

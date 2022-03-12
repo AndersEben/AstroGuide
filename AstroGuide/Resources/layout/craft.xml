@@ -73,13 +73,15 @@
                     android:layout_marginBottom="70px"
                     android:id="@+id/CraftImageViewer"/>
                 <RelativeLayout
+                    android:id="@+id/RLCTyp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="25px">
+                    android:layout_marginBottom="50px">
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/TVCTyp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Typ :"/>
@@ -95,12 +97,13 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="25px"
-                    android:id="@+id/RLCraftRezept">
+                    android:layout_marginBottom="50px"
+                    android:id="@+id/RLCRezept">
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/TVCRezept"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Rezept :"/>
@@ -114,12 +117,13 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="25px"
-                    android:id="@+id/RLCraftHerstellungsort">
+                    android:layout_marginBottom="50px"
+                    android:id="@+id/RLCHerstellungsort">
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/TVCHerstellungsort"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Herstellungsort :"/>
@@ -142,19 +146,21 @@
                                 android:src="@drawable/icon_atrox"/>
                 </RelativeLayout>
                 <RelativeLayout
+                    android:id="@+id/RLCBeschreibung"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="25px">
+                    android:layout_marginBottom="50px">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
                         <TextView
+                            android:id="@+id/TVCBeschreibung"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Beschreibung :"/>
                     <TextView
-                                    android:paddingTop="20px"
+                        android:paddingTop="20px"
                         android:id="@+id/CraftBeschreibung"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -162,14 +168,15 @@
                 </LinearLayout>
                 </RelativeLayout>
                 <RelativeLayout
+                    android:id="@+id/RLCForschungswert"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="25px"
-                    android:id="@+id/RLCraftForschungskosten">
+                    android:layout_marginBottom="50px">
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/TVCForschungswert"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Forschungskosten :"/>
@@ -183,16 +190,16 @@
                         android:text="Placeholder"/>
                 </RelativeLayout>
                 <RelativeLayout
-                    android:id="@+id/LayoutCrafterHerstellung"
+                    android:id="@+id/RLCVerwendung"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="gone"
-                    android:layout_marginBottom="25px">
+                    android:layout_marginBottom="50px">
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                         <TextView
-                            android:id="@+id/CrafterHerstellung"
+                            android:id="@+id/TVCVerwendung"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Verwendung :"/>
