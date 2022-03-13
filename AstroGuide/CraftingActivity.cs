@@ -178,8 +178,10 @@ namespace AstroGuide
 
 
             LinearLayout LL = new LinearLayout(this);
-            //LinearLayout.LayoutParams Lparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
-            LL.LayoutParameters = Lparam;
+            ScrollView.LayoutParams para = new ScrollView.LayoutParams(ScrollView.LayoutParams.MatchParent, ScrollView.LayoutParams.MatchParent);
+            para.SetMargins(Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0, Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0);
+
+            LL.LayoutParameters = para;
             LL.Orientation = Orientation.Vertical;
             TBLL.AddView(LL);
 
@@ -197,7 +199,7 @@ namespace AstroGuide
 
             LL.AddView(txtv);
 
-            ScrollView SV = new ScrollView(this);
+            AndroidX.Core.Widget.NestedScrollView SV = new AndroidX.Core.Widget.NestedScrollView(this);
             LinearLayout.LayoutParams SVparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
             SV.LayoutParameters = SVparam;
 

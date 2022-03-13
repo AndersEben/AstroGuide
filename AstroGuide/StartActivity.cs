@@ -14,6 +14,7 @@ using AstroGuide.Scripts.Settings;
 using AstroGuide.Scripts;
 using AstroGuide.Scripts.Planeten;
 using Xamarin.Essentials;
+using Android.Graphics;
 
 namespace AstroGuide
 {
@@ -33,13 +34,18 @@ namespace AstroGuide
 
             var txt = new TextView(this);
             txt.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
-            txt.Gravity = GravityFlags.Bottom;
-            txt.Text = versionCode;//Application.Context.ApplicationContext.PackageManager.GetPackageInfo(Application.Context.ApplicationContext.PackageName, 0).VersionCode.ToString();
+
+            txt.Gravity = GravityFlags.Bottom | GravityFlags.Center;
+            txt.SetTextColor(Android.Graphics.Color.White);
+            txt.Text = versionCode;
+            txt.SetTextSize(Android.Util.ComplexUnitType.Px, Resources.DisplayMetrics.WidthPixels / Einstellungen.TXT_ElementL);
+
 
             LL.AddView(txt);
             SetContentView(LL);
 
             Task startupWork = new Task(() => { Startup(); });
+
             startupWork.Start();
 
         }
@@ -59,8 +65,12 @@ namespace AstroGuide
 
             var txt = new TextView(this);
             txt.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
+
             txt.Gravity = GravityFlags.Bottom | GravityFlags.Center;
-            txt.Text = versionCode;//Application.Context.ApplicationContext.PackageManager.GetPackageInfo(Application.Context.ApplicationContext.PackageName, 0).VersionCode.ToString();
+            txt.SetTextColor(Android.Graphics.Color.White);
+            txt.Text = versionCode;
+            txt.SetTextSize(Android.Util.ComplexUnitType.Px, Resources.DisplayMetrics.WidthPixels / Einstellungen.TXT_ElementL);
+
 
             LL.AddView(txt);
             SetContentView(LL);
@@ -78,7 +88,9 @@ namespace AstroGuide
         {
 
             var display = Resources.DisplayMetrics;
+
             Einstellungen.TextSizeListOffset = display.WidthPixels;
+            Einstellungen.DisplayHeight = display.HeightPixels;
 
             Einstellungen.TXT_pixel10dip = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 10, Resources.DisplayMetrics);
 

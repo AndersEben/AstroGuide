@@ -49,7 +49,7 @@
             android:gravity="center"
             android:visibility="gone"
             android:textSize="55px"/>
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <LinearLayout
@@ -159,6 +159,6 @@
                     </LinearLayout>
                 </RelativeLayout>
             </LinearLayout>
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
     </LinearLayout>
 </LinearLayout>

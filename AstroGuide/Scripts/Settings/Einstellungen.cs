@@ -18,13 +18,14 @@ namespace AstroGuide.Scripts.Settings
         public static int PlanetOffset { get; } = 35;
 
 
-        public static int ListSingletHeight { get; set; } = 340;
+        public static int ListSingletHeight { get; set; } = 435;
         public static int ListPlanetHeight { get; set; } = 205;
 
 
         public static int ListCraftingHeight { get; } = 205;
 
         public static int TextSizeListOffset { get; set; }
+        public static int DisplayHeight { get; set; }
 
 
 
@@ -46,7 +47,7 @@ namespace AstroGuide.Scripts.Settings
 
 
         public static int PageMargin { get; set; } = 30;
-
+        public static int PageMarginTop { get; set; } = 18;
 
 
         public static int ListMarginRigth { get; set; } = 43;
@@ -62,7 +63,7 @@ namespace AstroGuide.Scripts.Settings
         public static int AdapterSize { get; set; } = 0;
         public static int AdapterImgSize { get; set; } = 0;
         public static int AdapterSpaceCalc { get; set; } = 0;
-        public static int AdapterSpace { get; set; } = 3;
+        public static int AdapterSpace { get; set; } = 4;
 
 
 
@@ -77,7 +78,7 @@ namespace AstroGuide.Scripts.Settings
         public static int BigAdapterSize { get; set; } = 0;
         public static int BigAdapterImgSize { get; set; } = 0;
         public static int BigAdapterSpaceCalc { get; set; } = 0;
-        public static int BigAdapterSpace { get; set; } = 4;
+        public static int BigAdapterSpace { get; set; } = 7;
 
 
 

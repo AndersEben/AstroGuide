@@ -31,7 +31,20 @@ namespace AstroGuide
 
 
             var TBText = FindViewById<TextView>(Resource.Id.TBTextCenter);
-            TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementXL);
+            if (plant.Name.Length < 16)
+            {
+                TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementXL);
+            }
+            else if (plant.Name.Length < 25)
+            {
+                TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementL);
+            }
+            else
+            {
+                TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementM);
+            }
+
+            //TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementXL);
             TBText.Text = plant.Name;
 
             var TBImageRigth = FindViewById<ImageView>(Resource.Id.TBImageRight);
@@ -110,7 +123,17 @@ namespace AstroGuide
                     ad.SetView(LayoutInflater.Inflate(Resource.Layout.imagePopup, null, false));
 
                     ad.Show();
-                    ad.FindViewById<ImageView>(Resource.Id.PopupImageView).SetImageResource(e.Picture);
+
+                    var alertLL = ad.FindViewById<LinearLayout>(Resource.Id.AlertLL);
+                    var alertPara = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / 2, Einstellungen.DisplayHeight / 2);
+                    alertPara.Gravity = GravityFlags.Center;
+                    alertLL.LayoutParameters = alertPara;
+
+                    var alertImage = ad.FindViewById<ImageView>(Resource.Id.PopupImageView);
+                    var alertImagePara = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent);
+                    alertImagePara.Gravity = GravityFlags.Center;
+                    alertImage.LayoutParameters = alertImagePara;
+                    alertImage.SetImageResource(e.Picture);
                 };
 
                 imageholder.SetAdapter(mAdapter2);
@@ -119,7 +142,7 @@ namespace AstroGuide
 
             var PflanzeLL = FindViewById<LinearLayout>(Resource.Id.PflanzeContentLL);
             ScrollView.LayoutParams para = new ScrollView.LayoutParams(ScrollView.LayoutParams.MatchParent, ScrollView.LayoutParams.WrapContent);
-            para.SetMargins(Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0, Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0);
+            para.SetMargins(Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, Einstellungen.TextSizeListOffset / Einstellungen.PageMarginTop, Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0);
             //para.TopMargin = Einstellungen.TextSizeListOffset / Einstellungen.Margin_M;
             PflanzeLL.LayoutParameters = para;
 

@@ -5,4 +5,5 @@
     <color name="colorAccent">#3498db</color>
 	<color name="splash_background">#FFFFFF</color>
 	<color name="colorWhite">#FFFFFF</color>
+	<color name="colorStartupScreen">#212330</color>
 </resources>

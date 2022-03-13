@@ -103,7 +103,7 @@ namespace AstroGuide
 
             LL.AddView(txtv);
 
-            ScrollView SV = new ScrollView(this);
+            AndroidX.Core.Widget.NestedScrollView SV = new AndroidX.Core.Widget.NestedScrollView(this);
             LinearLayout.LayoutParams SVparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
             SV.LayoutParameters = SVparam;
 

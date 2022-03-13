@@ -7,18 +7,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 		<color
-            android:color="@color/splash_background"
+            android:color="@color/colorStartupScreen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 	</item>
 	<item
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 		<bitmap
-            android:src="@drawable/astroneer_char"
+            android:src="@drawable/astro23"
             android:tileMode="disabled"
             android:gravity="center"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 	</item>
 </layer-list>

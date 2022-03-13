@@ -31,7 +31,20 @@ namespace AstroGuide
             var res = MaterialTest.FindRessource(Intent.GetStringExtra("Ressource"));
 
             var TBText = FindViewById<TextView>(Resource.Id.TBTextCenter);
-            TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementXL);
+            if (res.Name.Length < 16)
+            {
+                TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementXL);
+            }
+            else if (res.Name.Length < 25)
+            {
+                TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementL);
+            }
+            else
+            {
+                TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementM);
+            }
+
+            //TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementXL);
             TBText.Text = res.Name;
 
             var TBImageRigth = FindViewById<ImageView>(Resource.Id.TBImageRight);
@@ -84,6 +97,7 @@ namespace AstroGuide
                 FindViewById<TextView>(Resource.Id.TVRVorkommen).Text = "Rezept :";
 
                 var LVork = FindViewById<ListView>(Resource.Id.RLVorkommen);
+                
                 LVork.Adapter = new AddRezept(this, res.Rezept);
                 LVork.LayoutParameters.Height = res.Rezept.Count * Einstellungen.AdapterSpaceCalc;
                 LVork.ItemClick += (o, e) =>
@@ -98,6 +112,14 @@ namespace AstroGuide
 
 
                 var txtHersteller = FindViewById<TextView>(Resource.Id.RHerstellung);
+
+                var Herstpara = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WrapContent, RelativeLayout.LayoutParams.WrapContent);
+                Herstpara.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigth, 0);
+                Herstpara.AddRule(LayoutRules.AlignParentRight);
+                Herstpara.AddRule(LayoutRules.CenterInParent);
+
+                txtHersteller.LayoutParameters = Herstpara;
+
                 txtHersteller.Text = res.Hersteller.ToString();
                 txtHersteller.Click += (o, e) =>
                 {
@@ -109,7 +131,39 @@ namespace AstroGuide
                     }
                 };
 
-                FindViewById<RelativeLayout>(Resource.Id.RLRHerstellungsort).Visibility = ViewStates.Visible;
+                if (res.Hersteller != Herstellung.None)
+                {
+                    Herstpara = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WrapContent, RelativeLayout.LayoutParams.WrapContent);
+                    Herstpara.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigthText, 0);
+                    Herstpara.AddRule(LayoutRules.AlignParentRight);
+                    Herstpara.AddRule(LayoutRules.CenterInParent);
+
+                    txtHersteller.LayoutParameters = Herstpara;
+
+                    var imgHersteller = FindViewById<ImageView>(Resource.Id.RHerstellungImage);
+
+                    var HerstImgpara = new RelativeLayout.LayoutParams(Einstellungen.AdapterImgSize, Einstellungen.AdapterImgSize);
+                    HerstImgpara.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigth, 0);
+                    HerstImgpara.AddRule(LayoutRules.AlignParentRight);
+                    imgHersteller.LayoutParameters = HerstImgpara;
+                    imgHersteller.Visibility = ViewStates.Visible;
+                    imgHersteller.SetImageResource(CraftingTest.FindCraft(res.Hersteller.ToString()).Image);
+                    imgHersteller.Click += (o, e) =>
+                    {
+                        if (res.Hersteller != Herstellung.None)
+                        {
+                            Intent intent = new Intent(this, typeof(CraftActivity));
+                            intent.PutExtra("Craft", res.Hersteller.ToString());
+                            this.StartActivity(intent);
+                        }
+                    };
+                    FindViewById<RelativeLayout>(Resource.Id.RLRHerstellungsort).Visibility = ViewStates.Visible;
+                }
+                else
+                {
+                    FindViewById<RelativeLayout>(Resource.Id.RLRHerstellungsort).Visibility = ViewStates.Gone;
+                }
+
 
             }
             else if(res.Type == ResType.atmoRessource)
@@ -144,6 +198,14 @@ namespace AstroGuide
 
 
                 var txtHersteller = FindViewById<TextView>(Resource.Id.RHerstellung);
+
+                var Herstpara = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WrapContent, RelativeLayout.LayoutParams.WrapContent);
+                Herstpara.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigth, 0);
+                Herstpara.AddRule(LayoutRules.AlignParentRight);
+                Herstpara.AddRule(LayoutRules.CenterInParent);
+
+                txtHersteller.LayoutParameters = Herstpara;
+
                 txtHersteller.Text = res.Hersteller.ToString();
                 txtHersteller.Click += (o, e) =>
                 {
@@ -155,7 +217,40 @@ namespace AstroGuide
                     }
                 };
 
-                FindViewById<RelativeLayout>(Resource.Id.RLRHerstellungsort).Visibility = ViewStates.Visible;
+                if (res.Hersteller != Herstellung.None)
+                {
+                    Herstpara = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WrapContent, RelativeLayout.LayoutParams.WrapContent);
+                    Herstpara.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigthText, 0);
+                    Herstpara.AddRule(LayoutRules.AlignParentRight);
+                    Herstpara.AddRule(LayoutRules.CenterInParent);
+
+                    txtHersteller.LayoutParameters = Herstpara;
+
+                    var imgHersteller = FindViewById<ImageView>(Resource.Id.RHerstellungImage);
+
+                    var HerstImgpara = new RelativeLayout.LayoutParams(Einstellungen.AdapterImgSize, Einstellungen.AdapterImgSize);
+                    HerstImgpara.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigth, 0);
+                    HerstImgpara.AddRule(LayoutRules.AlignParentRight);
+                    imgHersteller.LayoutParameters = HerstImgpara;
+                    imgHersteller.Visibility = ViewStates.Visible;
+                    imgHersteller.SetImageResource(CraftingTest.FindCraft(res.Hersteller.ToString()).Image);
+                    imgHersteller.Click += (o, e) =>
+                    {
+                        if (res.Hersteller != Herstellung.None)
+                        {
+                            Intent intent = new Intent(this, typeof(CraftActivity));
+                            intent.PutExtra("Craft", res.Hersteller.ToString());
+                            this.StartActivity(intent);
+                        }
+                    };
+
+                    FindViewById<RelativeLayout>(Resource.Id.RLRHerstellungsort).Visibility = ViewStates.Visible;
+                }
+                else
+                {
+                    FindViewById<RelativeLayout>(Resource.Id.RLRHerstellungsort).Visibility = ViewStates.Gone;
+                }
+
                 FindViewById<RelativeLayout>(Resource.Id.RLRRezept).Visibility = ViewStates.Visible;
 
             }
@@ -163,10 +258,18 @@ namespace AstroGuide
             {
 
                 var txtHersteller = FindViewById<TextView>(Resource.Id.RHerstellung);
+
+                var Herstpara = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WrapContent, RelativeLayout.LayoutParams.WrapContent);
+                Herstpara.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigth, 0);
+                Herstpara.AddRule(LayoutRules.AlignParentRight);
+                Herstpara.AddRule(LayoutRules.CenterInParent);
+
+                txtHersteller.LayoutParameters = Herstpara;
+
                 txtHersteller.Text = res.Hersteller.ToString();
                 txtHersteller.Click += (o, e) =>
                 {
-                    if(res.Hersteller != Herstellung.None)
+                    if (res.Hersteller != Herstellung.None)
                     {
                         Intent intent = new Intent(this, typeof(CraftActivity));
                         intent.PutExtra("Craft", res.Hersteller.ToString());
@@ -174,9 +277,44 @@ namespace AstroGuide
                     }
                 };
 
+                if (res.Hersteller != Herstellung.None)
+                {
+                    Herstpara = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WrapContent, RelativeLayout.LayoutParams.WrapContent);
+                    Herstpara.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigthText, 0);
+                    Herstpara.AddRule(LayoutRules.AlignParentRight);
+                    Herstpara.AddRule(LayoutRules.CenterInParent);
+
+                    txtHersteller.LayoutParameters = Herstpara;
+
+                    var imgHersteller = FindViewById<ImageView>(Resource.Id.RHerstellungImage);
+
+                    var HerstImgpara = new RelativeLayout.LayoutParams(Einstellungen.AdapterImgSize, Einstellungen.AdapterImgSize);
+                    HerstImgpara.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigth, 0);
+                    HerstImgpara.AddRule(LayoutRules.AlignParentRight);
+                    imgHersteller.LayoutParameters = HerstImgpara;
+                    imgHersteller.Visibility = ViewStates.Visible;
+                    imgHersteller.SetImageResource(CraftingTest.FindCraft(res.Hersteller.ToString()).Image);
+                    imgHersteller.Click += (o, e) =>
+                    {
+                        if (res.Hersteller != Herstellung.None)
+                        {
+                            Intent intent = new Intent(this, typeof(CraftActivity));
+                            intent.PutExtra("Craft", res.Hersteller.ToString());
+                            this.StartActivity(intent);
+                        }
+                    };
+
+                    FindViewById<RelativeLayout>(Resource.Id.RLRHerstellungsort).Visibility = ViewStates.Visible;
+                }
+                else
+                {
+                    FindViewById<RelativeLayout>(Resource.Id.RLRHerstellungsort).Visibility = ViewStates.Gone;
+                }
+
+                
                 FindViewById<RelativeLayout>(Resource.Id.RLRVorkommen).Visibility = ViewStates.Gone;
                 FindViewById<RelativeLayout>(Resource.Id.RLRVerwendung).Visibility = ViewStates.Gone;
-                FindViewById<RelativeLayout>(Resource.Id.RLRHerstellungsort).Visibility = ViewStates.Visible;
+                
                 FindViewById<RelativeLayout>(Resource.Id.RLRRezept).Visibility = ViewStates.Gone;
 
             }
@@ -289,6 +427,8 @@ namespace AstroGuide
                             break;
                     }
                 };
+
+                FindViewById<RelativeLayout>(Resource.Id.RLRVerwendung).Visibility = ViewStates.Visible;
             }
             else
             {
@@ -308,15 +448,27 @@ namespace AstroGuide
 
 
             FindViewById<ImageView>(Resource.Id.RessourceBild).SetImageResource(res.Image);
-            FindViewById<TextView>(Resource.Id.RessourceType).Text = Funktionen.ShowEnumLabel(res.Type);
 
-            if(res.Forschungswert <= 0)
+            var ResTypeText = FindViewById<TextView>(Resource.Id.RessourceType);
+            var Typepara = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WrapContent, RelativeLayout.LayoutParams.WrapContent);
+            Typepara.AddRule(LayoutRules.AlignParentRight);
+            Typepara.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigth, 0);
+            ResTypeText.LayoutParameters = Typepara;
+            ResTypeText.Text = Funktionen.ShowEnumLabel(res.Type);
+
+            var ResForsch = FindViewById<TextView>(Resource.Id.RWert);
+            var Forschpara = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WrapContent, RelativeLayout.LayoutParams.WrapContent);
+            Forschpara.AddRule(LayoutRules.AlignParentRight);
+            Forschpara.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigth, 0);
+            ResForsch.LayoutParameters = Forschpara;
+
+            if (res.Forschungswert <= 0)
             {
-                FindViewById<TextView>(Resource.Id.RWert).Text = "nicht erforschbar";
+                ResForsch.Text = "nicht erforschbar";
             }
             else
             {
-                FindViewById<TextView>(Resource.Id.RWert).Text = res.Forschungswert.ToString() + " Bytes";
+                ResForsch.Text = res.Forschungswert.ToString() + " Bytes";
             }
 
             if(res.Tauschen.Count > 0)
@@ -376,7 +528,17 @@ namespace AstroGuide
                     ad.SetView(LayoutInflater.Inflate(Resource.Layout.imagePopup, null, false));
 
                     ad.Show();
-                    ad.FindViewById<ImageView>(Resource.Id.PopupImageView).SetImageResource(e.Picture);
+
+                    var alertLL = ad.FindViewById<LinearLayout>(Resource.Id.AlertLL);
+                    var alertPara = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / 2, Einstellungen.DisplayHeight / 2);
+                    alertPara.Gravity = GravityFlags.Center;
+                    alertLL.LayoutParameters = alertPara;
+
+                    var alertImage = ad.FindViewById<ImageView>(Resource.Id.PopupImageView);
+                    var alertImagePara = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent);
+                    alertImagePara.Gravity = GravityFlags.Center;
+                    alertImage.LayoutParameters = alertImagePara;
+                    alertImage.SetImageResource(e.Picture);
                 };
 
                 imageholder.SetAdapter(mAdapter2);
@@ -384,7 +546,7 @@ namespace AstroGuide
 
             var RessLL = FindViewById<LinearLayout>(Resource.Id.RessourceContentLL);
             ScrollView.LayoutParams para = new ScrollView.LayoutParams(ScrollView.LayoutParams.MatchParent, ScrollView.LayoutParams.MatchParent);
-            para.SetMargins(Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0, Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0);
+            para.SetMargins(Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, Einstellungen.TextSizeListOffset / Einstellungen.PageMarginTop, Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0);
             RessLL.LayoutParameters = para;
 
         }

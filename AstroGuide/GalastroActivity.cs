@@ -28,8 +28,22 @@ namespace AstroGuide
 
             var galast = GalastropodenTest.FindGalast(Intent.GetStringExtra("Galastropode"));
 
+            #region ToolBar
             var TBText = FindViewById<TextView>(Resource.Id.TBTextCenter);
-            TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementXL);
+            if (galast.Name.Length < 16)
+            {
+                TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementXL);
+            }
+            else if (galast.Name.Length < 25)
+            {
+                TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementL);
+            }
+            else
+            {
+                TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementM);
+            }
+
+            //TBText.SetTextSize(Android.Util.ComplexUnitType.Px, Einstellungen.TextSizeListOffset / Einstellungen.TXT_ElementXL);
             TBText.Text = galast.Name;
 
             var TBImageRigth = FindViewById<ImageView>(Resource.Id.TBImageRight);
@@ -51,6 +65,7 @@ namespace AstroGuide
                 base.OnBackPressed();
             };
 
+            #endregion
 
 
 
@@ -62,9 +77,6 @@ namespace AstroGuide
             var TVGBeschreibung = FindViewById<TextView>(Resource.Id.TVGBeschreibung);
             var RLGBuff = FindViewById<RelativeLayout>(Resource.Id.RLGBuff);
             var TVGBuff = FindViewById<TextView>(Resource.Id.TVGBuff);
-
-
-
 
 
 
@@ -119,7 +131,19 @@ namespace AstroGuide
                     }
                 };
 
-            FindViewById<TextView>(Resource.Id.GalastFood).Text = galast.Food.Name + " Samen";
+
+            var GalFood = FindViewById<TextView>(Resource.Id.GalastFood);
+
+            var Foodpara = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WrapContent, RelativeLayout.LayoutParams.WrapContent);
+            Foodpara.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigth, 0);
+            Foodpara.AddRule(LayoutRules.AlignParentRight);
+            Foodpara.AddRule(LayoutRules.CenterInParent);
+
+            GalFood.LayoutParameters = Foodpara;
+
+            GalFood.Text = galast.Food.Name + " Samen";
+
+
             FindViewById<TextView>(Resource.Id.GalastBeschreibung).Text = galast.Beschreibung;
             FindViewById<TextView>(Resource.Id.GalastBuff).Text = galast.Buff;
 
@@ -138,9 +162,19 @@ namespace AstroGuide
                 {
                     var ad = new AndroidX.AppCompat.App.AlertDialog.Builder(this).Create();
                     ad.SetView(LayoutInflater.Inflate(Resource.Layout.imagePopup, null, false));
-                    
+
                     ad.Show();
-                    ad.FindViewById<ImageView>(Resource.Id.PopupImageView).SetImageResource(e.Picture);
+
+                    var alertLL = ad.FindViewById<LinearLayout>(Resource.Id.AlertLL);
+                    var alertPara = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / 2, Einstellungen.DisplayHeight / 2);
+                    alertPara.Gravity = GravityFlags.Center;
+                    alertLL.LayoutParameters = alertPara;
+
+                    var alertImage = ad.FindViewById<ImageView>(Resource.Id.PopupImageView);
+                    var alertImagePara = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent);
+                    alertImagePara.Gravity = GravityFlags.Center;
+                    alertImage.LayoutParameters = alertImagePara;
+                    alertImage.SetImageResource(e.Picture);
                 };
 
                 imageholder.SetAdapter(mAdapter2);
@@ -149,7 +183,7 @@ namespace AstroGuide
 
             var GalastLL = FindViewById<LinearLayout>(Resource.Id.GalastroContentLL);
             ScrollView.LayoutParams para = new ScrollView.LayoutParams(ScrollView.LayoutParams.MatchParent, ScrollView.LayoutParams.WrapContent);
-            para.SetMargins(Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0, Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0);
+            para.SetMargins(Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, Einstellungen.TextSizeListOffset / Einstellungen.PageMarginTop, Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0);
             //para.TopMargin = Einstellungen.TextSizeListOffset / Einstellungen.Margin_M;
             GalastLL.LayoutParameters = para;
 

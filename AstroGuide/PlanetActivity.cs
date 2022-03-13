@@ -97,7 +97,17 @@ namespace AstroGuide
                     ad.SetView(LayoutInflater.Inflate(Resource.Layout.imagePopup, null, false));
 
                     ad.Show();
-                    ad.FindViewById<ImageView>(Resource.Id.PopupImageView).SetImageResource(e.Picture);
+
+                    var alertLL = ad.FindViewById<LinearLayout>(Resource.Id.AlertLL);
+                    var alertPara = new FrameLayout.LayoutParams(Einstellungen.TextSizeListOffset / 2, Einstellungen.DisplayHeight / 2);
+                    alertPara.Gravity = GravityFlags.Center;
+                    alertLL.LayoutParameters = alertPara;
+
+                    var alertImage = ad.FindViewById<ImageView>(Resource.Id.PopupImageView);
+                    var alertImagePara = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent);
+                    alertImagePara.Gravity = GravityFlags.Center;
+                    alertImage.LayoutParameters = alertImagePara;
+                    alertImage.SetImageResource(e.Picture);
                 };
 
                 imageholder.SetAdapter(mAdapter2);
@@ -105,9 +115,27 @@ namespace AstroGuide
             }
 
 
-            FindViewById<TextView>(Resource.Id.PlanetType).Text = plan.Typ;
-            FindViewById<TextView>(Resource.Id.PlanetSize).Text = plan.Groesse.ToString();
-            FindViewById<TextView>(Resource.Id.PlanetDiff).Text = plan.Schwierigkeitsgrad.ToString();
+            var PlanType = FindViewById<TextView>(Resource.Id.PlanetType);
+            var planpara = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WrapContent, RelativeLayout.LayoutParams.WrapContent);
+            planpara.AddRule(LayoutRules.AlignParentRight);
+            planpara.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigth, 0);
+            PlanType.LayoutParameters = planpara;
+            PlanType.Text = plan.Typ;
+
+
+            var PlanSize = FindViewById<TextView>(Resource.Id.PlanetSize);
+            var Grpara = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WrapContent, RelativeLayout.LayoutParams.WrapContent);
+            Grpara.AddRule(LayoutRules.AlignParentRight);
+            Grpara.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigth, 0);
+            PlanSize.LayoutParameters = Grpara;
+            PlanSize.Text = plan.Groesse.ToString();
+
+            var PlanDiff = FindViewById<TextView>(Resource.Id.PlanetDiff);
+            var Diffpara = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WrapContent, RelativeLayout.LayoutParams.WrapContent);
+            Diffpara.AddRule(LayoutRules.AlignParentRight);
+            Diffpara.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigth, 0);
+            PlanDiff.LayoutParameters = Diffpara;
+            PlanDiff.Text = plan.Schwierigkeitsgrad.ToString();
 
             var penergie = FindViewById<ListView>(Resource.Id.PlanetEnergiequellen);
             penergie.Adapter = new AddEnergie(this, plan.Energieqiellen);
@@ -138,8 +166,21 @@ namespace AstroGuide
                 intent.PutExtra("Pflanze", plant.Name);
                 this.StartActivity(intent);
             };
+            
+
+
+            var PMpara = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
+            PMpara.SetMargins(0,0,0,50);
+            RLPPortalMRessource.LayoutParameters = PMpara;
 
             var portalRess = FindViewById<TextView>(Resource.Id.PlanetPortalRes);
+
+            RelativeLayout.LayoutParams txtparam = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WrapContent, RelativeLayout.LayoutParams.WrapContent);
+            txtparam.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigthText, 0);
+            txtparam.AddRule(LayoutRules.AlignParentRight);
+            txtparam.AddRule(LayoutRules.CenterInParent);
+            portalRess.LayoutParameters = txtparam;
+
             portalRess.Text = plan.PortalElement.Name;
             portalRess.Click += (o, e) =>
             {
@@ -149,6 +190,12 @@ namespace AstroGuide
             };
 
             var portalRessImage = FindViewById<ImageView>(Resource.Id.PlanetPortalResImage);
+
+            RelativeLayout.LayoutParams imgparam = new RelativeLayout.LayoutParams(Einstellungen.AdapterImgSize, Einstellungen.AdapterImgSize);
+            imgparam.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigth, 0);
+            imgparam.AddRule(LayoutRules.AlignParentRight);
+            portalRessImage.LayoutParameters = imgparam;
+
             portalRessImage.SetImageResource(plan.PortalElement.Image);
             portalRessImage.Click += (o, e) =>
             {
@@ -158,7 +205,18 @@ namespace AstroGuide
             };
 
 
+            var Galpara = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, Einstellungen.AdapterImgSize);
+            Galpara.SetMargins(0, 0, 0, 50);
+            RLPGalstropode.LayoutParameters = Galpara;
+
             var Galastro = FindViewById<TextView>(Resource.Id.PlanetGalatrop);
+
+            RelativeLayout.LayoutParams Gtxtparam = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WrapContent, RelativeLayout.LayoutParams.WrapContent);
+            Gtxtparam.SetMargins(0, 0, Einstellungen.TextSizeListOffset / Einstellungen.ListMarginRigthText, 0);
+            Gtxtparam.AddRule(LayoutRules.AlignParentRight);
+            Gtxtparam.AddRule(LayoutRules.CenterInParent);
+
+            Galastro.LayoutParameters = Gtxtparam;
             Galastro.Text = plan.Galastro.Name;
             Galastro.Click += (o, e) =>
             {
@@ -168,6 +226,7 @@ namespace AstroGuide
             };
 
             var GalastroImage = FindViewById<ImageView>(Resource.Id.PlanetGalatropImage);
+            GalastroImage.LayoutParameters = imgparam;
             GalastroImage.SetImageResource(plan.Galastro.Icon);
             GalastroImage.Click += (o, e) =>
             {
@@ -178,7 +237,7 @@ namespace AstroGuide
 
             var PlanetLL = FindViewById<LinearLayout>(Resource.Id.PlanetContentLL);
             ScrollView.LayoutParams para = new ScrollView.LayoutParams(ScrollView.LayoutParams.MatchParent, ScrollView.LayoutParams.MatchParent);
-            para.SetMargins(Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0, Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0);
+            para.SetMargins(Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, Einstellungen.TextSizeListOffset / Einstellungen.PageMarginTop, Einstellungen.TextSizeListOffset / Einstellungen.PageMargin, 0);
             PlanetLL.LayoutParameters = para;
 
         }
